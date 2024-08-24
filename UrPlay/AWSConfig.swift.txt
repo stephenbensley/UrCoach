@@ -1,0 +1,27 @@
+//
+// Copyright 2024 Stephen E. Bensley
+//
+// This file is licensed under the MIT License. You may obtain a copy of the
+// license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
+//
+
+// Config used to query node info from the web service hosted in AWS. Some of these are
+// sensitive and thus not persisted to github; fill in appropriate values before building the
+// app.
+class AWSConfig {
+    // API ID assigned by API Gateway
+    static let apiID = ""
+    // API key associated with the API's usage plan.
+    static let apiKey = ""
+    // AWS region where the API is hosted.
+    static let region = ""
+    // Deployment stage -- change this if you want to test a beta deployment
+    static let stage = "prod"
+    // Name of the resource -- shouldn't be any need to configure this.
+    static let resource = "urnodes"
+    
+    // Returns the full URL to the resource in AWS.
+    static var resourceUrl: String {
+        String("https://\(apiID).execute-api.\(region).amazonaws.com/\(stage)/\(resource)")
+    }
+}

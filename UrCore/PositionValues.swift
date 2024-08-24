@@ -36,7 +36,7 @@ public final class PositionValues {
         }
         self.init(data: data)
     }
-    
+
     public subscript(position: GamePosition) -> Float {
         // The index is exhaustive, so we should never see an unknown id.
         return values[values.bsearch(by: \.id, for:  position.id)!].value
