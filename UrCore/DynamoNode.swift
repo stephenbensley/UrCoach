@@ -5,7 +5,7 @@
 // license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
 //
 
-// Representation of a game node in DynamoDB.
+// Representation of a SolutionNode in DynamoDB.
 public struct DynamoNode: Codable {
     // Encoded id
     public let I: String
@@ -20,13 +20,13 @@ public struct DynamoNode: Codable {
         self.P = P
     }
     
-    public init(_ dbNode: SolutionDBNode) {
-        let I = Self.uint32ToDynamoValue(UInt32(bitPattern: dbNode.id))
+    public init(_ node: SolutionNode) {
+        let I = Self.uint32ToDynamoValue(UInt32(bitPattern: node.id))
         
-        let V = Self.floatToDynamoValue(dbNode.value)
+        let V = Self.floatToDynamoValue(node.value)
         
         var packedPolicy: UInt16 = 0
-        for p in dbNode.policy {
+        for p in node.policy {
             packedPolicy <<= 4
             packedPolicy |= UInt16(p)
         }
@@ -35,7 +35,8 @@ public struct DynamoNode: Codable {
         self.init(I: I, V: V, P: P)
     }
     
-    var solutionDBNode: SolutionDBNode? {
+    // Returns as a SolutionNode or nil if the conversion fails.
+    var solutionDBNode: SolutionNode? {
         guard let asUInt32 = Self.dynamoValueToUInt32(I) else { return nil }
         let id = Int32(bitPattern: asUInt32)
         
@@ -50,7 +51,6 @@ public struct DynamoNode: Codable {
         policy.reverse()
         
         return .init(id: id, value: value, policy: policy)
-
     }
     
     static func floatToDynamoValue(_ value: Float) -> String {

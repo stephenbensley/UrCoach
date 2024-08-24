@@ -48,7 +48,7 @@ public struct GamePosition: Equatable, Identifiable {
     var isValid: Bool {
         attacker.isValid && defender.isValid && !attacker.intersects(with: defender)
     }
-
+    
     // Returns the current position reversed.
     var reversed: GamePosition { .init(attacker: defender, defender: attacker) }
     
@@ -61,12 +61,14 @@ public struct GamePosition: Equatable, Identifiable {
     }
     
     init(id: Int32) {
+        // Parse the bit fields.
         let dWait   =  id        & 0x0007
         let dUnique = (id >>  3) & 0x003f
         var shared  = (id >>  9) & 0x1fff
         let aWait   = (id >> 22) & 0x0007
         let aUnique = (id >> 25) & 0x003f
         
+        // Convert the ternary shared positions to binary.
         var aShared: Int32 = 0
         var dShared: Int32 = 0
         var mask: Int32 = 1
@@ -80,13 +82,14 @@ public struct GamePosition: Equatable, Identifiable {
             shared /= 3
             mask <<= 1
         }
- 
+        
+        // Rebuild the bitboards.
         let aBitboard = ((aUnique & 0x30) << 8) | (aShared << 4) | (aUnique & 0xf)
         let dBitboard = ((dUnique & 0x30) << 8) | (dShared << 4) | (dUnique & 0xf)
         
         self.attacker = .init(bitboard: UInt16(aBitboard), waitCount: Int(aWait))
         self.defender = .init(bitboard: UInt16(dBitboard), waitCount: Int(dWait))
-   }
+    }
     
     // Returns all legal moves from the position.
     func moves(forRoll roll: Int) -> [Move] {

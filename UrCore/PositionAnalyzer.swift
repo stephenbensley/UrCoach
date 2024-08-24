@@ -5,8 +5,6 @@
 // license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
 //
 
-import Foundation
-
 // Stores the value of a Move
 public struct MoveValue: Comparable {
     let move: Move
@@ -25,7 +23,7 @@ public protocol PositionAnalyzer {
     func bestMove(from position: GamePosition, forRoll roll: Int) throws -> Move?
 }
 
-// Stores all possible game positions.
+// Extend PositionValues to implement PositionAnalyzer.
 extension PositionValues: PositionAnalyzer {
     // Returns all moves sorted from best to worst.
     public func analyze(position: GamePosition, roll: Int) -> [MoveValue] {

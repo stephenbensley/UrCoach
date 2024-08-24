@@ -11,7 +11,7 @@ import XCTest
 class DynamoNodeTests: XCTestCase {
     func testConvert() throws {
         for pos in GamePosition.randomPositions {
-            let before = solution.solutionDbNode(for: pos)
+            let before = solution.solutionNode(for: pos)
             let after = DynamoNode(before).solutionDBNode!
             XCTAssert(before == after)
         }

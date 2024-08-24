@@ -31,15 +31,25 @@ final class Tournament {
     }
     
     static func main() {
-        let solution = PositionValues(fileURLWithPath: "urSolution.data")!
-        let player1 = HeuristicStrategy()
-        let player2 = RandomStrategy()
-        let player3 = AnalysisStrategy(analyzer: solution)
+        guard let solution = PositionValues(fileURLWithPath: "urSolution.data") else {
+            print("Unable to load urSolution.data")
+            return
+        }
+        
+        let playerH = HeuristicStrategy()
+        let playerR = RandomStrategy()
+        let playerA = AnalysisStrategy(analyzer: solution)
+        
+        var winPct = 0.0
+        
         do {
-            let winPct = try playTournament(players: [player3, player1], gameCount: 10000)
-            print(winPct)
+            winPct = try playTournament(players: [playerH, playerR], gameCount: 10000)
+            print(String(format: "Heuristic vs. Random:  %5.2f%%", winPct))
+
+            winPct = try playTournament(players: [playerA, playerH], gameCount: 10000)
+            print(String(format: "Optimal vs. Heuristic: %5.2f%%", winPct))
         } catch {
-            
+            print("Unexpected error during tournament.")
         }
     }
 }
