@@ -308,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				DC729EC32C7A4BB400193A2E /* DynamoDBGen */,
+				DC729ECF2C7A4CD700193A2E /* Frameworks */,
 				DC89A57C2C7A40F5005D0269 /* Products */,
 				DC729EA12C7A436F00193A2E /* Resources */,
 				DC729EB02C7A4AAA00193A2E /* Solver */,
@@ -315,7 +316,6 @@
 				DC89A5872C7A40F5005D0269 /* UrCoreTests */,
 				DC729E762C7A425100193A2E /* UrPlay */,
 				DC729E802C7A425100193A2E /* UrPlayTests */,
-				DC729ECF2C7A4CD700193A2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
