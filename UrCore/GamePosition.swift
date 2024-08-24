@@ -60,7 +60,7 @@ public struct GamePosition: Equatable, Identifiable {
         self.defender = defender
     }
     
-    public init(id: Int32) {
+    init(id: Int32) {
         let dWait   =  id        & 0x0007
         let dUnique = (id >>  3) & 0x003f
         var shared  = (id >>  9) & 0x1fff
@@ -89,7 +89,7 @@ public struct GamePosition: Equatable, Identifiable {
    }
     
     // Returns all legal moves from the position.
-    public func moves(forRoll roll: Int) -> [Move] {
+    func moves(forRoll roll: Int) -> [Move] {
         // A roll of 0 never has any moves.
         guard roll > 0 else { return .init() }
         
@@ -136,7 +136,7 @@ public struct GamePosition: Equatable, Identifiable {
     }
     
     // Apply the move and return the resulting GamePosition
-    public func tryMove(move: Move) -> (GamePosition, Bool) {
+    func tryMove(move: Move) -> (GamePosition, Bool) {
         var nextPosition = self
         let nextPlayer = nextPosition.makeMove(move)
         return (nextPosition, nextPlayer)

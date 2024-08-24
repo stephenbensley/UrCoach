@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC729E7D2C7A425100193A2E /* UrPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC729E752C7A425100193A2E /* UrPlay.framework */; };
-		DC729E832C7A425100193A2E /* UrPlay.h in Headers */ = {isa = PBXBuildFile; fileRef = DC729E772C7A425100193A2E /* UrPlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC729E8F2C7A428800193A2E /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DC729E902C7A428800193A2E /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DC729E912C7A428800193A2E /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DC729E932C7A428800193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DC729E952C7A429F00193A2E /* DynamoNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */; };
-		DC729E962C7A42C900193A2E /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
-		DC729EAA2C7A495100193A2E /* urSolution.data in Copy Files */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
 		DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* SolverApp.swift */; };
 		DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB32C7A4AAA00193A2E /* ContentView.swift */; };
 		DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB52C7A4AAB00193A2E /* Assets.xcassets */; };
@@ -27,10 +18,19 @@
 		DC729ED12C7A4CD700193A2E /* UrCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC729ED52C7A4CDE00193A2E /* UrCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; };
 		DC729ED62C7A4CDE00193A2E /* UrCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC729ED92C7A4CDE00193A2E /* UrPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC729E752C7A425100193A2E /* UrPlay.framework */; };
-		DC729EDA2C7A4CDE00193A2E /* UrPlay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC729E752C7A425100193A2E /* UrPlay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DC729EDE2C7A4E1100193A2E /* UrCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; };
-		DC729EDF2C7A4E1100193A2E /* UrCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC729F002C7A667A00193A2E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DC729F012C7A667A00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DC729F022C7A667A00193A2E /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DC729F032C7A667A00193A2E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
+		DC729F042C7A667A00193A2E /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DC729F052C7A667A00193A2E /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DC729F0A2C7A688600193A2E /* urSolution.data in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
+		DC729F0B2C7A68C200193A2E /* DynamoNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */; };
+		DC729F0C2C7A68C200193A2E /* PositionAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE32C7A507000193A2E /* PositionAnalyzerTests.swift */; };
+		DC729F182C7A6B7A00193A2E /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EF42C7A580E00193A2E /* Tournament.swift */; };
+		DC729F192C7A6BA300193A2E /* UrCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; };
+		DC729F1A2C7A6BA300193A2E /* UrCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC729F1E2C7A6BB100193A2E /* urSolution.data in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
 		DC89A5842C7A40F5005D0269 /* UrCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; };
 		DC89A58A2C7A40F5005D0269 /* UrCore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC89A57E2C7A40F5005D0269 /* UrCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC89A5992C7A410A005D0269 /* ArraySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5912C7A410A005D0269 /* ArraySearch.swift */; };
@@ -48,13 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DC729E7E2C7A425100193A2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC89A5702C7A40E1005D0269 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC729E742C7A425100193A2E;
-			remoteInfo = UrPlay;
-		};
 		DC729ED22C7A4CD700193A2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC89A5702C7A40E1005D0269 /* Project object */;
@@ -69,14 +62,7 @@
 			remoteGlobalIDString = DC89A57A2C7A40F5005D0269;
 			remoteInfo = UrCore;
 		};
-		DC729EDB2C7A4CDE00193A2E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC89A5702C7A40E1005D0269 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC729E742C7A425100193A2E;
-			remoteInfo = UrPlay;
-		};
-		DC729EE02C7A4E1100193A2E /* PBXContainerItemProxy */ = {
+		DC729F1B2C7A6BA300193A2E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC89A5702C7A40E1005D0269 /* Project object */;
 			proxyType = 1;
@@ -93,17 +79,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DC729EA92C7A494100193A2E /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /private/tmp;
-			dstSubfolderSpec = 0;
-			files = (
-				DC729EAA2C7A495100193A2E /* urSolution.data in Copy Files */,
-			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC729EC02C7A4BB400193A2E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -132,18 +107,37 @@
 			dstSubfolderSpec = 10;
 			files = (
 				DC729ED62C7A4CDE00193A2E /* UrCore.framework in Embed Frameworks */,
-				DC729EDA2C7A4CDE00193A2E /* UrPlay.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DC729EE22C7A4E1100193A2E /* Embed Frameworks */ = {
+		DC729F092C7A687B00193A2E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DC729F0A2C7A688600193A2E /* urSolution.data in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729F0F2C7A6B7100193A2E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				DC729F1E2C7A6BB100193A2E /* urSolution.data in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729F1D2C7A6BA300193A2E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC729EDF2C7A4E1100193A2E /* UrCore.framework in Embed Frameworks */,
+				DC729F1A2C7A6BA300193A2E /* UrCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,13 +145,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC729E752C7A425100193A2E /* UrPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC729E772C7A425100193A2E /* UrPlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrPlay.h; sourceTree = "<group>"; };
-		DC729E7C2C7A425100193A2E /* UrPlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrPlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionDBClient.swift; sourceTree = "<group>"; };
 		DC729E8B2C7A428800193A2E /* AWSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfig.swift; sourceTree = "<group>"; };
 		DC729E8C2C7A428800193A2E /* DynamoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNode.swift; sourceTree = "<group>"; };
-		DC729E8D2C7A428800193A2E /* AWSConfig.swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AWSConfig.swift.txt; sourceTree = "<group>"; };
 		DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionAnalyzer.swift; sourceTree = "<group>"; };
 		DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNodeTests.swift; sourceTree = "<group>"; };
 		DC729EA22C7A438400193A2E /* urSolution.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = urSolution.data; sourceTree = "<group>"; };
@@ -170,6 +160,11 @@
 		DC729EC22C7A4BB400193A2E /* DynamoDBGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DynamoDBGen; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC729EC92C7A4BC300193A2E /* BufferedTextFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferedTextFile.swift; sourceTree = "<group>"; };
 		DC729ECA2C7A4BC300193A2E /* DynamoDbFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoDbFileGenerator.swift; sourceTree = "<group>"; };
+		DC729EE32C7A507000193A2E /* PositionAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionAnalyzerTests.swift; sourceTree = "<group>"; };
+		DC729EE52C7A527300193A2E /* Strategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		DC729EE72C7A53ED00193A2E /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		DC729EF42C7A580E00193A2E /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		DC729F112C7A6B7100193A2E /* Tournament */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tournament; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC89A57B2C7A40F5005D0269 /* UrCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC89A57E2C7A40F5005D0269 /* UrCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrCore.h; sourceTree = "<group>"; };
 		DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,22 +183,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC729E722C7A425100193A2E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC729EDE2C7A4E1100193A2E /* UrCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC729E792C7A425100193A2E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC729E7D2C7A425100193A2E /* UrPlay.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC729EAC2C7A4AAA00193A2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,7 +196,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC729ED52C7A4CDE00193A2E /* UrCore.framework in Frameworks */,
-				DC729ED92C7A4CDE00193A2E /* UrPlay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729F0E2C7A6B7100193A2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC729F192C7A6BA300193A2E /* UrCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,27 +225,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC729E762C7A425100193A2E /* UrPlay */ = {
-			isa = PBXGroup;
-			children = (
-				DC729E8B2C7A428800193A2E /* AWSConfig.swift */,
-				DC729E8D2C7A428800193A2E /* AWSConfig.swift.txt */,
-				DC729E8C2C7A428800193A2E /* DynamoNode.swift */,
-				DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */,
-				DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */,
-				DC729E772C7A425100193A2E /* UrPlay.h */,
-			);
-			path = UrPlay;
-			sourceTree = "<group>";
-		};
-		DC729E802C7A425100193A2E /* UrPlayTests */ = {
-			isa = PBXGroup;
-			children = (
-				DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */,
-			);
-			path = UrPlayTests;
-			sourceTree = "<group>";
-		};
 		DC729EA12C7A436F00193A2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +269,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC729F122C7A6B7100193A2E /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+				DC729EF42C7A580E00193A2E /* Tournament.swift */,
+			);
+			path = Tournament;
+			sourceTree = "<group>";
+		};
 		DC89A56F2C7A40E1005D0269 = {
 			isa = PBXGroup;
 			children = (
@@ -312,10 +285,9 @@
 				DC89A57C2C7A40F5005D0269 /* Products */,
 				DC729EA12C7A436F00193A2E /* Resources */,
 				DC729EB02C7A4AAA00193A2E /* Solver */,
+				DC729F122C7A6B7100193A2E /* Tournament */,
 				DC89A57D2C7A40F5005D0269 /* UrCore */,
 				DC89A5872C7A40F5005D0269 /* UrCoreTests */,
-				DC729E762C7A425100193A2E /* UrPlay */,
-				DC729E802C7A425100193A2E /* UrPlayTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -324,10 +296,9 @@
 			children = (
 				DC89A57B2C7A40F5005D0269 /* UrCore.framework */,
 				DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */,
-				DC729E752C7A425100193A2E /* UrPlay.framework */,
-				DC729E7C2C7A425100193A2E /* UrPlayTests.xctest */,
 				DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */,
 				DC729EC22C7A4BB400193A2E /* DynamoDBGen */,
+				DC729F112C7A6B7100193A2E /* Tournament */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,12 +307,18 @@
 			isa = PBXGroup;
 			children = (
 				DC89A5912C7A410A005D0269 /* ArraySearch.swift */,
+				DC729E8B2C7A428800193A2E /* AWSConfig.swift */,
+				DC729E8C2C7A428800193A2E /* DynamoNode.swift */,
+				DC729EE72C7A53ED00193A2E /* GameModel.swift */,
 				DC89A5922C7A410A005D0269 /* GamePosition.swift */,
 				DC89A5982C7A410A005D0269 /* PlayerPosition.swift */,
+				DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */,
 				DC89A5962C7A410A005D0269 /* PositionValues.swift */,
 				DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */,
 				DC89A5972C7A410A005D0269 /* SafeCounts.swift */,
+				DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */,
 				DC89A5932C7A410A005D0269 /* Solver.swift */,
+				DC729EE52C7A527300193A2E /* Strategy.swift */,
 				DC89A5942C7A410A005D0269 /* Ur.swift */,
 				DC89A57E2C7A40F5005D0269 /* UrCore.h */,
 			);
@@ -351,6 +328,8 @@
 		DC89A5872C7A40F5005D0269 /* UrCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */,
+				DC729EE32C7A507000193A2E /* PositionAnalyzerTests.swift */,
 				DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */,
 				DC89A5A12C7A413B005D0269 /* PlayerPositionTests.swift */,
 				DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */,
@@ -362,14 +341,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		DC729E702C7A425100193A2E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC729E832C7A425100193A2E /* UrPlay.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC89A5762C7A40F5005D0269 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,45 +352,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DC729E742C7A425100193A2E /* UrPlay */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC729E882C7A425100193A2E /* Build configuration list for PBXNativeTarget "UrPlay" */;
-			buildPhases = (
-				DC729E702C7A425100193A2E /* Headers */,
-				DC729E712C7A425100193A2E /* Sources */,
-				DC729E722C7A425100193A2E /* Frameworks */,
-				DC729E732C7A425100193A2E /* Resources */,
-				DC729EE22C7A4E1100193A2E /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC729EE12C7A4E1100193A2E /* PBXTargetDependency */,
-			);
-			name = UrPlay;
-			productName = UrPlay;
-			productReference = DC729E752C7A425100193A2E /* UrPlay.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DC729E7B2C7A425100193A2E /* UrPlayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC729E892C7A425100193A2E /* Build configuration list for PBXNativeTarget "UrPlayTests" */;
-			buildPhases = (
-				DC729E782C7A425100193A2E /* Sources */,
-				DC729E792C7A425100193A2E /* Frameworks */,
-				DC729E7A2C7A425100193A2E /* Resources */,
-				DC729EA92C7A494100193A2E /* Copy Files */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DC729E7F2C7A425100193A2E /* PBXTargetDependency */,
-			);
-			name = UrPlayTests;
-			productName = UrPlayTests;
-			productReference = DC729E7C2C7A425100193A2E /* UrPlayTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DC729EAE2C7A4AAA00193A2E /* Solver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */;
@@ -452,11 +384,29 @@
 			);
 			dependencies = (
 				DC729ED82C7A4CDE00193A2E /* PBXTargetDependency */,
-				DC729EDC2C7A4CDE00193A2E /* PBXTargetDependency */,
 			);
 			name = DynamoDBGen;
 			productName = DynamoDBGen;
 			productReference = DC729EC22C7A4BB400193A2E /* DynamoDBGen */;
+			productType = "com.apple.product-type.tool";
+		};
+		DC729F102C7A6B7100193A2E /* Tournament */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC729F152C7A6B7100193A2E /* Build configuration list for PBXNativeTarget "Tournament" */;
+			buildPhases = (
+				DC729F0D2C7A6B7100193A2E /* Sources */,
+				DC729F0E2C7A6B7100193A2E /* Frameworks */,
+				DC729F0F2C7A6B7100193A2E /* CopyFiles */,
+				DC729F1D2C7A6BA300193A2E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC729F1C2C7A6BA300193A2E /* PBXTargetDependency */,
+			);
+			name = Tournament;
+			productName = Tournament;
+			productReference = DC729F112C7A6B7100193A2E /* Tournament */;
 			productType = "com.apple.product-type.tool";
 		};
 		DC89A57A2C7A40F5005D0269 /* UrCore */ = {
@@ -484,6 +434,7 @@
 				DC89A57F2C7A40F5005D0269 /* Sources */,
 				DC89A5802C7A40F5005D0269 /* Frameworks */,
 				DC89A5812C7A40F5005D0269 /* Resources */,
+				DC729F092C7A687B00193A2E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -505,17 +456,13 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					DC729E742C7A425100193A2E = {
-						CreatedOnToolsVersion = 15.4;
-						LastSwiftMigration = 1540;
-					};
-					DC729E7B2C7A425100193A2E = {
-						CreatedOnToolsVersion = 15.4;
-					};
 					DC729EAE2C7A4AAA00193A2E = {
 						CreatedOnToolsVersion = 15.4;
 					};
 					DC729EC12C7A4BB400193A2E = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					DC729F102C7A6B7100193A2E = {
 						CreatedOnToolsVersion = 15.4;
 					};
 					DC89A57A2C7A40F5005D0269 = {
@@ -542,29 +489,14 @@
 			targets = (
 				DC729EC12C7A4BB400193A2E /* DynamoDBGen */,
 				DC729EAE2C7A4AAA00193A2E /* Solver */,
+				DC729F102C7A6B7100193A2E /* Tournament */,
 				DC89A57A2C7A40F5005D0269 /* UrCore */,
 				DC89A5822C7A40F5005D0269 /* UrCoreTests */,
-				DC729E742C7A425100193A2E /* UrPlay */,
-				DC729E7B2C7A425100193A2E /* UrPlayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DC729E732C7A425100193A2E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC729E7A2C7A425100193A2E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC729EAD2C7A4AAA00193A2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -591,26 +523,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DC729E712C7A425100193A2E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC729E932C7A428800193A2E /* PositionAnalyzer.swift in Sources */,
-				DC729E8F2C7A428800193A2E /* SolutionDBClient.swift in Sources */,
-				DC729E912C7A428800193A2E /* DynamoNode.swift in Sources */,
-				DC729E902C7A428800193A2E /* AWSConfig.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC729E782C7A425100193A2E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC729E962C7A42C900193A2E /* TestUtils.swift in Sources */,
-				DC729E952C7A429F00193A2E /* DynamoNodeTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DC729EAB2C7A4AAA00193A2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -629,17 +541,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC729F0D2C7A6B7100193A2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC729F182C7A6B7A00193A2E /* Tournament.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC89A5772C7A40F5005D0269 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DC89A59F2C7A410A005D0269 /* SafeCounts.swift in Sources */,
+				DC729F022C7A667A00193A2E /* SolutionDBClient.swift in Sources */,
+				DC729F002C7A667A00193A2E /* GameModel.swift in Sources */,
 				DC89A5A02C7A410A005D0269 /* PlayerPosition.swift in Sources */,
 				DC89A59D2C7A410A005D0269 /* PositionValuesBuilder.swift in Sources */,
+				DC729F052C7A667A00193A2E /* AWSConfig.swift in Sources */,
 				DC89A59A2C7A410A005D0269 /* GamePosition.swift in Sources */,
 				DC89A5992C7A410A005D0269 /* ArraySearch.swift in Sources */,
 				DC89A59C2C7A410A005D0269 /* Ur.swift in Sources */,
 				DC89A59E2C7A410A005D0269 /* PositionValues.swift in Sources */,
+				DC729F032C7A667A00193A2E /* Strategy.swift in Sources */,
+				DC729F012C7A667A00193A2E /* PositionAnalyzer.swift in Sources */,
+				DC729F042C7A667A00193A2E /* DynamoNode.swift in Sources */,
 				DC89A59B2C7A410A005D0269 /* Solver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +575,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC89A5A52C7A413B005D0269 /* PlayerPositionTests.swift in Sources */,
+				DC729F0B2C7A68C200193A2E /* DynamoNodeTests.swift in Sources */,
+				DC729F0C2C7A68C200193A2E /* PositionAnalyzerTests.swift in Sources */,
 				DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */,
 				DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */,
 				DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */,
@@ -658,11 +586,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DC729E7F2C7A425100193A2E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC729E742C7A425100193A2E /* UrPlay */;
-			targetProxy = DC729E7E2C7A425100193A2E /* PBXContainerItemProxy */;
-		};
 		DC729ED32C7A4CD700193A2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC89A57A2C7A40F5005D0269 /* UrCore */;
@@ -673,15 +596,10 @@
 			target = DC89A57A2C7A40F5005D0269 /* UrCore */;
 			targetProxy = DC729ED72C7A4CDE00193A2E /* PBXContainerItemProxy */;
 		};
-		DC729EDC2C7A4CDE00193A2E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC729E742C7A425100193A2E /* UrPlay */;
-			targetProxy = DC729EDB2C7A4CDE00193A2E /* PBXContainerItemProxy */;
-		};
-		DC729EE12C7A4E1100193A2E /* PBXTargetDependency */ = {
+		DC729F1C2C7A6BA300193A2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC89A57A2C7A40F5005D0269 /* UrCore */;
-			targetProxy = DC729EE02C7A4E1100193A2E /* PBXContainerItemProxy */;
+			targetProxy = DC729F1B2C7A6BA300193A2E /* PBXContainerItemProxy */;
 		};
 		DC89A5862C7A40F5005D0269 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -691,340 +609,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DC729E842C7A425100193A2E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrPlay;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = auto;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DC729E852C7A425100193A2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrPlay;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = auto;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DC729E862C7A425100193A2E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrPlayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DC729E872C7A425100193A2E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6X2P4HJBQW;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 1.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrPlayTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DC729EBC2C7A4AAB00193A2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1254,6 +838,134 @@
 			name = Debug;
 		};
 		DC729EC82C7A4BB400193A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DC729F162C7A6B7100193A2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DC729F172C7A6B7100193A2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1662,24 +1374,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC729E882C7A425100193A2E /* Build configuration list for PBXNativeTarget "UrPlay" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC729E842C7A425100193A2E /* Debug */,
-				DC729E852C7A425100193A2E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC729E892C7A425100193A2E /* Build configuration list for PBXNativeTarget "UrPlayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DC729E862C7A425100193A2E /* Debug */,
-				DC729E872C7A425100193A2E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1694,6 +1388,15 @@
 			buildConfigurations = (
 				DC729EC72C7A4BB400193A2E /* Debug */,
 				DC729EC82C7A4BB400193A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC729F152C7A6B7100193A2E /* Build configuration list for PBXNativeTarget "Tournament" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC729F162C7A6B7100193A2E /* Debug */,
+				DC729F172C7A6B7100193A2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

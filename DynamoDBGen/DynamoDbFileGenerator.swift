@@ -7,7 +7,6 @@
 
 import Foundation
 import UrCore
-import UrPlay
 
 // Exports the Ur solution data as a series of JSON files suitable for import to DynamoDB.
 @main

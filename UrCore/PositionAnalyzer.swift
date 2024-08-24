@@ -6,19 +6,18 @@
 //
 
 import Foundation
-import UrCore
 
 // Stores the value of a Move
-struct MoveValue: Comparable {
+public struct MoveValue: Comparable {
     let move: Move
     let value: Float
     
-    static func == (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value == rhs.value }
-    static func < (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value < rhs.value }
+    public static func == (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value == rhs.value }
+    public static func < (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value < rhs.value }
 }
 
 // Protocol for analyzing a game position.
-protocol PositionAnalyzer {
+public protocol PositionAnalyzer {
     // Returns all moves sorted from best to worst.
     func analyze(position: GamePosition, roll: Int) throws -> [MoveValue]
     
@@ -29,17 +28,17 @@ protocol PositionAnalyzer {
 // Stores all possible game positions.
 extension PositionValues: PositionAnalyzer {
     // Returns all moves sorted from best to worst.
-    func analyze(position: GamePosition, roll: Int) -> [MoveValue] {
+    public func analyze(position: GamePosition, roll: Int) -> [MoveValue] {
         evaluateMoves(position: position, roll: roll).sorted(by: >)
     }
     
-    func bestMove(from position: GamePosition, forRoll roll: Int) -> Move? {
+    public func bestMove(from position: GamePosition, forRoll roll: Int) -> Move? {
         analyze(position: position, roll: roll).first?.move
     }
     
     // Returns the policy for rolls 1...4. The policy is index of the best move in the moves array
     // or 0 if no move is available.
-    public func policy(for position: GamePosition) -> [Int] {
+    func policy(for position: GamePosition) -> [Int] {
         (1...4).map { policyForRoll(position: position, roll: $0) }
     }
     

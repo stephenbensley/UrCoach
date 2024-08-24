@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UrCore
 
 // Errors thrown by SolutionDBClient
 enum SolutionDBError: Error {
@@ -23,7 +22,7 @@ public struct SolutionDBNode: Equatable {
     // Best move for rolls 1...4
     let policy: [Int]
     
-    public init(id: Int32, value: Float, policy: [Int]) {
+    init(id: Int32, value: Float, policy: [Int]) {
         self.id = id
         self.value = value
         self.policy = policy

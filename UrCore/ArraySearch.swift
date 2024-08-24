@@ -9,12 +9,12 @@
 extension Array where Element: Comparable {
     
     // Look for a match of the element.
-    public func bsearch(for element: Self.Element) -> Self.Index? {
+    func bsearch(for element: Self.Element) -> Self.Index? {
         bsearch(by: \.self, for: element)
     }
     
     // Look for a match of a property of the element.
-    public func bsearch<T>(
+    func bsearch<T>(
         by keyPath: KeyPath<Element, T>,
         for value: T
     ) -> Self.Index? where T: Comparable {

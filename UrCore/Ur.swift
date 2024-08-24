@@ -8,7 +8,8 @@
 // Common definitions
 public final class Ur {
     public static let pieceCount = 7
-    static let spaceCount = 14
+    public static let spaceCount = 14
+    public static let diceCount = 4
     
     static func isRosette(space: Int) -> Bool {
         switch space {

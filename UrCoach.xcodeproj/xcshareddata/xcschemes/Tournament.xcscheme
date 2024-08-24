@@ -15,9 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC729E742C7A425100193A2E"
-               BuildableName = "UrPlay.framework"
-               BlueprintName = "UrPlay"
+               BlueprintIdentifier = "DC729F102C7A6B7100193A2E"
+               BuildableName = "Tournament"
+               BlueprintName = "Tournament"
                ReferencedContainer = "container:UrCoach.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,19 +29,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC729E7B2C7A425100193A2E"
-               BuildableName = "UrPlayTests.xctest"
-               BlueprintName = "UrPlayTests"
-               ReferencedContainer = "container:UrCoach.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -52,7 +39,18 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      viewDebuggingEnabled = "No">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DC729F102C7A6B7100193A2E"
+            BuildableName = "Tournament"
+            BlueprintName = "Tournament"
+            ReferencedContainer = "container:UrCoach.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -60,15 +58,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DC729E742C7A425100193A2E"
-            BuildableName = "UrPlay.framework"
-            BlueprintName = "UrPlay"
+            BlueprintIdentifier = "DC729F102C7A6B7100193A2E"
+            BuildableName = "Tournament"
+            BlueprintName = "Tournament"
             ReferencedContainer = "container:UrCoach.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
