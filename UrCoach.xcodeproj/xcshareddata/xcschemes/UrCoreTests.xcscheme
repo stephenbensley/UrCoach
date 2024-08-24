@@ -37,6 +37,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DC729F102C7A6B7100193A2E"
+            BuildableName = "Tournament"
+            BlueprintName = "Tournament"
+            ReferencedContainer = "container:UrCoach.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

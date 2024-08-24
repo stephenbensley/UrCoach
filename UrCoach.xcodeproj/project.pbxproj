@@ -25,7 +25,6 @@
 		DC729F242C7A8C5D00193A2E /* ArraySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5912C7A410A005D0269 /* ArraySearch.swift */; };
 		DC729F252C7A8C5D00193A2E /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
 		DC729F262C7A8C5D00193A2E /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DC729F272C7A8C5D00193A2E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
 		DC729F282C7A8C5D00193A2E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
 		DC729F292C7A8C5D00193A2E /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
 		DC729F2A2C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
@@ -40,7 +39,6 @@
 		DC729F332C7A8C5D00193A2E /* ArraySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5912C7A410A005D0269 /* ArraySearch.swift */; };
 		DC729F342C7A8C5D00193A2E /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
 		DC729F352C7A8C5D00193A2E /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DC729F362C7A8C5D00193A2E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
 		DC729F372C7A8C5D00193A2E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
 		DC729F382C7A8C5D00193A2E /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
 		DC729F392C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
@@ -76,7 +74,6 @@
 		DCA00C382C7A8E9100C9E1D2 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
 		DCA00C392C7A8E9100C9E1D2 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
 		DCA00C3A2C7A8E9100C9E1D2 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DCA00C3B2C7A8E9100C9E1D2 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
 		DCA00C3C2C7A8E9100C9E1D2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
 		DCA00C3D2C7A8E9100C9E1D2 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
 		DCA00C3E2C7A8E9100C9E1D2 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
@@ -264,6 +261,7 @@
 		DC729F122C7A6B7100193A2E /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				DC729EE52C7A527300193A2E /* Strategy.swift */,
 				DC729EF42C7A580E00193A2E /* Tournament.swift */,
 			);
 			path = Tournament;
@@ -310,7 +308,6 @@
 				DC729F1F2C7A840300193A2E /* SolutionDB.swift */,
 				DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */,
 				DC89A5932C7A410A005D0269 /* Solver.swift */,
-				DC729EE52C7A527300193A2E /* Strategy.swift */,
 				DC89A5942C7A410A005D0269 /* Ur.swift */,
 			);
 			path = UrCore;
@@ -481,7 +478,6 @@
 				DC729F332C7A8C5D00193A2E /* ArraySearch.swift in Sources */,
 				DC729F342C7A8C5D00193A2E /* PositionValues.swift in Sources */,
 				DC729F352C7A8C5D00193A2E /* SafeCounts.swift in Sources */,
-				DC729F362C7A8C5D00193A2E /* Strategy.swift in Sources */,
 				DC729F372C7A8C5D00193A2E /* PlayerPosition.swift in Sources */,
 				DC729F382C7A8C5D00193A2E /* GamePosition.swift in Sources */,
 				DC729F392C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */,
@@ -505,7 +501,6 @@
 				DC729F242C7A8C5D00193A2E /* ArraySearch.swift in Sources */,
 				DC729F252C7A8C5D00193A2E /* PositionValues.swift in Sources */,
 				DC729F262C7A8C5D00193A2E /* SafeCounts.swift in Sources */,
-				DC729F272C7A8C5D00193A2E /* Strategy.swift in Sources */,
 				DC729F282C7A8C5D00193A2E /* PlayerPosition.swift in Sources */,
 				DC729F292C7A8C5D00193A2E /* GamePosition.swift in Sources */,
 				DC729F2A2C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */,
@@ -556,7 +551,6 @@
 				DCA00C382C7A8E9100C9E1D2 /* PositionValuesBuilder.swift in Sources */,
 				DCA00C392C7A8E9100C9E1D2 /* SafeCounts.swift in Sources */,
 				DCA00C3A2C7A8E9100C9E1D2 /* SolutionDBClient.swift in Sources */,
-				DCA00C3B2C7A8E9100C9E1D2 /* Strategy.swift in Sources */,
 				DCA00C3C2C7A8E9100C9E1D2 /* GameModel.swift in Sources */,
 				DCA00C3D2C7A8E9100C9E1D2 /* AWSConfig.swift in Sources */,
 				DCA00C3E2C7A8E9100C9E1D2 /* GamePosition.swift in Sources */,
