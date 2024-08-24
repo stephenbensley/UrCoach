@@ -16,6 +16,10 @@
 		DC729E952C7A429F00193A2E /* DynamoNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */; };
 		DC729E962C7A42C900193A2E /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
 		DC729EAA2C7A495100193A2E /* urSolution.data in Copy Files */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
+		DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* SolverApp.swift */; };
+		DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB32C7A4AAA00193A2E /* ContentView.swift */; };
+		DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB52C7A4AAB00193A2E /* Assets.xcassets */; };
+		DC729EB92C7A4AAB00193A2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB82C7A4AAB00193A2E /* Preview Assets.xcassets */; };
 		DC89A5842C7A40F5005D0269 /* UrCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC89A57B2C7A40F5005D0269 /* UrCore.framework */; };
 		DC89A58A2C7A40F5005D0269 /* UrCore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC89A57E2C7A40F5005D0269 /* UrCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC89A5992C7A410A005D0269 /* ArraySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5912C7A410A005D0269 /* ArraySearch.swift */; };
@@ -74,6 +78,12 @@
 		DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionAnalyzer.swift; sourceTree = "<group>"; };
 		DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNodeTests.swift; sourceTree = "<group>"; };
 		DC729EA22C7A438400193A2E /* urSolution.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = urSolution.data; sourceTree = "<group>"; };
+		DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ur Solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC729EB12C7A4AAA00193A2E /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
+		DC729EB32C7A4AAA00193A2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC729EB52C7A4AAB00193A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC729EB82C7A4AAB00193A2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC729EBA2C7A4AAB00193A2E /* Solver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solver.entitlements; sourceTree = "<group>"; };
 		DC89A57B2C7A40F5005D0269 /* UrCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UrCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC89A57E2C7A40F5005D0269 /* UrCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrCore.h; sourceTree = "<group>"; };
 		DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +114,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC729E7D2C7A425100193A2E /* UrPlay.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729EAC2C7A4AAA00193A2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,9 +171,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DC729EB02C7A4AAA00193A2E /* Solver */ = {
+			isa = PBXGroup;
+			children = (
+				DC729EB12C7A4AAA00193A2E /* SolverApp.swift */,
+				DC729EB32C7A4AAA00193A2E /* ContentView.swift */,
+				DC729EB52C7A4AAB00193A2E /* Assets.xcassets */,
+				DC729EBA2C7A4AAB00193A2E /* Solver.entitlements */,
+				DC729EB72C7A4AAB00193A2E /* Preview Content */,
+			);
+			path = Solver;
+			sourceTree = "<group>";
+		};
+		DC729EB72C7A4AAB00193A2E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC729EB82C7A4AAB00193A2E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		DC89A56F2C7A40E1005D0269 = {
 			isa = PBXGroup;
 			children = (
+				DC729EB02C7A4AAA00193A2E /* Solver */,
 				DC89A57C2C7A40F5005D0269 /* Products */,
 				DC729EA12C7A436F00193A2E /* Resources */,
 				DC89A57D2C7A40F5005D0269 /* UrCore */,
@@ -173,6 +211,7 @@
 				DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */,
 				DC729E752C7A425100193A2E /* UrPlay.framework */,
 				DC729E7C2C7A425100193A2E /* UrPlayTests.xctest */,
+				DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +302,23 @@
 			productReference = DC729E7C2C7A425100193A2E /* UrPlayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DC729EAE2C7A4AAA00193A2E /* Solver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */;
+			buildPhases = (
+				DC729EAB2C7A4AAA00193A2E /* Sources */,
+				DC729EAC2C7A4AAA00193A2E /* Frameworks */,
+				DC729EAD2C7A4AAA00193A2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Solver;
+			productName = Solver;
+			productReference = DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DC89A57A2C7A40F5005D0269 /* UrCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC89A58B2C7A40F5005D0269 /* Build configuration list for PBXNativeTarget "UrCore" */;
@@ -316,6 +372,9 @@
 					DC729E7B2C7A425100193A2E = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					DC729EAE2C7A4AAA00193A2E = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					DC89A57A2C7A40F5005D0269 = {
 						CreatedOnToolsVersion = 15.4;
 						LastSwiftMigration = 1540;
@@ -342,6 +401,7 @@
 				DC89A5822C7A40F5005D0269 /* UrCoreTests */,
 				DC729E742C7A425100193A2E /* UrPlay */,
 				DC729E7B2C7A425100193A2E /* UrPlayTests */,
+				DC729EAE2C7A4AAA00193A2E /* Solver */,
 			);
 		};
 /* End PBXProject section */
@@ -358,6 +418,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729EAD2C7A4AAA00193A2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC729EB92C7A4AAB00193A2E /* Preview Assets.xcassets in Resources */,
+				DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +464,15 @@
 			files = (
 				DC729E962C7A42C900193A2E /* TestUtils.swift in Sources */,
 				DC729E952C7A429F00193A2E /* DynamoNodeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC729EAB2C7A4AAA00193A2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */,
+				DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +852,166 @@
 			};
 			name = Release;
 		};
+		DC729EBC2C7A4AAB00193A2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"Solver/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrSolver;
+				PRODUCT_NAME = "Ur Solver";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DC729EBD2C7A4AAB00193A2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "\"Solver/Preview Content\"";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrSolver;
+				PRODUCT_NAME = "Ur Solver";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		DC89A5742C7A40E1005D0269 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1137,6 +1375,15 @@
 			buildConfigurations = (
 				DC729E862C7A425100193A2E /* Debug */,
 				DC729E872C7A425100193A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC729EBC2C7A4AAB00193A2E /* Debug */,
+				DC729EBD2C7A4AAB00193A2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
