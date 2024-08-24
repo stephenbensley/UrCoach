@@ -9,7 +9,7 @@ import XCTest
 @testable import UrCore
 @testable import UrPlay
 
-let solution = PositionValues(fileURLWithPath: "ursolution.data")!
+let solution = PositionValues(fileURLWithPath: "urSolution.data")!
 
 class DynamoNodeTests: XCTestCase {
     func testConvert() throws {
