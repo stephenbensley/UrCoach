@@ -39,7 +39,7 @@ final class DynamoDbFileGenerator {
     
     // Converts a game position into DynamoDb JSON.
     private func encodePosition(_ position: GamePosition) -> String {
-        let dynNode = DynamoNode(solution.solutionDbNode(for: position))
+        let dynNode = DynamoNode(solution.solutionNode(for: position))
         return """
                {"Item":{"I":{"S":"\(dynNode.I)"},"V":{"S":"\(dynNode.V)"},"P":{"S":"\(dynNode.P)"}}}
                """
