@@ -6,31 +6,30 @@
 //
 
 import Foundation
-import UrCore
 
 @main
 final class Tournament {
     
-    static func playGame(players: [Strategy]) throws -> Int {
+    static func playGame(players: [Strategy]) async throws -> Int {
         let game = GameModel()
         repeat {
             let player = game.playerToMove.rawValue
             let roll = game.rollDice()
-            let move = try players[player].getMove(position: game.position, roll: roll)
+            let move = try await players[player].getMove(position: game.position, roll: roll)
             game.makeMove(move: move)
         } while !game.isOver
         return game.winner.rawValue
     }
     
-    static func playTournament(players: [Strategy], gameCount: Int) throws -> Double {
+    static func playTournament(players: [Strategy], gameCount: Int) async throws -> Double {
         var wins = [0, 0]
         for _ in 0..<gameCount {
-            try wins[playGame(players: players)] += 1
-        } 
+            try await wins[playGame(players: players)] += 1
+        }
         return 100.0 * Double(wins[0]) / Double(gameCount)
     }
     
-    static func main() {
+    static func main() async {
         guard let solution = PositionValues(fileURLWithPath: "urSolution.data") else {
             print("Unable to load urSolution.data")
             return
@@ -38,16 +37,19 @@ final class Tournament {
         
         let playerH = HeuristicStrategy()
         let playerR = RandomStrategy()
-        let playerA = AnalysisStrategy(analyzer: solution)
-        
+        let playerL = AnalysisStrategy(analyzer: solution)
+        let playerC = AnalysisStrategy(analyzer: SolutionDB(client: MockSolutionDBClient(solution: solution)))
         var winPct = 0.0
         
         do {
-            winPct = try playTournament(players: [playerH, playerR], gameCount: 10000)
-            print(String(format: "Heuristic vs. Random:  %5.2f%%", winPct))
+            winPct = try await playTournament(players: [playerH, playerR], gameCount: 10000)
+            print(String(format: "Heuristic vs. Random: %5.2f%%", winPct))
 
-            winPct = try playTournament(players: [playerA, playerH], gameCount: 10000)
-            print(String(format: "Optimal vs. Heuristic: %5.2f%%", winPct))
+            winPct = try await playTournament(players: [playerL, playerH], gameCount: 10000)
+            print(String(format: "Local Optimal vs. Heuristic: %5.2f%%", winPct))
+
+            winPct = try await playTournament(players: [playerC, playerH], gameCount: 10000)
+            print(String(format: "Mock Cloud Optimal vs. Heuristic: %5.2f%%", winPct))
         } catch {
             print("Unexpected error during tournament.")
         }

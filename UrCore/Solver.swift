@@ -149,20 +149,20 @@ final class SolverWorker {
 }
 
 // Solves the game of Ur.
-public final class Solver {
+final class Solver {
     // Used to report progress towards the solution.
-    public enum Progress {
+    enum Progress {
         case buildingGraph(state: SafeCounts)
         case optimzing(iteration: Int, delta: Double)
     }
-    public typealias ReportProgress = (Progress) -> Void
+    typealias ReportProgress = (Progress) -> Void
     
     // Ultimately, we'll store the values as a Float which has a 23-bit mantissa. In the upper half
     // of our range (0.5..<1.0), the exponent is -1, so we have a precision of 2^-24. We solve for
     // one extra bit to minimize rounding errors. In reality, even this is overkill. Due to the
     // randomness of Ur, it would take a tremendous number of iterations to dectect an error of
     // even 10^-5.
-    public static let threshold = pow(2.0, -25.0)
+    static let threshold = pow(2.0, -25.0)
     // Current state of the solution
     private var builder: PositionValuesBuilder
     // Closure used to report progress towards the solution
@@ -234,7 +234,7 @@ public final class Solver {
         return delta
     }
     
-    public static func solve(reportProgress: @escaping ReportProgress) async -> PositionValues {
+    static func solve(reportProgress: @escaping ReportProgress) async -> PositionValues {
         let builder = PositionValuesBuilder()
         await Solver(builder: builder, reportProgress: reportProgress).solve()
         return builder.values

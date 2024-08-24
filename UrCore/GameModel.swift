@@ -6,7 +6,7 @@
 //
 
 // Used to represent the players in the game.
-public enum PlayerColor: Int, CaseIterable, Codable {
+enum PlayerColor: Int, CaseIterable, Codable {
     case white
     case black
     
@@ -27,28 +27,28 @@ public enum PlayerColor: Int, CaseIterable, Codable {
 }
 
 // Implements the state machine for a complete game of Ur.
-public final class GameModel {
+final class GameModel {
     // Next player to move
-    public private(set) var playerToMove = PlayerColor.random
+    private(set) var playerToMove = PlayerColor.random
     // Current game position
-    public private(set) var position = GamePosition()
+    private(set) var position = GamePosition()
     // Result of the most recent roll of the dice.
-    public private(set) var dice = [Int](repeating: 0, count: Ur.diceCount)
+    private(set) var dice = [Int](repeating: 0, count: Ur.diceCount)
 
     // Returns true if the game is over.
-    public var isOver: Bool { position.terminal }
+    var isOver: Bool { position.terminal }
 
     // Returns the winner
-    public var winner: PlayerColor {
+    var winner: PlayerColor {
         assert(isOver)
         // When the game is over, the player to move is the loser.
         return playerToMove.other
     }
 
-    public init() { }
+    init() { }
     
     // Updates game state based on the specified move. nil indicates no move available.
-    public func makeMove(move: Move?) {
+    func makeMove(move: Move?) {
         if let move = move {
             if position.makeMove(move) {
                 playerToMove = playerToMove.other
@@ -59,7 +59,7 @@ public final class GameModel {
         }
     }
     
-    public func rollDice() -> Int {
+    func rollDice() -> Int {
         for i in dice.indices {
             dice[i] = Int.random(in: (0...1))
         }

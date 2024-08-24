@@ -10,9 +10,9 @@
 // can superimpose a tree of metastates based on safeCounts. Thus, the graph can be partitioned
 // and solved in chunks. We don't differentiate between attacker and defender since in any meta-
 // state, we can trivially reverse attacker & defender by rolling a zero.
-public struct SafeCounts: Comparable {
-    public private(set) var hi: Int
-    public private(set) var lo: Int
+struct SafeCounts: Comparable {
+    private(set) var hi: Int
+    private(set) var lo: Int
     
     init(hi: Int, lo: Int) {
         assert(hi >= lo)
@@ -27,7 +27,7 @@ public struct SafeCounts: Comparable {
     var total: Int { hi + lo}
     
     // Returns all SafeCounts
-    public static var all: [SafeCounts] {
+    static var all: [SafeCounts] {
         (0...Ur.pieceCount).flatMap { hi in
             (0...hi).map { lo in
                 SafeCounts(hi: hi, lo: lo)
@@ -56,7 +56,7 @@ public struct SafeCounts: Comparable {
         PlayerPosition.all.filter { ($0.safeCount == safeCount) && !$0.terminal }
     }
     
-    public static func < (lhs: SafeCounts, rhs: SafeCounts) -> Bool {
+    static func < (lhs: SafeCounts, rhs: SafeCounts) -> Bool {
         // We order first by total count since total count must always increase. This ensures
         // that we never progress backwards during the game.
         if lhs.total != rhs.total {

@@ -8,7 +8,7 @@
 import Foundation
 
 // Game node information stored in the database.
-public struct SolutionNode: Equatable {
+struct SolutionNode: Hashable {
     // GamePosition.id
     let id: Int32
     // Attacker's win probability
@@ -21,11 +21,19 @@ public struct SolutionNode: Equatable {
         self.value = value
         self.policy = policy
     }
+    
+    static func == (lhs: SolutionNode, rhs: SolutionNode) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
 
 // Extend PositionValues to generate SolutionNodes.
 extension PositionValues {
-    public func solutionNode(for position: GamePosition) -> SolutionNode {
+    func solutionNode(for position: GamePosition) -> SolutionNode {
         let id = position.id
         let value = self[position]
         let policy = self.policy(for: position)
@@ -37,6 +45,7 @@ extension PositionValues {
 enum SolutionDBError: Error {
     case transportError(Error)
     case serverError(Int)
+    case unexpectedResponse
 }
 
 // This is defined as a protocol, so we can mock it.

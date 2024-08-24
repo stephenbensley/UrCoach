@@ -6,14 +6,15 @@
 //
 
 import XCTest
-@testable import UrCore
 
 class DynamoNodeTests: XCTestCase {
     func testConvert() throws {
         for pos in GamePosition.randomPositions {
             let before = solution.solutionNode(for: pos)
             let after = DynamoNode(before).solutionDBNode!
-            XCTAssert(before == after)
+            XCTAssert(before.id == after.id)
+            XCTAssert(before.value == after.value)
+            XCTAssert(before.policy == after.policy)
         }
     }
 }

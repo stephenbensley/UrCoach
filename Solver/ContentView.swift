@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import UrCore
 
 // FileDocument for the save solution
 struct SolutionFile: FileDocument {
@@ -153,9 +152,6 @@ struct ContentView: View {
         case .optimzing(let iteration, let delta):
             subProgressText = String(format: "Iteration: %d", iteration)
             subProgress = delta > 0 ? min(-log10(delta), Self.subProgressTotal) : 1.0
-            
-        @unknown default:
-            fatalError()
         }
     }
 }

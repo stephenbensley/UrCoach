@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import UrCore
 
 class PositionValuesBuilderTests: XCTestCase {
     func test() throws {

@@ -7,13 +7,13 @@
 
 // Represents a move in the game. If from < 0, a waiting piece is being moved onto the board.
 // If to == Ur.spaceCount, the piece is being exited from the board.
-public struct Move: Equatable {
+struct Move: Equatable {
     let from: Int
     let to: Int
 }
 
 // Represents one players position in the game.
-public struct PlayerPosition: Equatable {
+struct PlayerPosition: Equatable {
     // Bitboard storing the location of the player's pieces.
     private(set) var bitboard: UInt16
     // Internally, the wait count is stored as an Int8 to save memory.
@@ -35,7 +35,7 @@ public struct PlayerPosition: Equatable {
     var safeCount: Int { Ur.pieceCount - (bitboard & 0xfff).nonzeroBitCount - waitCount }
 
     // At start of game, all pieces are waiting to enter.
-    public init(bitboard: UInt16 = 0, waitCount: Int = Ur.pieceCount) {
+    init(bitboard: UInt16 = 0, waitCount: Int = Ur.pieceCount) {
         self.bitboard = bitboard
         self.waitCountInternal = Int8(waitCount)
     }

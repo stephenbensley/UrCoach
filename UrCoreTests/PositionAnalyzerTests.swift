@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import UrCore
 
 let solution = PositionValues(fileURLWithPath: "urSolution.data")!
 

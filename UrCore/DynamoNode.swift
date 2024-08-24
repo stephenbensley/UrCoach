@@ -6,13 +6,13 @@
 //
 
 // Representation of a SolutionNode in DynamoDB.
-public struct DynamoNode: Codable {
+struct DynamoNode: Codable {
     // Encoded id
-    public let I: String
+    let I: String
     // Encoded value
-    public let V: String
+    let V: String
     // Encoded policy
-    public let P: String
+    let P: String
     
     init(I: String, V: String, P: String) {
         self.I = I
@@ -20,7 +20,7 @@ public struct DynamoNode: Codable {
         self.P = P
     }
     
-    public init(_ node: SolutionNode) {
+    init(_ node: SolutionNode) {
         let I = Self.uint32ToDynamoValue(UInt32(bitPattern: node.id))
         
         let V = Self.floatToDynamoValue(node.value)

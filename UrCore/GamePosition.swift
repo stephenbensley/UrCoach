@@ -17,14 +17,14 @@ extension PlayerPosition {
 // Represents a position in the game without regard to which player has the next move. Ur is
 // symmetric with regard to player color, so we can analyze a position without knowing which player
 // moves next.
-public struct GamePosition: Equatable, Identifiable {
+struct GamePosition: Equatable, Identifiable {
     // Player with the next move.
     private(set) var attacker: PlayerPosition
     // Player without the next move.
     private(set) var defender: PlayerPosition
     
     // Id uniquely identifying this position.
-    public var id: Int32 {
+    var id: Int32 {
         let aUnique = Int32(attacker.bitboardUnique)
         let aShared = attacker.bitboardShared
         let aWait   = Int32(attacker.waitCount)
@@ -55,7 +55,7 @@ public struct GamePosition: Equatable, Identifiable {
     // True if the game is over.
     var terminal: Bool { attacker.terminal || defender.terminal }
     
-    public init(attacker: PlayerPosition = .init(), defender: PlayerPosition = .init()) {
+    init(attacker: PlayerPosition = .init(), defender: PlayerPosition = .init()) {
         self.attacker = attacker
         self.defender = defender
     }
@@ -146,7 +146,7 @@ public struct GamePosition: Equatable, Identifiable {
     }
     
     // Invoke the closure for every possible GamePosition
-    public static func forEach(_ body: (GamePosition) throws -> Void) rethrows {
+    static func forEach(_ body: (GamePosition) throws -> Void) rethrows {
         let ppa = PlayerPosition.all
         for attacker in ppa {
             for defender in ppa where !defender.intersects(with: attacker) {

@@ -6,31 +6,31 @@
 //
 
 // Stores the value of a Move
-public struct MoveValue: Comparable {
+struct MoveValue: Comparable {
     let move: Move
     let value: Float
     
-    public static func == (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value == rhs.value }
-    public static func < (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value < rhs.value }
+    static func == (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value == rhs.value }
+    static func < (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value < rhs.value }
 }
 
 // Protocol for analyzing a game position.
-public protocol PositionAnalyzer {
+protocol PositionAnalyzer {
     // Returns all moves sorted from best to worst.
-    func analyze(position: GamePosition, roll: Int) throws -> [MoveValue]
+    func analyze(position: GamePosition, roll: Int) async throws -> [MoveValue]
     
     // Returs the best move.
-    func bestMove(from position: GamePosition, forRoll roll: Int) throws -> Move?
+    func bestMove(from position: GamePosition, forRoll roll: Int) async throws -> Move?
 }
 
 // Extend PositionValues to implement PositionAnalyzer.
 extension PositionValues: PositionAnalyzer {
     // Returns all moves sorted from best to worst.
-    public func analyze(position: GamePosition, roll: Int) -> [MoveValue] {
+    func analyze(position: GamePosition, roll: Int) -> [MoveValue] {
         evaluateMoves(position: position, roll: roll).sorted(by: >)
     }
     
-    public func bestMove(from position: GamePosition, forRoll roll: Int) -> Move? {
+    func bestMove(from position: GamePosition, forRoll roll: Int) -> Move? {
         analyze(position: position, roll: roll).first?.move
     }
     

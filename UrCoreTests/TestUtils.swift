@@ -5,8 +5,6 @@
 // license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
 //
 
-@testable import UrCore
-
 // Generate random test cases.
 extension GamePosition {
     static func randomPosition() -> GamePosition {

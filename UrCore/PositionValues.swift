@@ -17,7 +17,7 @@ struct PositionValue: Identifiable, Comparable {
 }
 
 // Stores all possible game positions.
-public final class PositionValues {
+final class PositionValues {
     private var values = [PositionValue]()
     
     init(values: consuming [PositionValue]) {
@@ -30,17 +30,17 @@ public final class PositionValues {
         }
     }
     
-    public convenience init?(fileURLWithPath: String) {
+    convenience init?(fileURLWithPath: String) {
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: fileURLWithPath)) else {
             return nil
         }
         self.init(data: data)
     }
 
-    public subscript(position: GamePosition) -> Float {
+    subscript(position: GamePosition) -> Float {
         // The index is exhaustive, so we should never see an unknown id.
         return values[values.bsearch(by: \.id, for:  position.id)!].value
     }
     
-    public func encode() -> Data { values.withUnsafeBytes { Data($0) } }
+    func encode() -> Data { values.withUnsafeBytes { Data($0) } }
 }

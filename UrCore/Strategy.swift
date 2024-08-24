@@ -6,25 +6,25 @@
 //
 
 // Protocol for a strategy to play the game of Ur
-public protocol Strategy {
-    func getMove(position: GamePosition, roll: Int) throws -> Move?
+protocol Strategy {
+    func getMove(position: GamePosition, roll: Int) async throws -> Move?
 }
 
 // Strategy implemented by an analyzer.
-public final class AnalysisStrategy: Strategy {
+final class AnalysisStrategy: Strategy {
     private var analyzer: PositionAnalyzer
 
-    public init(analyzer: PositionAnalyzer) {
+    init(analyzer: PositionAnalyzer) {
         self.analyzer = analyzer
     }
     
-    public func getMove(position: UrCore.GamePosition, roll: Int) throws -> UrCore.Move? {
-        try analyzer.bestMove(from: position, forRoll: roll)
+    func getMove(position: GamePosition, roll: Int) async throws -> Move? {
+        try await analyzer.bestMove(from: position, forRoll: roll)
     }
 }
 
 // Implements a simple heuristic-based strategy
-public final class HeuristicStrategy: Strategy {
+final class HeuristicStrategy: Strategy {
     // Move types sorted from least to most desirable.
     private enum MoveType: Int {
         case simple
@@ -34,9 +34,9 @@ public final class HeuristicStrategy: Strategy {
         case capturePiece
     }
     
-    public init() { }
+    init() { }
     
-    public func getMove(position: GamePosition, roll: Int) -> Move? {
+    func getMove(position: GamePosition, roll: Int) -> Move? {
         position.moves(
             forRoll: roll
         ).sorted(by: {
@@ -78,10 +78,10 @@ public final class HeuristicStrategy: Strategy {
 }
 
 // Chooses a move at random.
-public final class RandomStrategy: Strategy {
-    public init() { }
+final class RandomStrategy: Strategy {
+    init() { }
 
-    public func getMove(position: GamePosition, roll: Int) -> Move? {
+    func getMove(position: GamePosition, roll: Int) -> Move? {
         position.moves(forRoll: roll).randomElement()
     }
 }
