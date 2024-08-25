@@ -94,7 +94,7 @@ struct ContentView: View {
             isPresented: $showingExporter,
             document: solution,
             contentType: .data,
-            defaultFilename: "rguSolution.data"
+            defaultFilename: "urSolution.data"
             
         ) { result in
             switch result {
