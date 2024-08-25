@@ -11,3 +11,10 @@
    - Delete the compressed files from S3.
 4. Create an IAM policy named [UrLambdaExecutionPolicy](UrLambdaExecutionPolicy.json).
 5. Create an IAM role for the Lambda service named UrLambdaExecutionRole and add the above policy.
+6. Create the Lambda function
+   - Create a function named QueryUrNodes.
+   - Set the runtime to node.js.
+   - Change the default execution role to the role created above.
+   - Copy/paste the code from [index.mjs](index.mjs).
+   - Deploy the function.
+7. Create the API
