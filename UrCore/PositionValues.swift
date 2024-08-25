@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UtiliKit
 
 // Stores the value of a GamePosition
 struct PositionValue: Identifiable, Comparable {
@@ -39,7 +40,7 @@ final class PositionValues {
 
     subscript(position: GamePosition) -> Float {
         // The index is exhaustive, so we should never see an unknown id.
-        return values[values.bsearch(by: \.id, for:  position.id)!].value
+        return values[values.bsearch(forKey: position.id, extractedBy: \.id)!].value
     }
     
     func encode() -> Data { values.withUnsafeBytes { Data($0) } }

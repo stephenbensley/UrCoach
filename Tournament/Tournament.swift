@@ -38,7 +38,7 @@ final class Tournament {
         let playerH = HeuristicStrategy()
         let playerR = RandomStrategy()
         let playerL = AnalysisStrategy(analyzer: solution)
-        let playerC = AnalysisStrategy(analyzer: SolutionDB(client: MockSolutionDBClient(solution: solution)))
+        let playerC = AnalysisStrategy(analyzer: SolutionDB(client: MockDBClient(solution: solution)))
         var winPct = 0.0
         
         do {

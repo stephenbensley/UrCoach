@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UtiliKit
 
 // Indexes the value of each game position. The class toggles between "read from red, write to
 // black" and "read from black, write to red". This allows phased updates of the values and allows
@@ -59,7 +60,7 @@ final class PositionValuesBuilder {
     
     // Returns the index of the position.
     func index(_ position: GamePosition) -> Int {
-        guard let index = entries.bsearch(by: \.id, for: position.id) else {
+        guard let index = entries.bsearch(forKey: position.id, extractedBy: \.id) else {
             fatalError("Unrecognized position in PositionValuesBuilder.index")
         }
         return index
