@@ -7,8 +7,6 @@
 
 import XCTest
 
-let solution = PositionValues(fileURLWithPath: "urSolution.data")!
-
 class PositionAnalyzerTests: XCTestCase {
     func testPolicy() throws {
         for pos in GamePosition.randomPositions {
@@ -17,7 +15,7 @@ class PositionAnalyzerTests: XCTestCase {
                 let moves = pos.moves(forRoll: roll)
                 guard !moves.isEmpty else { continue }
                 let best = solution.bestMove(from: pos, forRoll: roll)
-                XCTAssert(moves[policy[roll-1]] == best)
+                XCTAssert(moves[policy[roll - 1]] == best)
             }
          }
     }

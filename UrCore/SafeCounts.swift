@@ -10,7 +10,7 @@
 // can superimpose a tree of metastates based on safeCounts. Thus, the graph can be partitioned
 // and solved in chunks. We don't differentiate between attacker and defender since in any meta-
 // state, we can trivially reverse attacker & defender by rolling a zero.
-struct SafeCounts: Comparable {
+struct SafeCounts: Comparable, Hashable {
     private(set) var hi: Int
     private(set) var lo: Int
     

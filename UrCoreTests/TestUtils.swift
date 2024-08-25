@@ -5,6 +5,9 @@
 // license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
 //
 
+// Load this once for any tests that need it.
+let solution = PositionValues(fileURLWithPath: "urSolution.data")!
+
 // Generate random test cases.
 extension GamePosition {
     static func randomPosition() -> GamePosition {

@@ -157,7 +157,7 @@ struct GamePosition: Equatable, Identifiable {
     
     // Ids representing the shared spaces on the board. We use a ternary representation in order
     // to squeeze this into 13 bits. 13^2 > 8^3
-    static let sharedIds = (0...0xffff).map {
+    private static let sharedIds = (0...0xffff).map {
         // Extract the shared bitboards for each side.
         let lhs = UInt8($0 >> 8)
         let rhs = UInt8($0 & 0xff)

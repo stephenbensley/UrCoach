@@ -10,9 +10,17 @@ import XCTest
 class GamePositionTests: XCTestCase {
     func testId() throws {
         let pos = UrG("3/4 X--X/-O-- X------- XX/--")
-        let id = pos.id
-        XCTAssert(id == 0b111001_011_0000000000010_000010_100)
-        XCTAssert(GamePosition(id: id) == pos)
+        XCTAssert(pos.id == 0b111001_011_0000000000010_000010_100)
+        
+        for pos in GamePosition.randomPositions {
+            XCTAssert(GamePosition(id: pos.id) == pos)
+        }
+    }
+    
+    func testIsValid() throws {
+        for pos in GamePosition.randomPositions {
+            XCTAssert(pos.isValid)
+        }
     }
     
     func testReversed() throws {

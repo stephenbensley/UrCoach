@@ -14,11 +14,11 @@ class PlayerPositionTests: XCTestCase {
         XCTAssertFalse(UrP("0 ---- --X----- --").terminal)
     }
     
-    func testUnsafeCount() throws {
+    func testSafeCount() throws {
         XCTAssert(UrP("1 -XX- ----XX-- -X").safeCount == 2)
     }
     
-    func testBitboardIntersects() throws {
+    func testIntersects() throws {
         let other = UrP("1 -XXX ----XX-- -X")
         XCTAssertFalse(UrP("1 -XXX XXXX--XX -X").intersects(with: other))
         XCTAssert(UrP("1 X--- ----X--- X-").intersects(with: other))
@@ -58,8 +58,7 @@ class PlayerPositionTests: XCTestCase {
             XCTAssert(seen[pos.bitboard]!.insert(pos.waitCount).inserted)
             
             // Make sure we don't generate invalid positions.
-            let pieceCount = pos.bitboard.nonzeroBitCount + pos.waitCount
-            XCTAssert(pieceCount <= Ur.pieceCount)
+            XCTAssert(pos.isValid)
         }
     }
 }
