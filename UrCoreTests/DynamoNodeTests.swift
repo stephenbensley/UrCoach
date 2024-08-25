@@ -11,10 +11,8 @@ class DynamoNodeTests: XCTestCase {
     func testConvert() throws {
         for pos in GamePosition.randomPositions {
             let before = solution.solutionNode(for: pos)
-            let after = DynamoNode(before).solutionDBNode!
-            XCTAssert(before.id == after.id)
-            XCTAssert(before.value == after.value)
-            XCTAssert(before.policy == after.policy)
+            let after = DynamoNode(before).solutionNode!
+            XCTAssert(SolutionNode.identical(before, after))
         }
     }
 }

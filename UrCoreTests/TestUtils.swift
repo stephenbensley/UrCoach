@@ -76,3 +76,9 @@ func UrG(_ asString: String) -> GamePosition {
 func UrG(_ attacker: PlayerPosition, _ defender: PlayerPosition) -> GamePosition {
     .init(attacker: attacker, defender: defender)
 }
+
+extension SolutionNode {
+    static func identical(_ lhs: SolutionNode, _ rhs: SolutionNode) -> Bool {
+        (lhs.id == rhs.id) && (lhs.value == rhs.value) && (lhs.policy == rhs.policy)
+    }
+}

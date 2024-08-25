@@ -8,7 +8,7 @@
 import Foundation
 
 // Game node information stored in the database.
-struct SolutionNode: Hashable {
+struct SolutionNode: Comparable, Hashable {
     // GamePosition.id
     let id: Int32
     // Attacker's win probability
@@ -22,13 +22,9 @@ struct SolutionNode: Hashable {
         self.policy = policy
     }
     
-    static func == (lhs: SolutionNode, rhs: SolutionNode) -> Bool {
-        return lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
+    static func == (lhs: SolutionNode, rhs: SolutionNode) -> Bool { lhs.id == rhs.id }
+    static func < (lhs: SolutionNode, rhs: SolutionNode) -> Bool { lhs.id < rhs.id }
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
 }
 
 // Extend PositionValues to generate SolutionNodes.
@@ -55,11 +51,11 @@ protocol SolutionDBClient {
 }
 
 // Low-level wrapper around the web API to query the Ur solution stored in AWS.
-final class CloudSolutionDBClient: SolutionDBClient {
+final class CloudDBClient: SolutionDBClient {
     func getNode(id: Int32) async throws -> SolutionNode {
         let key = DynamoNode.uint32ToDynamoValue(UInt32(bitPattern: id))
         let dynNode = try await Self.getNode(key: key)
-        guard let node = dynNode.solutionDBNode else {
+        guard let node = dynNode.solutionNode else {
             throw SolutionDBError.serverError(422)  // Unprocessable Content
         }
         return node
@@ -69,7 +65,7 @@ final class CloudSolutionDBClient: SolutionDBClient {
         let keys = ids.map { DynamoNode.uint32ToDynamoValue(UInt32(bitPattern: $0)) }
         let dynNodes = try await Self.getNodes(keys: keys)
         return try dynNodes.map {
-            guard let node = $0.solutionDBNode else {
+            guard let node = $0.solutionNode else {
                 throw SolutionDBError.serverError(422)  // Unprocessable Content
             }
             return node
@@ -121,7 +117,7 @@ final class CloudSolutionDBClient: SolutionDBClient {
 }
 
 // Mocks SolutionDBClient by querying the local PositionValues instead of the web service.
-final class MockSolutionDBClient: SolutionDBClient {
+final class MockDBClient: SolutionDBClient {
     private var solution: PositionValues
     
     init(solution: PositionValues) {
@@ -131,7 +127,7 @@ final class MockSolutionDBClient: SolutionDBClient {
     func getNode(id: Int32) async throws -> SolutionNode {
         let node = solution.solutionNode(for: GamePosition(id: id))
         // Swizzle it back and forth to simulate the data conversions.
-        return DynamoNode(node).solutionDBNode!
+        return DynamoNode(node).solutionNode!
     }
     
     func getNodes(ids: [Int32]) async throws -> [SolutionNode] {

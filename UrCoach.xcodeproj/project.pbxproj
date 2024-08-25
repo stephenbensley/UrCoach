@@ -83,6 +83,7 @@
 		DCA00C432C7AAC8500C9E1D2 /* BinarySearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C422C7AAC8500C9E1D2 /* BinarySearchTests.swift */; };
 		DCA00C452C7AAF6600C9E1D2 /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */; };
 		DCA00C472C7AB20700C9E1D2 /* SafeCountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */; };
+		DCA00C492C7B942600C9E1D2 /* CloudDBClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -186,6 +187,7 @@
 		DCA00C422C7AAC8500C9E1D2 /* BinarySearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTests.swift; sourceTree = "<group>"; };
 		DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCountsTests.swift; sourceTree = "<group>"; };
+		DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDBClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA00C422C7AAC8500C9E1D2 /* BinarySearchTests.swift */,
+				DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */,
 				DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */,
 				DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */,
 				DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */,
@@ -559,6 +562,7 @@
 				DCA00C372C7A8E9100C9E1D2 /* BinarySearch.swift in Sources */,
 				DCA00C452C7AAF6600C9E1D2 /* GameModelTests.swift in Sources */,
 				DCA00C382C7A8E9100C9E1D2 /* PositionValuesBuilder.swift in Sources */,
+				DCA00C492C7B942600C9E1D2 /* CloudDBClientTests.swift in Sources */,
 				DCA00C392C7A8E9100C9E1D2 /* SafeCounts.swift in Sources */,
 				DCA00C3A2C7A8E9100C9E1D2 /* SolutionDBClient.swift in Sources */,
 				DCA00C3C2C7A8E9100C9E1D2 /* GameModel.swift in Sources */,

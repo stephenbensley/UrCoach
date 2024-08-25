@@ -36,7 +36,7 @@ struct DynamoNode: Codable {
     }
     
     // Returns as a SolutionNode or nil if the conversion fails.
-    var solutionDBNode: SolutionNode? {
+    var solutionNode: SolutionNode? {
         guard let asUInt32 = Self.dynamoValueToUInt32(I) else { return nil }
         let id = Int32(bitPattern: asUInt32)
         
