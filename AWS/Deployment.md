@@ -31,3 +31,4 @@
      - Associate the API key created above.
      - Associate the stage used to deploy the API.
 8. Update [AWSConfig.swift](../UrCore/AWSConfig.swift.txt) with the API parameters.
+9. Run [CloudDBClientTests](../UrCoreTests/CloudDBClientTests.swift) to validate the deployment.
