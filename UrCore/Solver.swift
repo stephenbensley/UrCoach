@@ -6,17 +6,7 @@
 //
 
 import Foundation
-
-// Returns the number of performance cores.
-func performanceCores() -> Int {
-    var result: Int64 = 0;
-    var size = MemoryLayout<Int64>.size
-    guard sysctlbyname("hw.perflevel0.physicalcpu", &result, &size, nil, 0) == 0 else {
-        // If sysctl fails, we'll assume half the CPUs are performance.
-        return (ProcessInfo.processInfo.activeProcessorCount + 1) / 2
-    }
-    return Int(result)
-}
+import UtiliKit
 
 // Stores the game graph flattened into an array that's processed linearly. This reduces memory
 // usage and improves data locality.
@@ -173,7 +163,8 @@ final class Solver {
     private init(builder: PositionValuesBuilder, reportProgress: @escaping ReportProgress) {
         self.builder = builder
         self.reportProgress = reportProgress
-        self.workers = (0..<performanceCores()).map { _ in .init(builder: builder) }
+        let workerCount = ProcessInfo.processInfo.performanceProcessorCount
+        self.workers = (0..<workerCount).map { _ in .init(builder: builder) }
     }
     
     // Solve the game of Ur.
