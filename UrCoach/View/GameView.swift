@@ -5,14 +5,15 @@
 // license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
 //
 
+import SpriteKit
 import SwiftUI
 
-struct ContentView: View {
+// Presents the SpriteKit game scene
+struct GameView: View {
     var body: some View {
-        GameView()
-     }
-}
-
-#Preview {
-    ContentView()
+        GeometryReader { geo in
+            SpriteView(scene: GameScene(size: geo.size))
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
 }
