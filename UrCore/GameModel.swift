@@ -2,29 +2,10 @@
 // Copyright 2024 Stephen E. Bensley
 //
 // This file is licensed under the MIT License. You may obtain a copy of the
-// license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
+// license at https://github.com/stephenbensley/UrCoach/blob/main/LICENSE.
 //
 
-// Used to represent the players in the game.
-enum PlayerColor: Int, CaseIterable, Codable {
-    case white
-    case black
-    
-    // Returns the other color -- useful for switching sides.
-    var other: PlayerColor {
-        switch self {
-        case .white:
-            return .black
-        case .black:
-            return .white
-        }
-    }
-    
-    // Choose a color at random -- useful for starting the game.
-    static var random: PlayerColor {
-        allCases.randomElement()!
-    }
-}
+import CheckersKit
 
 // Implements the state machine for a complete game of Ur.
 final class GameModel {

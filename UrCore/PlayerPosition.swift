@@ -2,7 +2,7 @@
 // Copyright 2024 Stephen E. Bensley
 //
 // This file is licensed under the MIT License. You may obtain a copy of the
-// license at https://github.com/stephenbensley/RGU/blob/main/LICENSE.
+// license at https://github.com/stephenbensley/UrCoach/blob/main/LICENSE.
 //
 
 // Represents a move in the game. If from < 0, a waiting piece is being moved onto the board.

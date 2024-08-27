@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1D07352C7E401B000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07342C7E401B000B7D5B /* UtiliKit */; };
+		DC1D07372C7E404A000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07362C7E404A000B7D5B /* UtiliKit */; };
+		DC1D07392C7E4066000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07382C7E4066000B7D5B /* UtiliKit */; };
+		DC1D073B2C7E407F000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D073A2C7E407F000B7D5B /* UtiliKit */; };
+		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
+		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
 		DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* SolverApp.swift */; };
 		DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB32C7A4AAA00193A2E /* ContentView.swift */; };
 		DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB52C7A4AAB00193A2E /* Assets.xcassets */; };
@@ -62,6 +68,9 @@
 		DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */; };
 		DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
 		DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */; };
+		DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB512C7E0C0700ECB509 /* UtiliKit */; };
+		DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB542C7E0CCB00ECB509 /* UtiliKit */; };
+		DC96FB572C7E0D2100ECB509 /* BoardLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */; };
 		DCA00C332C7A8E9100C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
 		DCA00C342C7A8E9100C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
 		DCA00C352C7A8E9100C9E1D2 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
@@ -81,13 +90,22 @@
 		DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */; };
 		DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */; };
 		DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */; };
-		DCA00C622C7BE73100C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C612C7BE73100C9E1D2 /* UtiliKit */; };
-		DCA00C642C7BE8F300C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C632C7BE8F300C9E1D2 /* UtiliKit */; };
-		DCA00C662C7BE92F00C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C652C7BE92F00C9E1D2 /* UtiliKit */; };
-		DCA00C682C7BE95400C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C672C7BE95400C9E1D2 /* UtiliKit */; };
 		DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */; };
-		DCA00C6C2C7CC15300C9E1D2 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C6B2C7CC15300C9E1D2 /* GameBoard.swift */; };
 		DCA00C6E2C7CC23400C9E1D2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */; };
+		DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
+		DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
+		DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
+		DCA00C832C7CF2E400C9E1D2 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DCA00C842C7CF2E400C9E1D2 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DCA00C852C7CF2E400C9E1D2 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DCA00C862C7CF2E400C9E1D2 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DCA00C872C7CF2E400C9E1D2 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCA00C882C7CF2E400C9E1D2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
+		DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C962C7E07B700C9E1D2 /* UtiliKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -186,6 +204,7 @@
 		DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionValuesBuilderTests.swift; sourceTree = "<group>"; };
 		DC89A5A32C7A413B005D0269 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePositionTests.swift; sourceTree = "<group>"; };
+		DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocations.swift; sourceTree = "<group>"; };
 		DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCountsTests.swift; sourceTree = "<group>"; };
 		DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDBClientTests.swift; sourceTree = "<group>"; };
@@ -194,7 +213,6 @@
 		DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DCA00C6B2C7CC15300C9E1D2 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,7 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA00C622C7BE73100C9E1D2 /* UtiliKit in Frameworks */,
+				DC1D07352C7E401B000B7D5B /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA00C682C7BE95400C9E1D2 /* UtiliKit in Frameworks */,
+				DC1D07392C7E4066000B7D5B /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA00C662C7BE92F00C9E1D2 /* UtiliKit in Frameworks */,
+				DC1D07372C7E404A000B7D5B /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +245,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA00C642C7BE8F300C9E1D2 /* UtiliKit in Frameworks */,
+				DC1D073B2C7E407F000B7D5B /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +253,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */,
+				DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */,
+				DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */,
+				DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */,
+				DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +393,7 @@
 		DCA00C5D2C7BCABC00C9E1D2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				DCA00C6B2C7CC15300C9E1D2 /* GameBoard.swift */,
+				DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */,
 				DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */,
 			);
 			path = Scene;
@@ -411,7 +434,7 @@
 			);
 			name = Solver;
 			packageProductDependencies = (
-				DCA00C612C7BE73100C9E1D2 /* UtiliKit */,
+				DC1D07342C7E401B000B7D5B /* UtiliKit */,
 			);
 			productName = Solver;
 			productReference = DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */;
@@ -432,7 +455,7 @@
 			);
 			name = DynamoDBGen;
 			packageProductDependencies = (
-				DCA00C672C7BE95400C9E1D2 /* UtiliKit */,
+				DC1D07382C7E4066000B7D5B /* UtiliKit */,
 			);
 			productName = DynamoDBGen;
 			productReference = DC729EC22C7A4BB400193A2E /* DynamoDBGen */;
@@ -453,7 +476,7 @@
 			);
 			name = Tournament;
 			packageProductDependencies = (
-				DCA00C652C7BE92F00C9E1D2 /* UtiliKit */,
+				DC1D07362C7E404A000B7D5B /* UtiliKit */,
 			);
 			productName = Tournament;
 			productReference = DC729F112C7A6B7100193A2E /* Tournament */;
@@ -474,7 +497,7 @@
 			);
 			name = UrCoreTests;
 			packageProductDependencies = (
-				DCA00C632C7BE8F300C9E1D2 /* UtiliKit */,
+				DC1D073A2C7E407F000B7D5B /* UtiliKit */,
 			);
 			productName = UrCoreTests;
 			productReference = DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */;
@@ -493,6 +516,13 @@
 			dependencies = (
 			);
 			name = UrCoach;
+			packageProductDependencies = (
+				DCA00C962C7E07B700C9E1D2 /* UtiliKit */,
+				DC28E04D2C7E0B4100C0FD2C /* UtiliKit */,
+				DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */,
+				DC96FB512C7E0C0700ECB509 /* UtiliKit */,
+				DC96FB542C7E0CCB00ECB509 /* UtiliKit */,
+			);
 			productName = UrCoach;
 			productReference = DCA00C4E2C7BCA8500C9E1D2 /* UrCoach.app */;
 			productType = "com.apple.product-type.application";
@@ -534,7 +564,7 @@
 			);
 			mainGroup = DC89A56F2C7A40E1005D0269;
 			packageReferences = (
-				DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */,
+				DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */,
 			);
 			productRefGroup = DC89A57C2C7A40F5005D0269 /* Products */;
 			projectDirPath = "";
@@ -675,8 +705,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA00C6C2C7CC15300C9E1D2 /* GameBoard.swift in Sources */,
 				DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */,
+				DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */,
+				DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */,
+				DC96FB572C7E0D2100ECB509 /* BoardLocations.swift in Sources */,
+				DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */,
+				DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */,
+				DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */,
+				DCA00C832C7CF2E400C9E1D2 /* PositionAnalyzer.swift in Sources */,
+				DCA00C842C7CF2E400C9E1D2 /* DynamoNode.swift in Sources */,
+				DCA00C852C7CF2E400C9E1D2 /* AWSConfig.swift in Sources */,
+				DCA00C862C7CF2E400C9E1D2 /* SolutionDBClient.swift in Sources */,
+				DCA00C872C7CF2E400C9E1D2 /* PositionValues.swift in Sources */,
+				DCA00C882C7CF2E400C9E1D2 /* GameModel.swift in Sources */,
+				DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */,
+				DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */,
 				DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */,
 				DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */,
 				DCA00C6E2C7CC23400C9E1D2 /* GameView.swift in Sources */,
@@ -1484,36 +1527,52 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../UtiliKit;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DCA00C612C7BE73100C9E1D2 /* UtiliKit */ = {
+		DC1D07342C7E401B000B7D5B /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			package = DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */;
 			productName = UtiliKit;
 		};
-		DCA00C632C7BE8F300C9E1D2 /* UtiliKit */ = {
+		DC1D07362C7E404A000B7D5B /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			package = DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */;
 			productName = UtiliKit;
 		};
-		DCA00C652C7BE92F00C9E1D2 /* UtiliKit */ = {
+		DC1D07382C7E4066000B7D5B /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			package = DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */;
 			productName = UtiliKit;
 		};
-		DCA00C672C7BE95400C9E1D2 /* UtiliKit */ = {
+		DC1D073A2C7E407F000B7D5B /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DCA00C602C7BE73100C9E1D2 /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			package = DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */;
+			productName = UtiliKit;
+		};
+		DC28E04D2C7E0B4100C0FD2C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC96FB512C7E0C0700ECB509 /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC96FB542C7E0CCB00ECB509 /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DCA00C962C7E07B700C9E1D2 /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = UtiliKit;
 		};
 /* End XCSwiftPackageProductDependency section */
