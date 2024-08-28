@@ -17,7 +17,7 @@ extension PlayerPosition {
 // Represents a position in the game without regard to which player has the next move. Ur is
 // symmetric with regard to player color, so we can analyze a position without knowing which player
 // moves next.
-struct GamePosition: Equatable, Identifiable {
+struct GamePosition: Codable, Equatable, Identifiable {
     // Player with the next move.
     private(set) var attacker: PlayerPosition
     // Player without the next move.

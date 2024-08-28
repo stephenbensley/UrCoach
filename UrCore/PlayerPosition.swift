@@ -13,7 +13,7 @@ struct Move: Equatable {
 }
 
 // Represents one players position in the game.
-struct PlayerPosition: Equatable {
+struct PlayerPosition: Codable, Equatable {
     // Bitboard storing the location of the player's pieces.
     private(set) var bitboard: UInt16
     // Internally, the wait count is stored as an Int8 to save memory.
