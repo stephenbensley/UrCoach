@@ -10,9 +10,12 @@ import SwiftUI
 
 // Presents the SpriteKit game scene
 struct GameView: View {
+    @Environment(\.appModel) private var appModel
+    @Binding var mainView: ViewType
+
     var body: some View {
         GeometryReader { geo in
-            SpriteView(scene: GameScene(size: geo.size))
+            SpriteView(scene: GameScene(viewType: $mainView, size: geo.size, model: appModel))
         }
         .edgesIgnoringSafeArea(.all)
     }

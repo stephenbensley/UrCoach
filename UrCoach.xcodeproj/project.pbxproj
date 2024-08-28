@@ -11,6 +11,10 @@
 		DC1D07372C7E404A000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07362C7E404A000B7D5B /* UtiliKit */; };
 		DC1D07392C7E4066000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07382C7E4066000B7D5B /* UtiliKit */; };
 		DC1D073B2C7E407F000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D073A2C7E407F000B7D5B /* UtiliKit */; };
+		DC1D073D2C7E5CEA000B7D5B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */; };
+		DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */; };
+		DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D07402C7E5D31000B7D5B /* UrModel.swift */; };
+		DC1D07432C7E5F0A000B7D5B /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC1D07422C7E5F0A000B7D5B /* rules.txt */; };
 		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
 		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
 		DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* SolverApp.swift */; };
@@ -70,7 +74,7 @@
 		DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */; };
 		DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB512C7E0C0700ECB509 /* UtiliKit */; };
 		DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB542C7E0CCB00ECB509 /* UtiliKit */; };
-		DC96FB572C7E0D2100ECB509 /* BoardLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */; };
+		DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */; };
 		DCA00C332C7A8E9100C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
 		DCA00C342C7A8E9100C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
 		DCA00C352C7A8E9100C9E1D2 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
@@ -172,6 +176,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		DC1D07402C7E5D31000B7D5B /* UrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrModel.swift; sourceTree = "<group>"; };
+		DC1D07422C7E5F0A000B7D5B /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
 		DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionDBClient.swift; sourceTree = "<group>"; };
 		DC729E8B2C7A428800193A2E /* AWSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfig.swift; sourceTree = "<group>"; };
 		DC729E8C2C7A428800193A2E /* DynamoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNode.swift; sourceTree = "<group>"; };
@@ -204,7 +212,7 @@
 		DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionValuesBuilderTests.swift; sourceTree = "<group>"; };
 		DC89A5A32C7A413B005D0269 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePositionTests.swift; sourceTree = "<group>"; };
-		DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLocations.swift; sourceTree = "<group>"; };
+		DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardPositions.swift; sourceTree = "<group>"; };
 		DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelTests.swift; sourceTree = "<group>"; };
 		DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCountsTests.swift; sourceTree = "<group>"; };
 		DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDBClientTests.swift; sourceTree = "<group>"; };
@@ -386,6 +394,7 @@
 		DCA00C5C2C7BCAB500C9E1D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC1D07402C7E5D31000B7D5B /* UrModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,7 +402,7 @@
 		DCA00C5D2C7BCABC00C9E1D2 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				DC96FB562C7E0D2100ECB509 /* BoardLocations.swift */,
+				DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */,
 				DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */,
 			);
 			path = Scene;
@@ -404,6 +413,8 @@
 			children = (
 				DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */,
 				DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */,
+				DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */,
+				DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */,
 				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
 			);
 			path = View;
@@ -412,6 +423,7 @@
 		DCA00C5F2C7BCACD00C9E1D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC1D07422C7E5F0A000B7D5B /* rules.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -599,6 +611,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1D07432C7E5F0A000B7D5B /* rules.txt in Resources */,
 				DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,7 +721,9 @@
 				DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */,
 				DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */,
 				DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */,
-				DC96FB572C7E0D2100ECB509 /* BoardLocations.swift in Sources */,
+				DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */,
+				DC1D073D2C7E5CEA000B7D5B /* MenuView.swift in Sources */,
+				DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */,
 				DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */,
 				DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */,
 				DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */,
@@ -720,6 +735,7 @@
 				DCA00C882C7CF2E400C9E1D2 /* GameModel.swift in Sources */,
 				DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */,
 				DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */,
+				DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */,
 				DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */,
 				DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */,
 				DCA00C6E2C7CC23400C9E1D2 /* GameView.swift in Sources */,

@@ -7,10 +7,37 @@
 
 import SwiftUI
 
+// Signals which view to display.
+enum ViewType {
+    case menu
+    case game
+    case rules
+}
+
 struct ContentView: View {
+    // Used to trigger saving state when app goes inactive.
+    @Environment(\.scenePhase) private var scenePhase
+    @State private var appModel = UrModel.create()
+    @State private var mainView = ViewType.menu
+    
     var body: some View {
-        GameView()
-     }
+        ZStack {
+            Color(.background)
+                .edgesIgnoringSafeArea(.all)
+            switch mainView {
+            case .menu:
+                MenuView(mainView: $mainView.animation())
+            case .game:
+                GameView(mainView: $mainView.animation())
+            case .rules:
+                RulesView(mainView: $mainView.animation())
+            }
+        }
+        .appModel(appModel)
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .inactive { appModel.save() }
+        }
+    }
 }
 
 #Preview {
