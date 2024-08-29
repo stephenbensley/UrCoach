@@ -30,15 +30,20 @@ struct MenuItem: View {
 
 // Presents the main menu of options for the user to choose from.
 struct MenuView: View {
-    @Binding var mainView: ViewType
-    @Environment(\.appModel) private var appModel
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.openURL) private var openURL
-
+    private var appModel: UrModel
+    private var changeView: ChangeView
+    
     var scale: CGFloat {
         return sizeClass == .compact ? 1.0 : 1.5
     }
     
+    init(appModel: UrModel, changeView: @escaping ChangeView) {
+        self.appModel = appModel
+        self.changeView = changeView
+    }
+
     var body: some View {
         VStack {
             Spacer()
@@ -52,21 +57,21 @@ struct MenuView: View {
                     .padding(.bottom)
                 MenuItem(text: "White vs. Computer") {
                     appModel.newGame(white: .human, black: .computer)
-                    mainView = .game
+                    changeView(.game)
                 }
                 MenuItem(text: "Black vs. Computer") {
                     appModel.newGame(white: .computer, black: .human)
-                    mainView = .game
+                    changeView(.game)
                 }
                 MenuItem(text: "Player vs. Player") {
                     appModel.newGame(white: .human, black: .human)
-                    mainView = .game
+                    changeView(.game)
                 }
                 MenuItem(text: "Resume Game") {
-                    mainView = .game
+                    changeView(.game)
                 }
                 MenuItem(text: "How to Play") {
-                    mainView = .rules
+                    changeView(.rules)
                 }
                 MenuItem(text: "Privacy Policy  \(Image(systemName: "link"))") {
                     if let url = URL(string: "https://stephenbensley.github.io/Queah/privacy.html") {

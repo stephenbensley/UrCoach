@@ -8,20 +8,24 @@ import SwiftUI
 
 // Displays the game rules.
 struct RulesView: View {
-    @Binding var mainView: ViewType
     @Environment(\.horizontalSizeClass) var sizeClass
+    private let changeView: ChangeView
     private let contents = load()
     
     var scale: CGFloat {
         return sizeClass == .compact ? 1.0 : 1.5
     }
     
+    init(changeView: @escaping ChangeView) {
+        self.changeView = changeView
+    }
+
     // ScrollView doesn't play well with .scaleEffect, so we scale everything individually
     var body: some View {
         VStack {
             HStack {
                 Spacer()
-                Button(action: { mainView = .menu }) {
+                Button(action: { changeView(.menu) }) {
                     Text("Done")
                         .font(.custom("Helvetica", fixedSize: 18 * scale))
                 }

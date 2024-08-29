@@ -4,7 +4,7 @@
 // license at https://github.com/stephenbensley/UrCoach/blob/main/LICENSE.
 //
 
-import SwiftUI
+import Foundation
 import CheckersKit
 
 final class UrModel: Codable {
@@ -31,25 +31,8 @@ final class UrModel: Codable {
         let data = try! JSONEncoder().encode(self)
         UserDefaults.standard.set(data, forKey: "AppModel")
     }
-    
+
     private init() {
         game = GameModel()
-    }
-}
-
-private struct AppModelKey: EnvironmentKey {
-    static let defaultValue = UrModel.create()
-}
-
-extension EnvironmentValues {
-    var appModel: UrModel {
-        get { self[AppModelKey.self] }
-        set { self[AppModelKey.self] = newValue }
-    }
-}
-
-extension View {
-    func appModel(_ value: UrModel) -> some View {
-        environment(\.appModel, value)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CheckersKit
 
 // Signals which view to display.
 enum ViewType {
@@ -13,30 +14,48 @@ enum ViewType {
     case game
     case rules
 }
+// Callback to change the current view
+typealias ChangeView = (ViewType) -> Void
 
 struct ContentView: View {
     // Used to trigger saving state when app goes inactive.
     @Environment(\.scenePhase) private var scenePhase
-    @State private var appModel = UrModel.create()
     @State private var mainView = ViewType.menu
+    @State private var appModel: UrModel
+    @State private var scene: GameScene
     
+    init() {
+        let appModel = UrModel.create()
+        let scene = GameScene(appModel: appModel)
+        self.appModel = appModel
+        self.scene = scene
+    }
+
     var body: some View {
         ZStack {
             Color(.background)
                 .edgesIgnoringSafeArea(.all)
             switch mainView {
             case .menu:
-                MenuView(mainView: $mainView.animation())
+                MenuView(appModel: appModel, changeView: changeView)
             case .game:
-                GameView(mainView: $mainView.animation())
+                AutoSizedSpriteView(scene: getScene())
             case .rules:
-                RulesView(mainView: $mainView.animation())
+                RulesView(changeView: changeView)
             }
         }
-        .appModel(appModel)
         .onChange(of: scenePhase) { _, phase in
             if phase == .inactive { appModel.save() }
         }
+    }
+    
+    func changeView(_ newValue: ViewType) {
+        withAnimation { mainView = newValue }
+    }
+    
+    func getScene() -> GameScene {
+        scene.changeView = changeView
+        return scene
     }
 }
 

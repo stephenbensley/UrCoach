@@ -95,7 +95,6 @@
 		DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */; };
 		DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */; };
 		DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */; };
-		DCA00C6E2C7CC23400C9E1D2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */; };
 		DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
 		DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
 		DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
@@ -221,7 +220,6 @@
 		DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,7 +410,6 @@
 			isa = PBXGroup;
 			children = (
 				DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */,
-				DCA00C6D2C7CC23400C9E1D2 /* GameView.swift */,
 				DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */,
 				DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */,
 				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
@@ -738,7 +735,6 @@
 				DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */,
 				DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */,
 				DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */,
-				DCA00C6E2C7CC23400C9E1D2 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
