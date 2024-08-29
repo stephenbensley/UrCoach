@@ -67,7 +67,7 @@ final class GameScene: SKScene {
         case .rollDice:
             rollDice()
         case .makeMove:
-            selectMove()
+            pickMove()
         case .gameOver:
             displayOutcome()
         }
@@ -127,7 +127,7 @@ final class GameScene: SKScene {
         if moves.isEmpty {
             displayNoMove()
         } else {
-            selectMove()
+            pickMove()
         }
     }
     private func displayNoMove() {
@@ -137,11 +137,11 @@ final class GameScene: SKScene {
         alert.display(completion: rollDice)
     }
     
-    private func selectMove() {
-         board.selectMove(
+    private func pickMove() {
+         board.pickMove(
             for: game.currentPlayer,
             moves: moves.map(convertMove),
-            onMoveSelected: onMoveSelected
+            onMovePicked: onMovePicked
         )
     }
     
@@ -149,11 +149,11 @@ final class GameScene: SKScene {
         mainView = .menu
     }
 
-    private func onMoveSelected(checker: Checker, viewMove: GameBoard.Move) {
+    private func onMovePicked(checker: Checker, viewMove: GameBoard.Move) {
         guard let modelMove = viewMove.userData as? Move else { return }
         
         var actions = [SKAction]()
-        actions.append(SKAction.run({ checker.zPosition = Layer.moving }))
+        actions.append(SKAction.setLayer(Layer.moving, onTarget: checker))
         
         if modelMove.from < 0 {
             let entry = positions.position(game.currentPlayer, -1)
@@ -175,7 +175,7 @@ final class GameScene: SKScene {
             actions.append(SKAction.run { captured.run(action) })
         }
 
-        actions.append(SKAction.run({ checker.zPosition = Layer.checkers }))
+        actions.append(SKAction.setLayer(Layer.checkers, onTarget: checker))
         
         let completion = Ur.isRosette(space: modelMove.to) ? displayRollAgain : rollDice
         checker.run(SKAction.sequence(actions), completion: completion)
@@ -189,9 +189,9 @@ final class GameScene: SKScene {
         let waitCount = game.playerPosition(for: player).waitCount
         let to = positions.position(player, waitCount - BoardPositions.indexOffset)
         return SKAction.sequence([
-            SKAction.run { captured.zPosition = Layer.captured },
+            SKAction.setLayer(Layer.captured, onTarget: captured),
             SKAction.move(to: to, duration: 1.0),
-            SKAction.run { captured.zPosition = Layer.checkers }
+            SKAction.setLayer(Layer.checkers, onTarget: captured)
        ])
     }
     
