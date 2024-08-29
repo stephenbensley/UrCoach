@@ -9,11 +9,10 @@ import XCTest
 
 class GameModelTests: XCTestCase {
     func testRollDice() throws {
-        let model = GameModel()
         let iterations = 100_000
         var counts = [Int](repeating: 0, count: 5)
         for _ in 0..<iterations {
-            counts[model.rollDice()] += 1
+            counts[GameModel.rollDice().reduce(0, +)] += 1
         }
         
         XCTAssertEqual(Double(counts[0]) / Double(iterations), 0.0625, accuracy: 0.01)

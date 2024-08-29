@@ -12,10 +12,14 @@ final class Tournament {
     
     static func playGame(players: [Strategy]) async throws -> Int {
         let game = GameModel()
+        game.decideFirstPlayer()
         repeat {
-            let player = game.playerToMove.rawValue
-            let roll = game.rollDice()
-            let move = try await players[player].getMove(position: game.position, roll: roll)
+            game.rollDice()
+            let player = game.currentPlayer.rawValue
+            let move = try await players[player].getMove(
+                position: game.position,
+                roll: game.diceSum
+            )
             game.makeMove(move: move)
         } while !game.isOver
         return game.winner.rawValue

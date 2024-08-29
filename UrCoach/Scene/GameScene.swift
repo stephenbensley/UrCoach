@@ -8,6 +8,7 @@
 import SpriteKit
 import SwiftUI
 import CheckersKit
+import UtiliKit
 
 final class GameScene: SKScene {
     // Used to return the app to the main menu
@@ -20,6 +21,7 @@ final class GameScene: SKScene {
     private let board = GameBoard()
     private let whiteDice = RollingDice(diceCount: Ur.diceCount, orientation: .vertical)
     private let blackDice = RollingDice(diceCount: Ur.diceCount, orientation: .vertical)
+    private var pendingDice = [Int]()
     private var moves = [Move]()
     
     init(viewType: Binding<ViewType>, size: CGSize, model: UrModel) {
@@ -37,15 +39,19 @@ final class GameScene: SKScene {
         addChild(board)
         
         addTargets()
-        setupPieces(player: .white, pieces: game.position(for: .white))
-        setupPieces(player: .black, pieces: game.position(for: .black))
+        setupPieces(player: .white, pieces: game.playerPosition(for: .white))
+        setupPieces(player: .black, pieces: game.playerPosition(for: .black))
         
         whiteDice.position = .init(x: -135.0, y: 135.0)
+        whiteDice.setValues(game.whiteDice)
         addChild(whiteDice)
         blackDice.position = .init(x: +135.0, y: 135.0)
+        blackDice.setValues(game.blackDice)
         addChild(blackDice)
         
-        let button = SKButton("Menu", size: .init(width: 150, height: 55)) { }
+        self.moves = game.moves(forRoll: game.diceSum)
+    
+        let button = SKButton("Menu", size: .init(width: 150, height: 55), action: returnToMainMenu)
         button.position = CGPoint(x: 0, y: -310)
         addChild(button)
     }
@@ -55,10 +61,15 @@ final class GameScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
-        if game.isInitial {
-            decideStartingPlayer()
-        } else {
-            nextMove()
+        switch game.state {
+        case .decideFirstPlayer:
+            decideFirstPlayer()
+        case .rollDice:
+            rollDice()
+        case .makeMove:
+            selectMove()
+        case .gameOver:
+            displayOutcome()
         }
     }
     
@@ -84,64 +95,135 @@ final class GameScene: SKScene {
         }
     }
     
-    private func nextMove() { }
-    
-    private func decideStartingPlayer() {
+    private func decideFirstPlayer() {
+        game.decideFirstPlayer()
         let multiComplete = MultiComplete(waitCount: 2, completion: self.displayStartingPlayer)
         whiteDice.roll(newValues: game.whiteDice, completion: multiComplete.complete)
         blackDice.roll(newValues: game.blackDice, completion: multiComplete.complete)
     }
     
     private func displayStartingPlayer() {
-        let alert = AutoAlert("\(game.playerToMove) has first move")
+        let alert = AutoAlert("\(game.currentPlayer) moves first")
         addChild(alert)
         alert.display(completion: self.rollDice)
     }
     
     private func rollDice() {
         // Roll the dice and update the available moves based on the outcome.
-        moves = game.moves(forRoll: game.rollDice())
-        // Determine next action
-        let completion = moves.isEmpty ? displayNoMove : selectMove
-        
+        pendingDice = GameModel.rollDice()
+        moves = game.moves(forRoll: pendingDice.reduce(0, +))
+
         // Animate the roll of the dice.
-        switch game.playerToMove {
+        switch game.currentPlayer {
         case .white:
-            whiteDice.rollOnTap(newValues: game.dice(), completion: completion)
+            whiteDice.rollOnTap(newValues: pendingDice, completion: rollComplete)
         case .black:
-            blackDice.rollOnTap(newValues: game.dice(), completion: completion)
+            blackDice.rollOnTap(newValues: pendingDice, completion: rollComplete)
         }
     }
     
+    private func rollComplete() {
+        game.rollDice(dice: pendingDice)
+        if moves.isEmpty {
+            displayNoMove()
+        } else {
+            selectMove()
+        }
+    }
     private func displayNoMove() {
-        let alert = AutoAlert("\(game.playerToMove) has no move")
+         let alert = AutoAlert("\(game.currentPlayer) has no move")
         addChild(alert)
         game.makeMove(move: nil)
         alert.display(completion: rollDice)
     }
     
     private func selectMove() {
-        board.selectMove(
-            for: game.playerToMove,
+         board.selectMove(
+            for: game.currentPlayer,
             moves: moves.map(convertMove),
             onMoveSelected: onMoveSelected
         )
     }
     
-    private func onMoveSelected(_ moveIndex: Int) { }
+    private func returnToMainMenu() {
+        mainView = .menu
+    }
+
+    private func onMoveSelected(checker: Checker, viewMove: GameBoard.Move) {
+        guard let modelMove = viewMove.userData as? Move else { return }
+        
+        var actions = [SKAction]()
+        actions.append(SKAction.run({ checker.zPosition = Layer.moving }))
+        
+        if modelMove.from < 0 {
+            let entry = positions.position(game.currentPlayer, -1)
+            actions.append(SKAction.move(to: entry, duration: 1.0))
+        }
+        
+        for i in (modelMove.from + 1)...modelMove.to {
+            let entry = positions.position(game.currentPlayer, i)
+            actions.append(SKAction.move(to: entry, duration: 0.5))
+        }
+        
+        if modelMove.to == Ur.spaceCount {
+            actions.append(SKAction.fadeOut(withDuration: 0.5))
+            actions.append(SKAction.removeFromParent())
+        }
+        
+        if let captured = board.checker(at: viewMove.to) {
+            let action = captureAction(captured: captured)
+            actions.append(SKAction.run { captured.run(action) })
+        }
+
+        actions.append(SKAction.run({ checker.zPosition = Layer.checkers }))
+        
+        let completion = Ur.isRosette(space: modelMove.to) ? displayRollAgain : rollDice
+        checker.run(SKAction.sequence(actions), completion: completion)
+        
+        game.makeMove(move: modelMove)
+
+    }
+
+    private func captureAction(captured: Checker) -> SKAction {
+        let player = captured.player
+        let waitCount = game.playerPosition(for: player).waitCount
+        let to = positions.position(player, waitCount - BoardPositions.indexOffset)
+        return SKAction.sequence([
+            SKAction.run { captured.zPosition = Layer.captured },
+            SKAction.move(to: to, duration: 1.0),
+            SKAction.run { captured.zPosition = Layer.checkers }
+       ])
+    }
     
+    private func displayRollAgain() {
+        let alert = AutoAlert("\(game.currentPlayer) rolls again")
+        addChild(alert)
+        alert.display(completion: rollDice)
+    }
     
+    private func displayOutcome() {
+         let alert = AutoAlert("\(game.winner) wins!")
+        addChild(alert)
+        alert.display(completion: doNothing)
+    }
+    
+    private func doNothing() { }
+
     private func indexToPoint(_ index: Int) -> CGPoint {
         let shifted: Int
         if index < 0 {
-            shifted = index + game.position().waitCount - BoardPositions.indexOffset
+            shifted = index + game.playerPosition().waitCount - BoardPositions.indexOffset
         } else {
             shifted = index
         }
-        return positions.position(game.playerToMove, shifted)
+        return positions.position(game.currentPlayer, shifted)
     }
     
     private func convertMove(_ move: Move) -> GameBoard.Move {
-        return .init(from: indexToPoint(move.from), to: indexToPoint(move.to))
+        return .init(
+            from: indexToPoint(move.from),
+            to: indexToPoint(move.to),
+            userData: move
+        )
     }
 }
