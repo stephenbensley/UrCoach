@@ -34,7 +34,7 @@ final class GameModel: Codable {
         // When the game is over, the player to move is the loser.
         return currentPlayer.other
     }
-
+    
     // Position of the specified player or the current player if none specified.
     func playerPosition(for player: PlayerColor? = nil) -> PlayerPosition {
         let player = player ?? currentPlayer
@@ -44,7 +44,7 @@ final class GameModel: Codable {
             return position.defender
         }
     }
-
+    
     // Sum of the dice for the current player.
     var diceSum: Int {
         switch currentPlayer {
@@ -116,4 +116,11 @@ final class GameModel: Codable {
     static func rollDice() -> [Int] {
         (0..<Ur.diceCount).map {_ in Int.random(in: 0...1) }
     }
+    
+#if TEST_ENDGAME
+    func testEndGame() {
+        let endPos = PlayerPosition(bitboard: 0x2000, waitCount: 0)
+        position = .init(attacker: endPos, defender: endPos)
+    }
+#endif
 }
