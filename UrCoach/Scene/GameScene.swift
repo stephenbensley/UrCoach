@@ -14,6 +14,7 @@ import UtiliKit
 public extension GamePalette {
     static let analysisGreen = BoardGameColor(Color(.analysisGreen))
     static let analysisRed   = BoardGameColor(Color(.red))
+    static let bottomSheet   = BoardGameColor(Color(.gray))
 }
 
 final class GameScene: SKScene {
@@ -86,32 +87,6 @@ final class GameScene: SKScene {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Invoked when we've been added to a SwiftUI view.
-    func addedToView(size: CGSize, changeView: @escaping ChangeView) {
-        self.size = Self.minSize.stretchToAspectRatio(size.aspectRatio)
-        self.changeView = changeView
-    }
-    
-    // Invoked when our scene is added to an SKView and will now be displayed.
-    override func didMove(to view: SKView) {
-        super.didMove(to: view)
-        
-        // Load state from the app model. This might have changed since we were last displayed.
-        loadAppModel()
-        
-        // Kick off the FSM based on the current game state.
-        switch game.state {
-        case .decideFirstPlayer:
-            decideFirstPlayer()
-        case .rollDice:
-            rollDice()
-        case .makeMove:
-            pickMove()
-        case .gameOver:
-            displayGameOutcome()
-        }
-    }
-    
     private func addTargets() {
         for i in 0...Ur.spaceCount {
             let pos = positions.position(.white, i)
@@ -120,6 +95,12 @@ final class GameScene: SKScene {
                 board.addTarget(at: pos.reflectedOverY)
             }
         }
+    }
+    
+    // Invoked when we've been added to a SwiftUI view.
+    func addedToView(size: CGSize, changeView: @escaping ChangeView) {
+        self.size = Self.minSize.stretchToAspectRatio(size.aspectRatio)
+        self.changeView = changeView
     }
     
     // MARK: Clean-up
@@ -141,6 +122,26 @@ final class GameScene: SKScene {
     
     // MARK: Load state
     
+    // Invoked when our scene is added to an SKView and will now be displayed.
+    override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
+        // Load state from the app model. This might have changed since we were last displayed.
+        loadAppModel()
+        
+        // Kick off the FSM based on the current game state.
+        switch game.state {
+        case .decideFirstPlayer:
+            decideFirstPlayer()
+        case .rollDice:
+            rollDice()
+        case .makeMove:
+            pickMove()
+        case .gameOver:
+            displayGameOutcome()
+        }
+    }
+    
     private func loadAppModel() {
         // Setup the dice.
         whiteDice.setValues(game.whiteDice)
@@ -154,6 +155,7 @@ final class GameScene: SKScene {
         placeCheckers(player: .black, pieces: game.playerPosition(for: .black))
         
         // Recompute properties in case something has changed.
+        board.inputEnabled = true
         allowedMoves = game.moves(forRoll: game.diceSum)
         solo = appModel.playerType[0] == .computer || appModel.playerType[1] == .computer
         pickMoveEpoch += 1
@@ -206,7 +208,7 @@ final class GameScene: SKScene {
     private func displayStartingPlayer() {
         let alert = AutoAlert("\(game.currentPlayer) moves first")
         addChild(alert)
-        alert.display(completion: self.rollDice)
+        alert.display(forDuration: 1.5, completion: self.rollDice)
     }
     
     private func rollDice() {
@@ -248,7 +250,7 @@ final class GameScene: SKScene {
         let alert = AutoAlert("\(game.currentPlayer) has no move")
         addChild(alert)
         game.makeMove(move: nil)
-        alert.display(completion: rollDice)
+        alert.display(forDuration: 1.5, completion: rollDice)
     }
     
     private func pickMove() {
@@ -262,8 +264,7 @@ final class GameScene: SKScene {
             )
         case .computer:
             pickBestMove(
-                onMovePicked: executeMove,
-                onError: { alertNetworkError(retryAction: pickMove) }
+                onMovePicked: executeMove
             )
         }
     }
@@ -273,28 +274,50 @@ final class GameScene: SKScene {
         
         removeAnnotations()
         pickMoveEpoch += 1
-        
+
+        // Build the animation before updating the game model.
         let actions = buildMoveAnimation(checker: checker, viewMove: viewMove)
-        
-        let completion = Ur.isRosette(space: modelMove.to) ? displayRollAgain : rollDice
-        checker.run(SKAction.sequence(actions), completion: completion)
-        
+
         game.makeMove(move: modelMove)
+
+        let nextState: () -> Void
+        if game.isOver {
+            nextState = displayGameOutcome
+        } else if Ur.isRosette(space: modelMove.to) {
+            nextState = displayRollAgain
+        } else {
+            nextState = rollDice
+        }
+
+        checker.run(SKAction.sequence(actions), completion: nextState)
     }
     
     private func displayRollAgain() {
         let alert = AutoAlert("\(game.currentPlayer) rolls again")
         addChild(alert)
-        alert.display(completion: rollDice)
+        alert.display(forDuration: 1.5, completion: rollDice)
     }
     
     private func displayGameOutcome() {
         let alert = AutoAlert("\(game.winner) wins!")
         addChild(alert)
-        alert.display(completion: doNothing)
+        alert.display(forDuration: 5.0, completion: doNothing)
     }
     
-    private func alertNetworkError(retryAction: () -> Void) { }
+    private func alertNetworkError(_ text: String, retryAction: @escaping () -> Void) {
+        board.inputEnabled = false
+        let alert = NoNetworkAlert(text, sceneSize: size)
+        addChild(alert)
+        alert.display() { choice in
+            self.board.inputEnabled = true
+            switch choice {
+            case .tryAgain:
+                retryAction()
+            case .quit:
+                self.returnToMainMenu()
+            }
+        }
+    }
     
     private func doNothing() { }
     
@@ -410,28 +433,36 @@ final class GameScene: SKScene {
         
         Task { @MainActor in
             let analysis = await pendingAnalyze.value
-            guard let analysis = analysis else {
-                // TODO: Display error
-                return
-            }
             guard epoch == pickMoveEpoch else { return }
+            
+            guard let analysis = analysis else {
+                return self.alertNetworkError(
+                    "An Internet connection is required to analyze moves."
+                ) {
+                    self.fetchAnalysis(forRoll: self.game.diceSum)
+                    self.analyzeButton.enabled = true
+                }
+            }
+            
             annotateCheckers(with: analysis)
             self.pendingAnalyze = nil
         }
     }
     
-    private func pickBestMove(
-        onMovePicked: GameBoard.OnMovePicked,
-        onError: () -> Void
-    ) {
+    private func pickBestMove(onMovePicked: GameBoard.OnMovePicked) {
         guard let pendingBestMove = pendingBestMove else { return }
         
         Task { @MainActor in
             let move = await pendingBestMove.value
             guard let move = move else {
-                // TODO: Display error
-                return
+                return self.alertNetworkError(
+                    "An Internet connection is required to play against the computer."
+                ) {
+                    self.fetchBestMove(forRoll: self.game.diceSum)
+                    self.pickMove()
+                }
             }
+            
             let viewMove = convertMove(move)
             guard let checker = board.checker(at: viewMove.from) else { return }
             executeMove(checker: checker, viewMove: viewMove)
