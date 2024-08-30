@@ -32,15 +32,13 @@ struct MenuItem: View {
 struct MenuView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.openURL) private var openURL
-    private var appModel: UrModel
     private var changeView: ChangeView
     
     var scale: CGFloat {
         return sizeClass == .compact ? 1.0 : 1.5
     }
     
-    init(appModel: UrModel, changeView: @escaping ChangeView) {
-        self.appModel = appModel
+    init(changeView: @escaping ChangeView) {
         self.changeView = changeView
     }
 
@@ -56,15 +54,15 @@ struct MenuView: View {
                     .foregroundStyle(.white)
                     .padding(.bottom)
                 MenuItem(text: "White vs. Computer") {
-                    appModel.newGame(white: .human, black: .computer)
+                    UrModel.shared.newGame(white: .human, black: .computer)
                     changeView(.game)
                 }
                 MenuItem(text: "Black vs. Computer") {
-                    appModel.newGame(white: .computer, black: .human)
+                    UrModel.shared.newGame(white: .computer, black: .human)
                     changeView(.game)
                 }
                 MenuItem(text: "Player vs. Player") {
-                    appModel.newGame(white: .human, black: .human)
+                    UrModel.shared.newGame(white: .human, black: .human)
                     changeView(.game)
                 }
                 MenuItem(text: "Resume Game") {

@@ -10,56 +10,96 @@ import SwiftUI
 import CheckersKit
 import UtiliKit
 
-typealias ExitGame = () -> Void
+
+public extension GamePalette {
+    static let analysisGreen = BoardGameColor(Color(.analysisGreen))
+    static let analysisRed   = BoardGameColor(Color(.red))
+}
 
 final class GameScene: SKScene {
+    // Game coordinates are designed for this size.
     static private let minSize = CGSize(width: 390, height: 750)
-    public var changeView: ChangeView? = nil
-    private var appModel: UrModel
+    
+    // SKNode names
+    static private let annotationName = "annotation"
+    
+    // Global game state
+    private var appModel = UrModel.shared
+    // Set by the enclosing SwiftUI view to allow this scene to return to the main menu.
+    private var changeView: ChangeView? = nil
+    
+    // Used to map logical board positions to screen coordinates.
     private let positions = BoardPositions()
+    
+    // These nodes are interacted with frequently, so we cache references to them.
     private let board = GameBoard()
     private let whiteDice = RollingDice(diceCount: Ur.diceCount, orientation: .vertical)
     private let blackDice = RollingDice(diceCount: Ur.diceCount, orientation: .vertical)
+    private let analyzeButton = SKButton("Analyze", size: .init(width: 125, height: 45))
+    private let menuButton = SKButton("Menu", size: .init(width: 125, height: 45))
+    
+    // The next roll of the dice. We precompute this, so we can query the analyzer as soon as
+    // possible, but we don't want to update the appModel until we've shown this roll to the
+    // players.
     private var pendingDice = [Int]()
-    private var moves = [Move]()
+    private var pendingDiceSum: Int = 0
+    // Allowed moves the current player may select from.
+    private var allowedMoves = [Move]()
     
-    override var size: CGSize {
-        get { super.size }
-        set { super.size = Self.minSize.stretchToAspectRatio(newValue.aspectRatio) }
-    }
+    // True if a human is playing solo against the computer.
+    private var solo = false
+    // Pending SolutionDB queries (if any).
+    private var pendingBestMove: Task<Move?, Never>? = nil
+    private var pendingAnalyze: Task<[MoveValue]?, Never>? = nil
+    // Used to detect stale move analyses. If the user has already picked a move, by the time the
+    // analysis completes, then the analysis isn't useful anymore.
+    private var pickMoveEpoch = 0
     
+    // Helpers for frequently accessed state.
+    private var currentType: PlayerType { appModel.playerType[game.currentPlayer.rawValue] }
     private var game: GameModel { appModel.game }
     
-    init(appModel: UrModel) {
-        self.appModel = appModel
+    // MARK: Initialization
+    
+    override init() {
         super.init(size: Self.minSize)
-        
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = GamePalette.background
         self.scaleMode = .aspectFit
         
+        // Add the permanent nodes.
         addChild(board)
-        
         addTargets()
-        
         whiteDice.position = .init(x: -135.0, y: 135.0)
         addChild(whiteDice)
         blackDice.position = .init(x: +135.0, y: 135.0)
         addChild(blackDice)
-        
-        
-        let button = SKButton("Menu", size: .init(width: 150, height: 55), action: returnToMainMenu)
-        button.position = CGPoint(x: 0, y: -310)
-        addChild(button)
+        analyzeButton.action = analyzeMoves
+        analyzeButton.position = .init(x: +80.0, y: -310.0)
+        addChild(analyzeButton)
+        menuButton.action = returnToMainMenu
+        menuButton.position =    .init(x: -80.0, y: -310.0)
+        addChild(menuButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Invoked when we've been added to a SwiftUI view.
+    func addedToView(size: CGSize, changeView: @escaping ChangeView) {
+        self.size = Self.minSize.stretchToAspectRatio(size.aspectRatio)
+        self.changeView = changeView
+    }
+    
+    // Invoked when our scene is added to an SKView and will now be displayed.
     override func didMove(to view: SKView) {
-        loadModel()
+        super.didMove(to: view)
         
+        // Load state from the app model. This might have changed since we were last displayed.
+        loadAppModel()
+        
+        // Kick off the FSM based on the current game state.
         switch game.state {
         case .decideFirstPlayer:
             decideFirstPlayer()
@@ -68,7 +108,7 @@ final class GameScene: SKScene {
         case .makeMove:
             pickMove()
         case .gameOver:
-            displayOutcome()
+            displayGameOutcome()
         }
     }
     
@@ -82,19 +122,67 @@ final class GameScene: SKScene {
         }
     }
     
-    private func loadModel() {
+    // MARK: Clean-up
+    
+    // Returns to a clean state by stopping all ongoing activity and clearing the gameboard.
+    private func returnToMainMenu() {
+        pendingAnalyze?.cancel()
+        pendingAnalyze = nil
+        pendingBestMove?.cancel()
+        pendingBestMove = nil
+        
+        whiteDice.removeAllActions()
+        blackDice.removeAllActions()
+        
+        board.clear()
+        
+        changeView?(.menu)
+    }
+    
+    // MARK: Load state
+    
+    private func loadAppModel() {
+        // Setup the dice.
         whiteDice.setValues(game.whiteDice)
         blackDice.setValues(game.blackDice)
         pendingDice = .init()
+        pendingDiceSum = 0
         
+        // Place the checkers on the board.
         board.clear()
-        setupPieces(player: .white, pieces: game.playerPosition(for: .white))
-        setupPieces(player: .black, pieces: game.playerPosition(for: .black))
+        placeCheckers(player: .white, pieces: game.playerPosition(for: .white))
+        placeCheckers(player: .black, pieces: game.playerPosition(for: .black))
         
-        moves = game.moves(forRoll: game.diceSum)
+        // Recompute properties in case something has changed.
+        allowedMoves = game.moves(forRoll: game.diceSum)
+        solo = appModel.playerType[0] == .computer || appModel.playerType[1] == .computer
+        pickMoveEpoch += 1
+        
+        // Place the buttons based on whether we're in solo mode.
+        if solo {
+            analyzeButton.enabled = false
+            if analyzeButton.parent == nil {
+                addChild(analyzeButton)
+            }
+            menuButton.position = .init(x: -80.0, y: -310.0)
+        } else {
+            analyzeButton.removeFromParent()
+            menuButton.position = .init(x: 0, y: -310.0)
+        }
+        
+        // Start network I/O if necessary
+        if solo && game.state == .makeMove {
+            switch currentType {
+            case .human:
+                analyzeButton.enabled = true
+                fetchAnalysis(forRoll: game.diceSum)
+            case .computer:
+                fetchBestMove(forRoll: game.diceSum)
+            }
+        }
     }
     
-    private func setupPieces(player: PlayerColor, pieces: PlayerPosition) {
+    private func placeCheckers(player: PlayerColor, pieces: PlayerPosition) {
         for i in 0..<pieces.waitCount {
             let pos = positions.position(player, i - BoardPositions.indexOffset)
             board.addChecker(for: player, at: pos)
@@ -105,6 +193,8 @@ final class GameScene: SKScene {
             board.addChecker(for: player, at: pos)
         }
     }
+    
+    // MARK: FSM entry points
     
     private func decideFirstPlayer() {
         game.decideFirstPlayer()
@@ -122,25 +212,38 @@ final class GameScene: SKScene {
     private func rollDice() {
         // Roll the dice and update the available moves based on the outcome.
         pendingDice = GameModel.rollDice()
-        moves = game.moves(forRoll: pendingDice.reduce(0, +))
+        pendingDiceSum = pendingDice.reduce(0, +)
+        allowedMoves = game.moves(forRoll: pendingDiceSum)
         
-        // Animate the roll of the dice.
+        let dice: RollingDice
         switch game.currentPlayer {
         case .white:
-            whiteDice.rollOnTap(newValues: pendingDice, completion: rollComplete)
+            dice = whiteDice
         case .black:
-            blackDice.rollOnTap(newValues: pendingDice, completion: rollComplete)
+            dice = blackDice
+        }
+        
+        // Initiate network I/O before animating the dice. This buys us some extra time for
+        // network latency.
+        switch currentType {
+        case .human:
+            fetchAnalysis(forRoll: pendingDiceSum)
+            dice.rollOnTap(newValues: pendingDice, completion: rollComplete)
+        case .computer:
+            fetchBestMove(forRoll: pendingDiceSum)
+            dice.roll(newValues: pendingDice, completion: rollComplete)
         }
     }
     
     private func rollComplete() {
         game.rollDice(dice: pendingDice)
-        if moves.isEmpty {
+        if allowedMoves.isEmpty {
             displayNoMove()
         } else {
             pickMove()
         }
     }
+    
     private func displayNoMove() {
         let alert = AutoAlert("\(game.currentPlayer) has no move")
         addChild(alert)
@@ -149,19 +252,56 @@ final class GameScene: SKScene {
     }
     
     private func pickMove() {
-        board.pickMove(
-            for: game.currentPlayer,
-            moves: moves.map(convertMove),
-            onMovePicked: onMovePicked
-        )
+        switch currentType {
+        case .human:
+            if solo { analyzeButton.enabled = true }
+            board.pickMove(
+                for: game.currentPlayer,
+                moves: allowedMoves.map(convertMove),
+                onMovePicked: executeMove
+            )
+        case .computer:
+            pickBestMove(
+                onMovePicked: executeMove,
+                onError: { alertNetworkError(retryAction: pickMove) }
+            )
+        }
     }
     
-    private func returnToMainMenu() {
-        changeView?(.menu)
-    }
-    
-    private func onMovePicked(checker: Checker, viewMove: GameBoard.Move) {
+    private func executeMove(checker: Checker, viewMove: GameBoard.Move) {
         guard let modelMove = viewMove.userData as? Move else { return }
+        
+        removeAnnotations()
+        pickMoveEpoch += 1
+        
+        let actions = buildMoveAnimation(checker: checker, viewMove: viewMove)
+        
+        let completion = Ur.isRosette(space: modelMove.to) ? displayRollAgain : rollDice
+        checker.run(SKAction.sequence(actions), completion: completion)
+        
+        game.makeMove(move: modelMove)
+    }
+    
+    private func displayRollAgain() {
+        let alert = AutoAlert("\(game.currentPlayer) rolls again")
+        addChild(alert)
+        alert.display(completion: rollDice)
+    }
+    
+    private func displayGameOutcome() {
+        let alert = AutoAlert("\(game.winner) wins!")
+        addChild(alert)
+        alert.display(completion: doNothing)
+    }
+    
+    private func alertNetworkError(retryAction: () -> Void) { }
+    
+    private func doNothing() { }
+    
+    // MARK: Animations
+    
+    func buildMoveAnimation(checker: Checker, viewMove: GameBoard.Move) -> [SKAction] {
+        guard let modelMove = viewMove.userData as? Move else { return .init() }
         
         var actions = [SKAction]()
         actions.append(SKAction.setLayer(Layer.moving, onTarget: checker))
@@ -188,11 +328,7 @@ final class GameScene: SKScene {
         
         actions.append(SKAction.setLayer(Layer.checkers, onTarget: checker))
         
-        let completion = Ur.isRosette(space: modelMove.to) ? displayRollAgain : rollDice
-        checker.run(SKAction.sequence(actions), completion: completion)
-        
-        game.makeMove(move: modelMove)
-        
+        return actions
     }
     
     private func captureAction(captured: Checker) -> SKAction {
@@ -206,19 +342,111 @@ final class GameScene: SKScene {
         ])
     }
     
-    private func displayRollAgain() {
-        let alert = AutoAlert("\(game.currentPlayer) rolls again")
-        addChild(alert)
-        alert.display(completion: rollDice)
+    
+    // MARK: Annotations
+    
+    private func annotateCheckers(with analysis: [MoveValue]) {
+        for (i, move) in analysis.enumerated() {
+            annotateChecker(at: move.move.from, with: move.value, isBest: (i == 0))
+        }
     }
     
-    private func displayOutcome() {
-        let alert = AutoAlert("\(game.winner) wins!")
-        addChild(alert)
-        alert.display(completion: doNothing)
+    private func annotateChecker(at index: Int, with winProb: Float, isBest: Bool) {
+        guard let checker = board.checker(at: indexToPoint(index)) else { return }
+        
+        let label = SKLabelNode()
+        label.fontColor = isBest ?  UIColor(Color(.analysisGreen)): .red
+        label.fontName = "Helvetica"
+        label.fontSize = 11.0
+        label.horizontalAlignmentMode = .center
+        label.position = .init(x: 0, y: -5)
+        label.text = String(format: "%.2f%%", 100.0 * winProb)
+        
+        let shape = SKShapeNode(rectOf: .init(width: 47.0, height: 15.0), cornerRadius: 2.0)
+        shape.fillColor = .white
+        shape.name = "annotation"
+        shape.position = .init(x: 0.0, y: 27.5)
+        shape.addChild(label)
+        
+        checker.addChild(shape)
     }
     
-    private func doNothing() { }
+    private func removeAnnotations() {
+        analyzeButton.enabled = false
+        for child in board.children {
+            if let checker = child as? Checker {
+                checker.childNode(withName: "annotation")?.removeFromParent()
+            }
+        }
+    }
+    
+    // MARK: SolutionDB operations
+    
+    private func fetchAnalysis(forRoll roll: Int) {
+        guard solo else { return }
+        pendingAnalyze?.cancel()
+        pendingAnalyze = Task { @MainActor in
+            try? await appModel.analyzer.analyze(
+                position: game.position,
+                roll: roll
+            )
+        }
+    }
+    
+    private func fetchBestMove(forRoll roll: Int) {
+        pendingBestMove?.cancel()
+        pendingBestMove = Task{ @MainActor in
+            try? await appModel.analyzer.bestMove(
+                from: game.position,
+                forRoll: roll
+            )
+        }
+    }
+    
+    private func analyzeMoves() {
+        analyzeButton.enabled = false
+        guard let pendingAnalyze = pendingAnalyze else { return }
+        let epoch = pickMoveEpoch
+        
+        Task { @MainActor in
+            let analysis = await pendingAnalyze.value
+            guard let analysis = analysis else {
+                // TODO: Display error
+                return
+            }
+            guard epoch == pickMoveEpoch else { return }
+            annotateCheckers(with: analysis)
+            self.pendingAnalyze = nil
+        }
+    }
+    
+    private func pickBestMove(
+        onMovePicked: GameBoard.OnMovePicked,
+        onError: () -> Void
+    ) {
+        guard let pendingBestMove = pendingBestMove else { return }
+        
+        Task { @MainActor in
+            let move = await pendingBestMove.value
+            guard let move = move else {
+                // TODO: Display error
+                return
+            }
+            let viewMove = convertMove(move)
+            guard let checker = board.checker(at: viewMove.from) else { return }
+            executeMove(checker: checker, viewMove: viewMove)
+        }
+    }
+    
+    // MARK: Convert between logical and screen positions
+    
+    private func convertMove(_ move: Move) -> GameBoard.Move {
+        return .init(
+            from: indexToPoint(move.from),
+            to: indexToPoint(move.to),
+            userData: move
+        )
+    }
     
     private func indexToPoint(_ index: Int) -> CGPoint {
         let shifted: Int
@@ -228,13 +456,5 @@ final class GameScene: SKScene {
             shifted = index
         }
         return positions.position(game.currentPlayer, shifted)
-    }
-    
-    private func convertMove(_ move: Move) -> GameBoard.Move {
-        return .init(
-            from: indexToPoint(move.from),
-            to: indexToPoint(move.to),
-            userData: move
-        )
     }
 }

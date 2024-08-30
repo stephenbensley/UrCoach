@@ -109,6 +109,7 @@
 		DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
 		DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
 		DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C962C7E07B700C9E1D2 /* UtiliKit */; };
+		DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -220,6 +221,7 @@
 		DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +404,7 @@
 			children = (
 				DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */,
 				DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */,
+				DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */,
 				DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */,
 				DCA00C832C7CF2E400C9E1D2 /* PositionAnalyzer.swift in Sources */,
+				DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */,
 				DCA00C842C7CF2E400C9E1D2 /* DynamoNode.swift in Sources */,
 				DCA00C852C7CF2E400C9E1D2 /* AWSConfig.swift in Sources */,
 				DCA00C862C7CF2E400C9E1D2 /* SolutionDBClient.swift in Sources */,
