@@ -60,7 +60,7 @@ final class CloudDBClient: SolutionDBClient {
         }
         return node
     }
-
+    
     func getNodes(ids: [Int32]) async throws -> [SolutionNode] {
         let keys = ids.map { DynamoNode.uint32ToDynamoValue(UInt32(bitPattern: $0)) }
         let dynNodes = try await Self.getNodes(keys: keys)
@@ -71,7 +71,7 @@ final class CloudDBClient: SolutionDBClient {
             return node
         }
     }
-
+    
     // Retrieve a single DynamoNode.
     private static func getNode(key: String) async throws -> DynamoNode {
         // Build the URL
@@ -81,7 +81,7 @@ final class CloudDBClient: SolutionDBClient {
         // Decode into a DynamoNode
         return try JSONDecoder().decode(DynamoNode.self, from: data)
     }
-
+    
     // Retrieve a batch of nodes.
     private static func getNodes(keys: [String]) async throws -> [DynamoNode] {
         // Build the URL
@@ -134,5 +134,39 @@ final class MockDBClient: SolutionDBClient {
         var result = [SolutionNode]()
         for id in ids { try await result.append(getNode(id: id)) }
         return result
+    }
+}
+
+final class FaultyDBClient: SolutionDBClient {
+    private var client = CloudDBClient()
+    private var errorRate = 0
+    private var extraLatency = 0.0
+    
+    init(errorRate: Int = 0, extraLatency: Double = 0.0) {
+        self.errorRate = errorRate
+        self.extraLatency = extraLatency
+    }
+    
+    func getNode(id: Int32) async throws -> SolutionNode {
+        try await injectFaults()
+        return try await client.getNode(id: id)
+    }
+    
+    func getNodes(ids: [Int32]) async throws -> [SolutionNode] {
+        try await injectFaults()
+        return try await client.getNodes(ids: ids)
+    }
+    
+    private func injectFaults() async throws {
+        if errorRate > 0 {
+            if Int.random(in: 1...errorRate) == errorRate {
+                try? await Task.sleep(for: .seconds(3.0))
+                throw SolutionDBError.unexpectedResponse
+            }
+        }
+        
+        if extraLatency > 0.0 {
+            try? await Task.sleep(for: .seconds(extraLatency))
+        }
     }
 }

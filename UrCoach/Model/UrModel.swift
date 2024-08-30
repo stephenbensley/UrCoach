@@ -9,7 +9,11 @@ import CheckersKit
 
 final class UrModel: Codable {
     let game: GameModel
+#if TEST_NETWORK_FAULTS
+    let analyzer = SolutionDB(client: FaultyDBClient(errorRate: 3, extraLatency: 5.0))
+#else
     let analyzer = SolutionDB(client: CloudDBClient())
+#endif
     var playerType: [PlayerType] = [ .human, .computer ]
 
     static let shared = create()
