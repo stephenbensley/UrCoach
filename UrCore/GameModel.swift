@@ -45,19 +45,22 @@ final class GameModel: Codable {
         }
     }
     
-    // Sum of the dice for the current player.
-    var diceSum: Int {
+    // Values of the dice for the current player.
+    var diceValues: [Int] {
         switch currentPlayer {
         case .white:
-            return whiteDice.reduce(0, +)
+            return whiteDice
         case .black:
-            return blackDice.reduce(0, +)
+            return blackDice
         }
     }
+
+    // Sum of the dice for the current player.
+    var diceSum: Int { diceValues.reduce(0, +) }
     
     // Moves available to the current player.
-    func moves(forRoll roll: Int) -> [Move] {
-        position.moves(forRoll: roll)
+    func moves() -> [Move] {
+        position.moves(forRoll: diceSum)
     }
     
     // Start a new game.
@@ -84,15 +87,15 @@ final class GameModel: Codable {
     }
     
     // Roll the dice to determine the current player's moves.
-    func rollDice(dice: [Int] = GameModel.rollDice()) {
+    func rollDice() {
         assert(state == .rollDice)
         state = .makeMove
         
         switch currentPlayer {
         case .white:
-            whiteDice = dice
+            whiteDice = Self.rollDice()
         case .black:
-            blackDice = dice
+            blackDice = Self.rollDice()
         }
     }
     
@@ -113,7 +116,7 @@ final class GameModel: Codable {
     }
     
     // Generate a random dice roll.
-    static func rollDice() -> [Int] {
+    private static func rollDice() -> [Int] {
         (0..<Ur.diceCount).map {_ in Int.random(in: 0...1) }
     }
     

@@ -20,7 +20,10 @@ public extension GamePalette {
 final class GameScene: SKScene {
     // Game coordinates are designed for this size.
     static private let minSize = CGSize(width: 390, height: 750)
-    
+    // Time it takes to move one space on the board
+    static private let moveDuration = 0.5
+    // Amount by which to accelerate entry/exit
+    static private let entryExitSpeedUp = 1.50
     // SKNode names
     static private let annotationName = "annotation"
     
@@ -39,11 +42,6 @@ final class GameScene: SKScene {
     private let analyzeButton = SKButton("Analyze", size: .init(width: 125, height: 45))
     private let menuButton = SKButton("Menu", size: .init(width: 125, height: 45))
     
-    // The next roll of the dice. We precompute this, so we can query the analyzer as soon as
-    // possible, but we don't want to update the appModel until we've shown this roll to the
-    // players.
-    private var pendingDice = [Int]()
-    private var pendingDiceSum: Int = 0
     // Allowed moves the current player may select from.
     private var allowedMoves = [Move]()
     
@@ -59,6 +57,14 @@ final class GameScene: SKScene {
     // Helpers for frequently accessed state.
     private var currentType: PlayerType { appModel.playerType[game.currentPlayer.rawValue] }
     private var game: GameModel { appModel.game }
+    private var dice: RollingDice {
+        switch game.currentPlayer {
+        case .white:
+            return whiteDice
+        case .black:
+            return blackDice
+        }
+    }
     
     // MARK: Initialization
     
@@ -146,8 +152,6 @@ final class GameScene: SKScene {
         // Setup the dice.
         whiteDice.setValues(game.whiteDice)
         blackDice.setValues(game.blackDice)
-        pendingDice = .init()
-        pendingDiceSum = 0
         
         // Place the checkers on the board.
         board.clear()
@@ -156,7 +160,7 @@ final class GameScene: SKScene {
         
         // Recompute properties in case something has changed.
         board.inputEnabled = true
-        allowedMoves = game.moves(forRoll: game.diceSum)
+        allowedMoves = game.moves()
         solo = appModel.playerType[0] == .computer || appModel.playerType[1] == .computer
         pickMoveEpoch += 1
         
@@ -213,37 +217,23 @@ final class GameScene: SKScene {
     
     private func rollDice() {
         // Roll the dice and update the available moves based on the outcome.
-        pendingDice = GameModel.rollDice()
-        pendingDiceSum = pendingDice.reduce(0, +)
-        allowedMoves = game.moves(forRoll: pendingDiceSum)
+        game.rollDice()
+        allowedMoves = game.moves()
         
-        let dice: RollingDice
-        switch game.currentPlayer {
-        case .white:
-            dice = whiteDice
-        case .black:
-            dice = blackDice
-        }
+        let nextState = allowedMoves.isEmpty ? displayNoMove : pickMove
         
         // Initiate network I/O before animating the dice. This buys us some extra time for
         // network latency.
         switch currentType {
         case .human:
-            fetchAnalysis(forRoll: pendingDiceSum)
-            dice.rollOnTap(newValues: pendingDice, completion: rollComplete)
+            fetchAnalysis(forRoll: game.diceSum)
         case .computer:
-            fetchBestMove(forRoll: pendingDiceSum)
-            dice.roll(newValues: pendingDice, completion: rollComplete)
+            fetchBestMove(forRoll: game.diceSum)
         }
-    }
-    
-    private func rollComplete() {
-        game.rollDice(dice: pendingDice)
-        if allowedMoves.isEmpty {
-            displayNoMove()
-        } else {
-            pickMove()
-        }
+        
+        whiteDice.selected = false
+        blackDice.selected = false
+        dice.roll(newValues: game.diceValues, completion: nextState)
     }
     
     private func displayNoMove() {
@@ -254,6 +244,8 @@ final class GameScene: SKScene {
     }
     
     private func pickMove() {
+        dice.selected = true
+        
         switch currentType {
         case .human:
             if solo { analyzeButton.enabled = true }
@@ -274,22 +266,26 @@ final class GameScene: SKScene {
         
         removeAnnotations()
         pickMoveEpoch += 1
-
-        // Build the animation before updating the game model.
-        let actions = buildMoveAnimation(checker: checker, viewMove: viewMove)
-
-        game.makeMove(move: modelMove)
-
+        
+        let (nextPosition, _) = game.position.tryMove(move: modelMove)
         let nextState: () -> Void
-        if game.isOver {
+        if nextPosition.terminal {
             nextState = displayGameOutcome
         } else if Ur.isRosette(space: modelMove.to) {
             nextState = displayRollAgain
         } else {
             nextState = rollDice
         }
-
-        checker.run(SKAction.sequence(actions), completion: nextState)
+        
+        // Build the animation before updating the game model.
+        let actions = buildMoveAnimation(
+            checker: checker,
+            viewMove: viewMove,
+            completion: nextState
+        )
+        
+        game.makeMove(move: modelMove)
+        checker.run(SKAction.sequence(actions))
     }
     
     private func displayRollAgain() {
@@ -323,48 +319,70 @@ final class GameScene: SKScene {
     
     // MARK: Animations
     
-    func buildMoveAnimation(checker: Checker, viewMove: GameBoard.Move) -> [SKAction] {
+    func buildMoveAnimation(
+        checker: Checker,
+        viewMove: GameBoard.Move,
+        completion: @escaping () -> Void
+    ) -> [SKAction] {
         guard let modelMove = viewMove.userData as? Move else { return .init() }
+        
+        var runBlock = completion
         
         var actions = [SKAction]()
         actions.append(SKAction.setLayer(Layer.moving, onTarget: checker))
         
         if modelMove.from < 0 {
-            let entry = positions.position(game.currentPlayer, -1)
-            actions.append(SKAction.move(to: entry, duration: 1.0))
+            let entryPoint = positions.position(game.currentPlayer, -1)
+            let duration = Self.entryExitDuration(from: checker.position, to: entryPoint)
+            actions.append(SKAction.move(to: entryPoint, duration: duration))
         }
         
         for i in (modelMove.from + 1)...modelMove.to {
-            let entry = positions.position(game.currentPlayer, i)
-            actions.append(SKAction.move(to: entry, duration: 0.5))
+            let to = positions.position(game.currentPlayer, i)
+            actions.append(SKAction.move(to: to, duration: Self.moveDuration))
         }
         
         if modelMove.to == Ur.spaceCount {
-            actions.append(SKAction.fadeOut(withDuration: 0.5))
+            actions.append(SKAction.fadeOut(withDuration: Self.moveDuration))
             actions.append(SKAction.removeFromParent())
         }
         
         if let captured = board.checker(at: viewMove.to) {
-            let action = captureAction(captured: captured)
+            runBlock = MultiComplete(waitCount: 2, completion: completion).complete
+            let action = buildCaptureAnimation(captured: captured, runBlock: runBlock)
             actions.append(SKAction.run { captured.run(action) })
+            actions.append(SKAction.wait(forDuration: Self.moveDuration))
         }
         
         actions.append(SKAction.setLayer(Layer.checkers, onTarget: checker))
+        actions.append(SKAction.run(runBlock))
         
         return actions
     }
     
-    private func captureAction(captured: Checker) -> SKAction {
+    private func buildCaptureAnimation(
+        captured: Checker,
+        runBlock: @escaping () -> Void
+    ) -> SKAction {
         let player = captured.player
         let waitCount = game.playerPosition(for: player).waitCount
         let to = positions.position(player, waitCount - BoardPositions.indexOffset)
+        let duration = Self.entryExitDuration(from: captured.position, to: to)
         return SKAction.sequence([
             SKAction.setLayer(Layer.captured, onTarget: captured),
-            SKAction.move(to: to, duration: 1.0),
-            SKAction.setLayer(Layer.checkers, onTarget: captured)
+            SKAction.move(to: to, duration: duration),
+            SKAction.setLayer(Layer.checkers, onTarget: captured),
+            SKAction.run(runBlock)
         ])
     }
     
+    static private func entryExitDuration(from: CGPoint, to: CGPoint) -> CGFloat {
+        let deltaX = from.x - to.x
+        let deltaY = from.y - to.y
+        let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
+        let spaces = distance / BoardTarget.size.width
+        return spaces * Self.moveDuration / Self.entryExitSpeedUp
+    }
     
     // MARK: Annotations
     
