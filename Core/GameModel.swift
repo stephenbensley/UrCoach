@@ -116,7 +116,7 @@ final class GameModel: Codable {
     }
     
     // Generate a random dice roll.
-    private static func rollDice() -> [Int] {
+    static func rollDice() -> [Int] {
         (0..<Ur.diceCount).map {_ in Int.random(in: 0...1) }
     }
     

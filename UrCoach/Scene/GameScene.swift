@@ -161,18 +161,16 @@ final class GameScene: SKScene {
         // Recompute properties in case something has changed.
         board.inputEnabled = true
         allowedMoves = game.moves()
-        solo = appModel.playerType[0] == .computer || appModel.playerType[1] == .computer
+        solo = appModel.playerType[0] != appModel.playerType[1]
         pickMoveEpoch += 1
         
         // Place the buttons based on whether we're in solo mode.
         if solo {
             analyzeButton.enabled = false
-            if analyzeButton.parent == nil {
-                addChild(analyzeButton)
-            }
+            analyzeButton.isHidden = false
             menuButton.position = .init(x: -80.0, y: -310.0)
         } else {
-            analyzeButton.removeFromParent()
+            analyzeButton.isHidden = true
             menuButton.position = .init(x: 0, y: -310.0)
         }
         

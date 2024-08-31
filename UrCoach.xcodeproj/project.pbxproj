@@ -17,7 +17,7 @@
 		DC1D07432C7E5F0A000B7D5B /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC1D07422C7E5F0A000B7D5B /* rules.txt */; };
 		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
 		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
-		DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* SolverApp.swift */; };
+		DC729EB22C7A4AAA00193A2E /* UrSolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */; };
 		DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB32C7A4AAA00193A2E /* ContentView.swift */; };
 		DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB52C7A4AAB00193A2E /* Assets.xcassets */; };
 		DC729ECB2C7A4BC300193A2E /* BufferedTextFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EC92C7A4BC300193A2E /* BufferedTextFile.swift */; };
@@ -28,46 +28,7 @@
 		DC729F0C2C7A68C200193A2E /* PositionAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE32C7A507000193A2E /* PositionAnalyzerTests.swift */; };
 		DC729F182C7A6B7A00193A2E /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EF42C7A580E00193A2E /* Tournament.swift */; };
 		DC729F1E2C7A6BB100193A2E /* urSolution.data in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
-		DC729F212C7A8C5D00193A2E /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DC729F222C7A8C5D00193A2E /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
-		DC729F232C7A8C5D00193A2E /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
-		DC729F252C7A8C5D00193A2E /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
-		DC729F262C7A8C5D00193A2E /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DC729F282C7A8C5D00193A2E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
-		DC729F292C7A8C5D00193A2E /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
-		DC729F2A2C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DC729F2B2C7A8C5D00193A2E /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DC729F2C2C7A8C5D00193A2E /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DC729F2D2C7A8C5D00193A2E /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
-		DC729F2E2C7A8C5D00193A2E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
-		DC729F2F2C7A8C5D00193A2E /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
-		DC729F302C7A8C5D00193A2E /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DC729F312C7A8C5D00193A2E /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
-		DC729F322C7A8C5D00193A2E /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
-		DC729F342C7A8C5D00193A2E /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
-		DC729F352C7A8C5D00193A2E /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DC729F372C7A8C5D00193A2E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
-		DC729F382C7A8C5D00193A2E /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
-		DC729F392C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DC729F3A2C7A8C5D00193A2E /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DC729F3B2C7A8C5D00193A2E /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DC729F3C2C7A8C5D00193A2E /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
-		DC729F3D2C7A8C5D00193A2E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
-		DC729F3E2C7A8C5D00193A2E /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
-		DC729F3F2C7A8C5E00193A2E /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DC729F402C7A8C5E00193A2E /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
-		DC729F412C7A8C5E00193A2E /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
-		DC729F432C7A8C5E00193A2E /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
-		DC729F442C7A8C5E00193A2E /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
 		DC729F452C7A8C5E00193A2E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
-		DC729F462C7A8C5E00193A2E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
-		DC729F472C7A8C5E00193A2E /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
-		DC729F482C7A8C5E00193A2E /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DC729F492C7A8C5E00193A2E /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DC729F4A2C7A8C5E00193A2E /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DC729F4B2C7A8C5E00193A2E /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
-		DC729F4C2C7A8C5E00193A2E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
-		DC729F4D2C7A8C5E00193A2E /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
 		DC89A5A52C7A413B005D0269 /* PlayerPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A12C7A413B005D0269 /* PlayerPositionTests.swift */; };
 		DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */; };
 		DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
@@ -75,19 +36,6 @@
 		DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB512C7E0C0700ECB509 /* UtiliKit */; };
 		DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB542C7E0CCB00ECB509 /* UtiliKit */; };
 		DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */; };
-		DCA00C332C7A8E9100C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
-		DCA00C342C7A8E9100C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
-		DCA00C352C7A8E9100C9E1D2 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DCA00C362C7A8E9100C9E1D2 /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
-		DCA00C382C7A8E9100C9E1D2 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
-		DCA00C392C7A8E9100C9E1D2 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DCA00C3A2C7A8E9100C9E1D2 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DCA00C3C2C7A8E9100C9E1D2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
-		DCA00C3D2C7A8E9100C9E1D2 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DCA00C3E2C7A8E9100C9E1D2 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
-		DCA00C3F2C7A8E9100C9E1D2 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
-		DCA00C402C7A8E9100C9E1D2 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DCA00C412C7A8E9100C9E1D2 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
 		DCA00C452C7AAF6600C9E1D2 /* GameModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C442C7AAF6600C9E1D2 /* GameModelTests.swift */; };
 		DCA00C472C7AB20700C9E1D2 /* SafeCountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */; };
 		DCA00C492C7B942600C9E1D2 /* CloudDBClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */; };
@@ -95,21 +43,54 @@
 		DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */; };
 		DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */; };
 		DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */; };
-		DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
-		DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
-		DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
-		DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
-		DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
-		DCA00C832C7CF2E400C9E1D2 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
-		DCA00C842C7CF2E400C9E1D2 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
-		DCA00C852C7CF2E400C9E1D2 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
-		DCA00C862C7CF2E400C9E1D2 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
-		DCA00C872C7CF2E400C9E1D2 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
-		DCA00C882C7CF2E400C9E1D2 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
-		DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
-		DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
 		DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C962C7E07B700C9E1D2 /* UtiliKit */; };
 		DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */; };
+		DCBDB97E2C836BD700667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCBDB97F2C836BD700667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCBDB9802C836BF100667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCBDB9812C836C0000667654 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DCBDB9822C836C0A00667654 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCBDB9832C836C1500667654 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DCBDB9842C836C1D00667654 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DCBDB9852C836C5600667654 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DCBDB9862C836C5D00667654 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
+		DCBDB9872C836C6900667654 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DCBDB9882C836C7000667654 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
+		DCBDB9892C836C8E00667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCBDB98A2C836C9100667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCBDB98B2C836C9400667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCBDB98C2C836C9700667654 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCBDB98D2C836C9B00667654 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DCBDB98E2C836CAC00667654 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DCBDB9902C836D3800667654 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DCBDB9912C836D4B00667654 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DCBDB9922C836D7D00667654 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DCBDB9932C836D7D00667654 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DCBDB9942C836D7D00667654 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DCBDB9952C836D7D00667654 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DCBDB9962C836D7D00667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCBDB9972C836D7D00667654 /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
+		DCBDB9982C836D7D00667654 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCBDB9992C836D7D00667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCBDB99A2C836D7D00667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCBDB99B2C836D7D00667654 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DCBDB99C2C836D9800667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCBDB99D2C836D9800667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCBDB99E2C836D9800667654 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCBDB99F2C836D9800667654 /* Solver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5932C7A410A005D0269 /* Solver.swift */; };
+		DCBDB9A02C836D9800667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCBDB9A12C836D9800667654 /* SafeCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5972C7A410A005D0269 /* SafeCounts.swift */; };
+		DCBDB9A22C836D9800667654 /* PositionValuesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5952C7A410A005D0269 /* PositionValuesBuilder.swift */; };
+		DCBDB9A42C836E3F00667654 /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
+		DCBDB9A52C836E3F00667654 /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DCBDB9A62C836E3F00667654 /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DCBDB9A72C836E3F00667654 /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DCBDB9A82C836E3F00667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DCBDB9A92C836E3F00667654 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DCBDB9AA2C836E3F00667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DCBDB9AB2C836E3F00667654 /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DCBDB9AC2C836E3F00667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DCBDB9AD2C836E3F00667654 /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,8 +127,8 @@
 		DC729F092C7A687B00193A2E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstPath = /private/tmp;
+			dstSubfolderSpec = 0;
 			files = (
 				DC729F0A2C7A688600193A2E /* urSolution.data in CopyFiles */,
 			);
@@ -187,10 +168,9 @@
 		DC729E942C7A429F00193A2E /* DynamoNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNodeTests.swift; sourceTree = "<group>"; };
 		DC729EA22C7A438400193A2E /* urSolution.data */ = {isa = PBXFileReference; lastKnownFileType = file; path = urSolution.data; sourceTree = "<group>"; };
 		DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ur Solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC729EB12C7A4AAA00193A2E /* SolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverApp.swift; sourceTree = "<group>"; };
+		DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrSolverApp.swift; sourceTree = "<group>"; };
 		DC729EB32C7A4AAA00193A2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC729EB52C7A4AAB00193A2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DC729EBA2C7A4AAB00193A2E /* Solver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Solver.entitlements; sourceTree = "<group>"; };
 		DC729EC22C7A4BB400193A2E /* DynamoDBGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DynamoDBGen; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC729EC92C7A4BC300193A2E /* BufferedTextFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferedTextFile.swift; sourceTree = "<group>"; };
 		DC729ECA2C7A4BC300193A2E /* DynamoDbFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoDbFileGenerator.swift; sourceTree = "<group>"; };
@@ -200,7 +180,7 @@
 		DC729EF42C7A580E00193A2E /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		DC729F112C7A6B7100193A2E /* Tournament */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tournament; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC729F1F2C7A840300193A2E /* SolutionDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionDB.swift; sourceTree = "<group>"; };
-		DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC89A5832C7A40F5005D0269 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC89A5922C7A410A005D0269 /* GamePosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePosition.swift; sourceTree = "<group>"; };
 		DC89A5932C7A410A005D0269 /* Solver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Solver.swift; sourceTree = "<group>"; };
 		DC89A5942C7A410A005D0269 /* Ur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ur.swift; sourceTree = "<group>"; };
@@ -222,6 +202,7 @@
 		DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkAlert.swift; sourceTree = "<group>"; };
+		DCBDB9A32C836E2200667654 /* UrSolver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrSolver.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,15 +261,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		DC729EB02C7A4AAA00193A2E /* Solver */ = {
+		DC729EB02C7A4AAA00193A2E /* UrSolver */ = {
 			isa = PBXGroup;
 			children = (
-				DC729EB12C7A4AAA00193A2E /* SolverApp.swift */,
+				DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */,
 				DC729EB32C7A4AAA00193A2E /* ContentView.swift */,
 				DC729EB52C7A4AAB00193A2E /* Assets.xcassets */,
-				DC729EBA2C7A4AAB00193A2E /* Solver.entitlements */,
+				DCBDB9A32C836E2200667654 /* UrSolver.entitlements */,
 			);
-			path = Solver;
+			path = UrSolver;
 			sourceTree = "<group>";
 		};
 		DC729EC32C7A4BB400193A2E /* DynamoDBGen */ = {
@@ -319,22 +300,22 @@
 		DC89A56F2C7A40E1005D0269 = {
 			isa = PBXGroup;
 			children = (
+				DC89A57D2C7A40F5005D0269 /* Core */,
+				DC89A5872C7A40F5005D0269 /* CoreTests */,
 				DC729EC32C7A4BB400193A2E /* DynamoDBGen */,
 				DC729ECF2C7A4CD700193A2E /* Frameworks */,
 				DC89A57C2C7A40F5005D0269 /* Products */,
 				DC729EA12C7A436F00193A2E /* Resources */,
-				DC729EB02C7A4AAA00193A2E /* Solver */,
 				DC729F122C7A6B7100193A2E /* Tournament */,
 				DCA00C4F2C7BCA8500C9E1D2 /* UrCoach */,
-				DC89A57D2C7A40F5005D0269 /* UrCore */,
-				DC89A5872C7A40F5005D0269 /* UrCoreTests */,
+				DC729EB02C7A4AAA00193A2E /* UrSolver */,
 			);
 			sourceTree = "<group>";
 		};
 		DC89A57C2C7A40F5005D0269 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */,
+				DC89A5832C7A40F5005D0269 /* CoreTests.xctest */,
 				DC729EAF2C7A4AAA00193A2E /* Ur Solver.app */,
 				DC729EC22C7A4BB400193A2E /* DynamoDBGen */,
 				DC729F112C7A6B7100193A2E /* Tournament */,
@@ -343,7 +324,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC89A57D2C7A40F5005D0269 /* UrCore */ = {
+		DC89A57D2C7A40F5005D0269 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				DC729E8B2C7A428800193A2E /* AWSConfig.swift */,
@@ -360,10 +341,10 @@
 				DC89A5932C7A410A005D0269 /* Solver.swift */,
 				DC89A5942C7A410A005D0269 /* Ur.swift */,
 			);
-			path = UrCore;
+			path = Core;
 			sourceTree = "<group>";
 		};
-		DC89A5872C7A40F5005D0269 /* UrCoreTests */ = {
+		DC89A5872C7A40F5005D0269 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
 				DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */,
@@ -376,7 +357,7 @@
 				DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */,
 				DC89A5A32C7A413B005D0269 /* TestUtils.swift */,
 			);
-			path = UrCoreTests;
+			path = CoreTests;
 			sourceTree = "<group>";
 		};
 		DCA00C4F2C7BCA8500C9E1D2 /* UrCoach */ = {
@@ -431,9 +412,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC729EAE2C7A4AAA00193A2E /* Solver */ = {
+		DC729EAE2C7A4AAA00193A2E /* UrSolver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */;
+			buildConfigurationList = DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "UrSolver" */;
 			buildPhases = (
 				DC729EAB2C7A4AAA00193A2E /* Sources */,
 				DC729EAC2C7A4AAA00193A2E /* Frameworks */,
@@ -444,7 +425,7 @@
 			);
 			dependencies = (
 			);
-			name = Solver;
+			name = UrSolver;
 			packageProductDependencies = (
 				DC1D07342C7E401B000B7D5B /* UtiliKit */,
 			);
@@ -494,9 +475,9 @@
 			productReference = DC729F112C7A6B7100193A2E /* Tournament */;
 			productType = "com.apple.product-type.tool";
 		};
-		DC89A5822C7A40F5005D0269 /* UrCoreTests */ = {
+		DC89A5822C7A40F5005D0269 /* CoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC89A58E2C7A40F5005D0269 /* Build configuration list for PBXNativeTarget "UrCoreTests" */;
+			buildConfigurationList = DC89A58E2C7A40F5005D0269 /* Build configuration list for PBXNativeTarget "CoreTests" */;
 			buildPhases = (
 				DC89A57F2C7A40F5005D0269 /* Sources */,
 				DC89A5802C7A40F5005D0269 /* Frameworks */,
@@ -507,12 +488,12 @@
 			);
 			dependencies = (
 			);
-			name = UrCoreTests;
+			name = CoreTests;
 			packageProductDependencies = (
 				DC1D073A2C7E407F000B7D5B /* UtiliKit */,
 			);
 			productName = UrCoreTests;
-			productReference = DC89A5832C7A40F5005D0269 /* UrCoreTests.xctest */;
+			productReference = DC89A5832C7A40F5005D0269 /* CoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		DCA00C4D2C7BCA8500C9E1D2 /* UrCoach */ = {
@@ -582,11 +563,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				DC89A5822C7A40F5005D0269 /* CoreTests */,
 				DC729EC12C7A4BB400193A2E /* DynamoDBGen */,
-				DC729EAE2C7A4AAA00193A2E /* Solver */,
 				DC729F102C7A6B7100193A2E /* Tournament */,
 				DCA00C4D2C7BCA8500C9E1D2 /* UrCoach */,
-				DC89A5822C7A40F5005D0269 /* UrCoreTests */,
+				DC729EAE2C7A4AAA00193A2E /* UrSolver */,
 			);
 		};
 /* End PBXProject section */
@@ -623,21 +604,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBDB99C2C836D9800667654 /* GamePosition.swift in Sources */,
+				DCBDB99D2C836D9800667654 /* PlayerPosition.swift in Sources */,
+				DCBDB99E2C836D9800667654 /* PositionValues.swift in Sources */,
+				DCBDB99F2C836D9800667654 /* Solver.swift in Sources */,
+				DCBDB9A02C836D9800667654 /* Ur.swift in Sources */,
+				DCBDB9A12C836D9800667654 /* SafeCounts.swift in Sources */,
+				DCBDB9A22C836D9800667654 /* PositionValuesBuilder.swift in Sources */,
 				DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */,
-				DC729EB22C7A4AAA00193A2E /* SolverApp.swift in Sources */,
-				DC729F302C7A8C5D00193A2E /* AWSConfig.swift in Sources */,
-				DC729F312C7A8C5D00193A2E /* Solver.swift in Sources */,
-				DC729F322C7A8C5D00193A2E /* Ur.swift in Sources */,
-				DC729F342C7A8C5D00193A2E /* PositionValues.swift in Sources */,
-				DC729F352C7A8C5D00193A2E /* SafeCounts.swift in Sources */,
-				DC729F372C7A8C5D00193A2E /* PlayerPosition.swift in Sources */,
-				DC729F382C7A8C5D00193A2E /* GamePosition.swift in Sources */,
-				DC729F392C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */,
-				DC729F3A2C7A8C5D00193A2E /* SolutionDBClient.swift in Sources */,
-				DC729F3B2C7A8C5D00193A2E /* DynamoNode.swift in Sources */,
-				DC729F3C2C7A8C5D00193A2E /* SolutionDB.swift in Sources */,
-				DC729F3D2C7A8C5D00193A2E /* GameModel.swift in Sources */,
-				DC729F3E2C7A8C5D00193A2E /* PositionValuesBuilder.swift in Sources */,
+				DC729EB22C7A4AAA00193A2E /* UrSolverApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,21 +620,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBDB9892C836C8E00667654 /* GamePosition.swift in Sources */,
+				DCBDB9912C836D4B00667654 /* AWSConfig.swift in Sources */,
+				DCBDB98A2C836C9100667654 /* PlayerPosition.swift in Sources */,
 				DC729ECB2C7A4BC300193A2E /* BufferedTextFile.swift in Sources */,
+				DCBDB98E2C836CAC00667654 /* SolutionDBClient.swift in Sources */,
+				DCBDB98B2C836C9400667654 /* Ur.swift in Sources */,
+				DCBDB98C2C836C9700667654 /* PositionValues.swift in Sources */,
+				DCBDB98D2C836C9B00667654 /* DynamoNode.swift in Sources */,
+				DCBDB9902C836D3800667654 /* PositionAnalyzer.swift in Sources */,
 				DC729ECC2C7A4BC300193A2E /* DynamoDbFileGenerator.swift in Sources */,
-				DC729F212C7A8C5D00193A2E /* AWSConfig.swift in Sources */,
-				DC729F222C7A8C5D00193A2E /* Solver.swift in Sources */,
-				DC729F232C7A8C5D00193A2E /* Ur.swift in Sources */,
-				DC729F252C7A8C5D00193A2E /* PositionValues.swift in Sources */,
-				DC729F262C7A8C5D00193A2E /* SafeCounts.swift in Sources */,
-				DC729F282C7A8C5D00193A2E /* PlayerPosition.swift in Sources */,
-				DC729F292C7A8C5D00193A2E /* GamePosition.swift in Sources */,
-				DC729F2A2C7A8C5D00193A2E /* PositionAnalyzer.swift in Sources */,
-				DC729F2B2C7A8C5D00193A2E /* SolutionDBClient.swift in Sources */,
-				DC729F2C2C7A8C5D00193A2E /* DynamoNode.swift in Sources */,
-				DC729F2D2C7A8C5D00193A2E /* SolutionDB.swift in Sources */,
-				DC729F2E2C7A8C5D00193A2E /* GameModel.swift in Sources */,
-				DC729F2F2C7A8C5D00193A2E /* PositionValuesBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,20 +637,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC729F3F2C7A8C5E00193A2E /* AWSConfig.swift in Sources */,
-				DC729F402C7A8C5E00193A2E /* Solver.swift in Sources */,
-				DC729F412C7A8C5E00193A2E /* Ur.swift in Sources */,
-				DC729F432C7A8C5E00193A2E /* PositionValues.swift in Sources */,
-				DC729F442C7A8C5E00193A2E /* SafeCounts.swift in Sources */,
 				DC729F452C7A8C5E00193A2E /* Strategy.swift in Sources */,
-				DC729F462C7A8C5E00193A2E /* PlayerPosition.swift in Sources */,
-				DC729F472C7A8C5E00193A2E /* GamePosition.swift in Sources */,
-				DC729F482C7A8C5E00193A2E /* PositionAnalyzer.swift in Sources */,
-				DC729F492C7A8C5E00193A2E /* SolutionDBClient.swift in Sources */,
-				DC729F4A2C7A8C5E00193A2E /* DynamoNode.swift in Sources */,
-				DC729F4B2C7A8C5E00193A2E /* SolutionDB.swift in Sources */,
-				DC729F4C2C7A8C5E00193A2E /* GameModel.swift in Sources */,
-				DC729F4D2C7A8C5E00193A2E /* PositionValuesBuilder.swift in Sources */,
+				DCBDB9922C836D7D00667654 /* AWSConfig.swift in Sources */,
+				DCBDB9932C836D7D00667654 /* GameModel.swift in Sources */,
+				DCBDB9942C836D7D00667654 /* SolutionDBClient.swift in Sources */,
+				DCBDB9952C836D7D00667654 /* PositionAnalyzer.swift in Sources */,
+				DCBDB9962C836D7D00667654 /* Ur.swift in Sources */,
+				DCBDB9972C836D7D00667654 /* SolutionDB.swift in Sources */,
+				DCBDB9982C836D7D00667654 /* PositionValues.swift in Sources */,
+				DCBDB9992C836D7D00667654 /* GamePosition.swift in Sources */,
+				DCBDB99A2C836D7D00667654 /* PlayerPosition.swift in Sources */,
+				DCBDB99B2C836D7D00667654 /* DynamoNode.swift in Sources */,
 				DC729F182C7A6B7A00193A2E /* Tournament.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,27 +656,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCBDB9822C836C0A00667654 /* PositionValues.swift in Sources */,
 				DC89A5A52C7A413B005D0269 /* PlayerPositionTests.swift in Sources */,
 				DC729F0B2C7A68C200193A2E /* DynamoNodeTests.swift in Sources */,
+				DCBDB9802C836BF100667654 /* Ur.swift in Sources */,
+				DCBDB9812C836C0000667654 /* SolutionDBClient.swift in Sources */,
 				DC729F0C2C7A68C200193A2E /* PositionAnalyzerTests.swift in Sources */,
 				DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */,
-				DCA00C332C7A8E9100C9E1D2 /* Solver.swift in Sources */,
-				DCA00C342C7A8E9100C9E1D2 /* Ur.swift in Sources */,
-				DCA00C352C7A8E9100C9E1D2 /* DynamoNode.swift in Sources */,
-				DCA00C362C7A8E9100C9E1D2 /* SolutionDB.swift in Sources */,
 				DCA00C452C7AAF6600C9E1D2 /* GameModelTests.swift in Sources */,
-				DCA00C382C7A8E9100C9E1D2 /* PositionValuesBuilder.swift in Sources */,
+				DCBDB9862C836C5D00667654 /* SafeCounts.swift in Sources */,
+				DCBDB97E2C836BD700667654 /* GamePosition.swift in Sources */,
+				DCBDB9882C836C7000667654 /* PositionValuesBuilder.swift in Sources */,
+				DCBDB9872C836C6900667654 /* GameModel.swift in Sources */,
+				DCBDB97F2C836BD700667654 /* PlayerPosition.swift in Sources */,
+				DCBDB9832C836C1500667654 /* DynamoNode.swift in Sources */,
+				DCBDB9842C836C1D00667654 /* AWSConfig.swift in Sources */,
 				DCA00C492C7B942600C9E1D2 /* CloudDBClientTests.swift in Sources */,
-				DCA00C392C7A8E9100C9E1D2 /* SafeCounts.swift in Sources */,
-				DCA00C3A2C7A8E9100C9E1D2 /* SolutionDBClient.swift in Sources */,
-				DCA00C3C2C7A8E9100C9E1D2 /* GameModel.swift in Sources */,
-				DCA00C3D2C7A8E9100C9E1D2 /* AWSConfig.swift in Sources */,
-				DCA00C3E2C7A8E9100C9E1D2 /* GamePosition.swift in Sources */,
-				DCA00C3F2C7A8E9100C9E1D2 /* PlayerPosition.swift in Sources */,
-				DCA00C402C7A8E9100C9E1D2 /* PositionAnalyzer.swift in Sources */,
-				DCA00C412C7A8E9100C9E1D2 /* PositionValues.swift in Sources */,
 				DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */,
 				DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */,
+				DCBDB9852C836C5600667654 /* PositionAnalyzer.swift in Sources */,
 				DCA00C472C7AB20700C9E1D2 /* SafeCountsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,23 +684,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */,
-				DCA00C7E2C7CF2E400C9E1D2 /* GamePosition.swift in Sources */,
-				DCA00C7F2C7CF2E400C9E1D2 /* PositionValuesBuilder.swift in Sources */,
 				DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */,
 				DC1D073D2C7E5CEA000B7D5B /* MenuView.swift in Sources */,
 				DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */,
-				DCA00C802C7CF2E400C9E1D2 /* Ur.swift in Sources */,
-				DCA00C812C7CF2E400C9E1D2 /* SafeCounts.swift in Sources */,
-				DCA00C822C7CF2E400C9E1D2 /* SolutionDB.swift in Sources */,
-				DCA00C832C7CF2E400C9E1D2 /* PositionAnalyzer.swift in Sources */,
 				DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */,
-				DCA00C842C7CF2E400C9E1D2 /* DynamoNode.swift in Sources */,
-				DCA00C852C7CF2E400C9E1D2 /* AWSConfig.swift in Sources */,
-				DCA00C862C7CF2E400C9E1D2 /* SolutionDBClient.swift in Sources */,
-				DCA00C872C7CF2E400C9E1D2 /* PositionValues.swift in Sources */,
-				DCA00C882C7CF2E400C9E1D2 /* GameModel.swift in Sources */,
-				DCA00C892C7CF2E400C9E1D2 /* Solver.swift in Sources */,
-				DCA00C8A2C7CF2E400C9E1D2 /* PlayerPosition.swift in Sources */,
+				DCBDB9A42C836E3F00667654 /* SolutionDB.swift in Sources */,
+				DCBDB9A52C836E3F00667654 /* AWSConfig.swift in Sources */,
+				DCBDB9A62C836E3F00667654 /* DynamoNode.swift in Sources */,
+				DCBDB9A72C836E3F00667654 /* SolutionDBClient.swift in Sources */,
+				DCBDB9A82C836E3F00667654 /* GamePosition.swift in Sources */,
+				DCBDB9A92C836E3F00667654 /* GameModel.swift in Sources */,
+				DCBDB9AA2C836E3F00667654 /* PlayerPosition.swift in Sources */,
+				DCBDB9AB2C836E3F00667654 /* PositionValues.swift in Sources */,
+				DCBDB9AC2C836E3F00667654 /* Ur.swift in Sources */,
+				DCBDB9AD2C836E3F00667654 /* PositionAnalyzer.swift in Sources */,
 				DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */,
 				DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */,
 				DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */,
@@ -780,7 +742,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UrSolver/UrSolver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -864,7 +826,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Solver/Solver.entitlements;
+				CODE_SIGN_ENTITLEMENTS = UrSolver/UrSolver.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1397,7 +1359,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrCoach;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST_ENDGAME";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1488,7 +1450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "Solver" */ = {
+		DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "UrSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC729EBC2C7A4AAB00193A2E /* Debug */,
@@ -1524,7 +1486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC89A58E2C7A40F5005D0269 /* Build configuration list for PBXNativeTarget "UrCoreTests" */ = {
+		DC89A58E2C7A40F5005D0269 /* Build configuration list for PBXNativeTarget "CoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC89A58F2C7A40F5005D0269 /* Debug */,
