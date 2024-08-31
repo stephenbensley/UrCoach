@@ -123,7 +123,7 @@ final class GameModel: Codable {
 #if TEST_ENDGAME
     func testEndGame() {
         let endPos = PlayerPosition(bitboard: 0x2000, waitCount: 0)
-        position = .init(attacker: endPos, defender: endPos)
+        inPlayPosition = .init(attacker: endPos, defender: endPos)
     }
 #endif
 }

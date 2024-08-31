@@ -10,7 +10,6 @@ import SwiftUI
 import CheckersKit
 import UtiliKit
 
-
 public extension GamePalette {
     static let analysisGreen = BoardGameColor(Color(.analysisGreen))
     static let analysisRed   = BoardGameColor(Color(.red))
@@ -20,15 +19,15 @@ public extension GamePalette {
 final class GameScene: SKScene {
     // Game coordinates are designed for this size.
     static private let minSize = CGSize(width: 390, height: 750)
+    // Side length for the board spaces.
+    static private let spaceLength = 55.0
     // Time it takes to move one space on the board
-    static private let moveDuration = 0.5
-    // Amount by which to accelerate entry/exit
-    static private let entryExitSpeedUp = 1.50
+    static private let moveDuration = 0.35
     // SKNode names
     static private let annotationName = "annotation"
     
     // Global game state
-    private var appModel = UrModel.shared
+    private let appModel = UrModel.shared
     // Set by the enclosing SwiftUI view to allow this scene to return to the main menu.
     private var changeView: ChangeView? = nil
     
@@ -42,7 +41,7 @@ final class GameScene: SKScene {
     private let analyzeButton = SKButton("Analyze", size: .init(width: 125, height: 45))
     private let menuButton = SKButton("Menu", size: .init(width: 125, height: 45))
     
-    // Allowed moves the current player may select from.
+    // Allowed moves for the current turn.
     private var allowedMoves = [Move]()
     
     // True if a human is playing solo against the computer.
@@ -50,8 +49,8 @@ final class GameScene: SKScene {
     // Pending SolutionDB queries (if any).
     private var pendingBestMove: Task<Move?, Never>? = nil
     private var pendingAnalyze: Task<[MoveValue]?, Never>? = nil
-    // Used to detect stale move analyses. If the user has already picked a move, by the time the
-    // analysis completes, then the analysis isn't useful anymore.
+    // Used to detect stale move analyses. If the user picks a move before the analysis query
+    // completes, then the analysis isn't useful anymore.
     private var pickMoveEpoch = 0
     
     // Helpers for frequently accessed state.
@@ -95,12 +94,18 @@ final class GameScene: SKScene {
     
     private func addTargets() {
         for i in 0...Ur.spaceCount {
-            let pos = positions.position(.white, i)
-            board.addTarget(at: pos)
+            let pos = positions.position(.white, index: i)
+            addTarget(at: pos)
             if !Ur.isShared(space: i) {
-                board.addTarget(at: pos.reflectedOverY)
+                addTarget(at: pos.reflectedOverY)
             }
         }
+    }
+    
+    private func addTarget(at position: CGPoint) {
+        let target = BoardTarget(sideLength: Self.spaceLength)
+        target.position = position
+        board.addChild(target)
     }
     
     // Invoked when we've been added to a SwiftUI view.
@@ -149,17 +154,17 @@ final class GameScene: SKScene {
     }
     
     private func loadAppModel() {
-        // Setup the dice.
-        whiteDice.setValues(game.whiteDice)
-        blackDice.setValues(game.blackDice)
-        
         // Place the checkers on the board.
         board.clear()
         placeCheckers(player: .white, pieces: game.playerPosition(for: .white))
         placeCheckers(player: .black, pieces: game.playerPosition(for: .black))
-        
-        // Recompute properties in case something has changed.
         board.inputEnabled = true
+        
+        // Setup the dice.
+        whiteDice.setValues(game.whiteDice)
+        blackDice.setValues(game.blackDice)
+        
+        // Update derived properties.
         allowedMoves = game.moves()
         solo = appModel.playerType[0] != appModel.playerType[1]
         pickMoveEpoch += 1
@@ -188,14 +193,20 @@ final class GameScene: SKScene {
     
     private func placeCheckers(player: PlayerColor, pieces: PlayerPosition) {
         for i in 0..<pieces.waitCount {
-            let pos = positions.position(player, i - BoardPositions.indexOffset)
-            board.addChecker(for: player, at: pos)
+            let pos = positions.position(player, waitSlot: i)
+            placeChecker(for: player, at: pos)
         }
         
         for i in 0..<Ur.spaceCount where pieces.occupies(space: i) {
-            let pos = positions.position(player, i)
-            board.addChecker(for: player, at: pos)
+            let pos = positions.position(player, index: i)
+            placeChecker(for: player, at: pos)
         }
+    }
+    
+    private func placeChecker(for player: PlayerColor, at position: CGPoint) {
+        let checker = Checker(player: player)
+        checker.position = position
+        board.addChild(checker)
     }
     
     // MARK: FSM entry points
@@ -218,17 +229,21 @@ final class GameScene: SKScene {
         game.rollDice()
         allowedMoves = game.moves()
         
+        // Commpute the next state after the roll animation completes.
         let nextState = allowedMoves.isEmpty ? displayNoMove : pickMove
         
-        // Initiate network I/O before animating the dice. This buys us some extra time for
+        // Initiate network I/O before animating the dice. This buys us some extra time to mask
         // network latency.
-        switch currentType {
-        case .human:
-            fetchAnalysis(forRoll: game.diceSum)
-        case .computer:
-            fetchBestMove(forRoll: game.diceSum)
+        if solo {
+            switch currentType {
+            case .human:
+                fetchAnalysis(forRoll: game.diceSum)
+            case .computer:
+                fetchBestMove(forRoll: game.diceSum)
+            }
         }
         
+        // The animation looks nicer without the selection border.
         whiteDice.selected = false
         blackDice.selected = false
         dice.roll(newValues: game.diceValues, completion: nextState)
@@ -242,29 +257,32 @@ final class GameScene: SKScene {
     }
     
     private func pickMove() {
+        // Enable the selection border to signal whose turn it is.
         dice.selected = true
         
         switch currentType {
         case .human:
+            // During solo play, the human can ask for help.
             if solo { analyzeButton.enabled = true }
             board.pickMove(
                 for: game.currentPlayer,
-                moves: allowedMoves.map(convertMove),
+                allowedMoves: allowedMoves.map(convertMove),
                 onMovePicked: executeMove
             )
         case .computer:
-            pickBestMove(
-                onMovePicked: executeMove
-            )
+            pickBestMove(onMovePicked: executeMove)
         }
     }
     
     private func executeMove(checker: Checker, viewMove: GameBoard.Move) {
         guard let modelMove = viewMove.userData as? Move else { return }
         
+        // Annotations have served their purpose, so they can be removed now.
         removeAnnotations()
         pickMoveEpoch += 1
         
+        // Compute next state. Note: we can't update the game model until after the animations
+        // have been constructed, so we use tryMove to peek at the next position.
         let (nextPosition, _) = game.position.tryMove(move: modelMove)
         let nextState: () -> Void
         if nextPosition.terminal {
@@ -275,13 +293,15 @@ final class GameScene: SKScene {
             nextState = rollDice
         }
         
-        // Build the animation before updating the game model.
+        // Build the animation before updating the game model. The animation needs to know the
+        // current state of the game.
         let actions = buildMoveAnimation(
             checker: checker,
             viewMove: viewMove,
             completion: nextState
         )
         
+        // Now we can update the model and run the animation.
         game.makeMove(move: modelMove)
         checker.run(SKAction.sequence(actions))
     }
@@ -299,6 +319,8 @@ final class GameScene: SKScene {
     }
     
     private func alertNetworkError(_ text: String, retryAction: @escaping () -> Void) {
+        // Disable input -- it would be silly to let the user make a move while the alert
+        // is showing.
         board.inputEnabled = false
         let alert = NoNetworkAlert(text, sceneSize: size)
         addChild(alert)
@@ -330,13 +352,13 @@ final class GameScene: SKScene {
         actions.append(SKAction.setLayer(Layer.moving, onTarget: checker))
         
         if modelMove.from < 0 {
-            let entryPoint = positions.position(game.currentPlayer, -1)
+            let entryPoint = positions.position(game.currentPlayer, index: -1)
             let duration = Self.entryExitDuration(from: checker.position, to: entryPoint)
             actions.append(SKAction.move(to: entryPoint, duration: duration))
         }
         
         for i in (modelMove.from + 1)...modelMove.to {
-            let to = positions.position(game.currentPlayer, i)
+            let to = positions.position(game.currentPlayer, index: i)
             actions.append(SKAction.move(to: to, duration: Self.moveDuration))
         }
         
@@ -364,7 +386,7 @@ final class GameScene: SKScene {
     ) -> SKAction {
         let player = captured.player
         let waitCount = game.playerPosition(for: player).waitCount
-        let to = positions.position(player, waitCount - BoardPositions.indexOffset)
+        let to = positions.position(player, waitSlot: waitCount)
         let duration = Self.entryExitDuration(from: captured.position, to: to)
         return SKAction.sequence([
             SKAction.setLayer(Layer.captured, onTarget: captured),
@@ -378,8 +400,8 @@ final class GameScene: SKScene {
         let deltaX = from.x - to.x
         let deltaY = from.y - to.y
         let distance = sqrt(deltaX * deltaX + deltaY * deltaY)
-        let spaces = distance / BoardTarget.size.width
-        return spaces * Self.moveDuration / Self.entryExitSpeedUp
+        let spaces = distance / Self.spaceLength
+        return spaces * Self.moveDuration
     }
     
     // MARK: Annotations
@@ -422,7 +444,6 @@ final class GameScene: SKScene {
     // MARK: SolutionDB operations
     
     private func fetchAnalysis(forRoll roll: Int) {
-        guard solo else { return }
         pendingAnalyze?.cancel()
         pendingAnalyze = Task { @MainActor in
             try? await appModel.analyzer.analyze(
@@ -443,13 +464,17 @@ final class GameScene: SKScene {
     }
     
     private func analyzeMoves() {
-        analyzeButton.enabled = false
         guard let pendingAnalyze = pendingAnalyze else { return }
-        let epoch = pickMoveEpoch
+        
+        // Doesn't make sense to press analyze twice.
+        analyzeButton.enabled = false
+        
+        // Record the current epoch so we can detect stale analyses.
+        let analysisEpoch = pickMoveEpoch
         
         Task { @MainActor in
             let analysis = await pendingAnalyze.value
-            guard epoch == pickMoveEpoch else { return }
+            guard analysisEpoch == pickMoveEpoch else { return }
             
             guard let analysis = analysis else {
                 return self.alertNetworkError(
@@ -461,7 +486,6 @@ final class GameScene: SKScene {
             }
             
             annotateCheckers(with: analysis)
-            self.pendingAnalyze = nil
         }
     }
     
@@ -496,12 +520,16 @@ final class GameScene: SKScene {
     }
     
     private func indexToPoint(_ index: Int) -> CGPoint {
-        let shifted: Int
         if index < 0 {
-            shifted = index + game.playerPosition().waitCount - BoardPositions.indexOffset
+            return positions.position(
+                game.currentPlayer,
+                waitSlot: game.playerPosition().waitCount - 1
+            )
         } else {
-            shifted = index
+            return positions.position(
+                game.currentPlayer,
+                index: index
+            )
         }
-        return positions.position(game.currentPlayer, shifted)
     }
 }
