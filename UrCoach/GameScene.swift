@@ -11,9 +11,8 @@ import CheckersKit
 import UtiliKit
 
 public extension GamePalette {
-    static let analysisGreen = BoardGameColor(Color(.analysisGreen))
-    static let analysisRed   = BoardGameColor(Color(.red))
-    static let bottomSheet   = BoardGameColor(Color(.gray))
+    static let analysisGreen = GameColor(Color(.analysisGreen))
+    static let analysisRed   = GameColor(Color(.red))
 }
 
 final class GameScene: SKScene {
@@ -29,7 +28,7 @@ final class GameScene: SKScene {
     // Global game state
     private let appModel = UrModel.shared
     // Set by the enclosing SwiftUI view to allow this scene to return to the main menu.
-    private var changeView: ChangeView? = nil
+    private var exitGame: (() -> Void)? = nil
     
     // Used to map logical board positions to screen coordinates.
     private let positions = BoardPositions()
@@ -109,9 +108,9 @@ final class GameScene: SKScene {
     }
     
     // Invoked when we've been added to a SwiftUI view.
-    func addedToView(size: CGSize, changeView: @escaping ChangeView) {
+    func addedToView(size: CGSize, exitGame: @escaping () -> Void) {
         self.size = Self.minSize.stretchToAspectRatio(size.aspectRatio)
-        self.changeView = changeView
+        self.exitGame = exitGame
     }
     
     // MARK: Clean-up
@@ -128,7 +127,7 @@ final class GameScene: SKScene {
         
         board.clear()
         
-        changeView?(.menu)
+        exitGame?()
     }
     
     // MARK: Load state

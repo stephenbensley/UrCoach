@@ -32,13 +32,16 @@ struct MenuItem: View {
 struct MenuView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.openURL) private var openURL
+    private var delegate: CheckersGame
     private var changeView: ChangeView
+    @State private var showAbout = false
     
     var scale: CGFloat {
         return sizeClass == .compact ? 1.0 : 1.5
     }
     
-    init(changeView: @escaping ChangeView) {
+    init(delegate: some CheckersGame, changeView: @escaping ChangeView) {
+        self.delegate = delegate
         self.changeView = changeView
     }
 
@@ -46,30 +49,30 @@ struct MenuView: View {
         VStack {
             Spacer()
             VStack {
-                Text("Queah")
+                Text(delegate.name)
                     .font(.custom("Helvetica-Bold", fixedSize: 40))
                     .foregroundStyle(.white)
-                Text("A strategy game from Liberia")
+                Text(delegate.description)
                     .font(.custom("Helvetica", fixedSize: 18))
                     .foregroundStyle(.white)
                     .padding(.bottom)
                 MenuItem(text: "White vs. Computer") {
-                    UrModel.shared.newGame(white: .human, black: .computer)
+                    delegate.newGame(white: .human, black: .computer)
                     changeView(.game)
                 }
                 MenuItem(text: "Black vs. Computer") {
-                    UrModel.shared.newGame(white: .computer, black: .human)
+                    delegate.newGame(white: .computer, black: .human)
                     changeView(.game)
                 }
                 MenuItem(text: "Player vs. Player") {
-                    UrModel.shared.newGame(white: .human, black: .human)
+                    delegate.newGame(white: .human, black: .human)
                     changeView(.game)
                 }
                 MenuItem(text: "Resume Game") {
                     changeView(.game)
                 }
                 MenuItem(text: "How to Play") {
-                    changeView(.rules)
+                    showAbout = true
                 }
                 MenuItem(text: "Privacy Policy  \(Image(systemName: "link"))") {
                     if let url = URL(string: "https://stephenbensley.github.io/Queah/privacy.html") {
@@ -82,5 +85,11 @@ struct MenuView: View {
             Spacer()
             Spacer()
         }
+        .sheet(isPresented: $showAbout) { RulesView(changeView: { _ in }) }
     }
+}
+
+
+#Preview {
+    MenuView(delegate: MockDelegate(), changeView: { _ in } )
 }

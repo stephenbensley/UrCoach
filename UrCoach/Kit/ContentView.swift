@@ -8,31 +8,26 @@
 import SwiftUI
 import SpriteKit
 
-// Signals which view to display.
-enum ViewType {
-    case menu
-    case game
-    case rules
-}
-// Callback to change the current view
-typealias ChangeView = (ViewType) -> Void
-
 struct ContentView: View {
     // Used to trigger saving state when app goes inactive.
     @Environment(\.scenePhase) private var scenePhase
     @State private var mainView = ViewType.menu
-    @State private var scene: GameScene = GameScene()
-    
+    @State private var delegate: CheckersGame
+
+    init(delegate: some CheckersGame) {
+        self.delegate = delegate
+    }
+
     var body: some View {
         ZStack {
             Color(.background)
                 .edgesIgnoringSafeArea(.all)
             switch mainView {
             case .menu:
-                MenuView(changeView: changeView)
+                MenuView(delegate: delegate, changeView: changeView)
             case .game:
                 GeometryReader { proxy in
-                    SpriteView(scene: getScene(size: proxy.size))
+                    SpriteView(scene: delegate.getScene(size: proxy.size, changeView: changeView))
                 }
                 .edgesIgnoringSafeArea(.all)
             case .rules:
@@ -40,20 +35,15 @@ struct ContentView: View {
             }
         }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .inactive { UrModel.shared.save() }
+            if phase == .inactive { delegate.save() }
         }
     }
      
     private func changeView(_ newValue: ViewType) {
         withAnimation { mainView = newValue }
     }
-
-    private func getScene(size: CGSize) -> GameScene {
-        scene.addedToView(size: size, changeView: changeView)
-        return scene
-    }
 }
 
 #Preview {
-    ContentView()
+    ContentView(delegate: MockDelegate())
 }

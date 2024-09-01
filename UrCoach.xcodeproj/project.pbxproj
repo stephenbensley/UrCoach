@@ -11,12 +11,14 @@
 		DC1D07372C7E404A000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07362C7E404A000B7D5B /* UtiliKit */; };
 		DC1D07392C7E4066000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D07382C7E4066000B7D5B /* UtiliKit */; };
 		DC1D073B2C7E407F000B7D5B /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC1D073A2C7E407F000B7D5B /* UtiliKit */; };
-		DC1D073D2C7E5CEA000B7D5B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */; };
-		DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */; };
 		DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D07402C7E5D31000B7D5B /* UrModel.swift */; };
-		DC1D07432C7E5F0A000B7D5B /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC1D07422C7E5F0A000B7D5B /* rules.txt */; };
 		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
 		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
+		DC358F342C85155E007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
+		DC358F352C85155E007BD6A3 /* About.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F332C85155E007BD6A3 /* About.md */; };
+		DC358F362C85156B007BD6A3 /* About.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F332C85155E007BD6A3 /* About.md */; };
+		DC358F372C851573007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
+		DC44E22D2C85029200008101 /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC44E22C2C85029200008101 /* CheckersKit */; };
 		DC729EB22C7A4AAA00193A2E /* UrSolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */; };
 		DC729EB42C7A4AAA00193A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB32C7A4AAA00193A2E /* ContentView.swift */; };
 		DC729EB62C7A4AAB00193A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC729EB52C7A4AAB00193A2E /* Assets.xcassets */; };
@@ -40,11 +42,9 @@
 		DCA00C472C7AB20700C9E1D2 /* SafeCountsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C462C7AB20700C9E1D2 /* SafeCountsTests.swift */; };
 		DCA00C492C7B942600C9E1D2 /* CloudDBClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */; };
 		DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */; };
-		DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */; };
 		DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */; };
 		DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */; };
 		DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DCA00C962C7E07B700C9E1D2 /* UtiliKit */; };
-		DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */; };
 		DCBDB97E2C836BD700667654 /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
 		DCBDB97F2C836BD700667654 /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
 		DCBDB9802C836BF100667654 /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
@@ -157,10 +157,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		DC1D07402C7E5D31000B7D5B /* UrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrModel.swift; sourceTree = "<group>"; };
-		DC1D07422C7E5F0A000B7D5B /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
+		DC358F322C85155E007BD6A3 /* Help.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Help.md; sourceTree = "<group>"; };
+		DC358F332C85155E007BD6A3 /* About.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = About.md; sourceTree = "<group>"; };
 		DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionDBClient.swift; sourceTree = "<group>"; };
 		DC729E8B2C7A428800193A2E /* AWSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfig.swift; sourceTree = "<group>"; };
 		DC729E8C2C7A428800193A2E /* DynamoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNode.swift; sourceTree = "<group>"; };
@@ -198,10 +197,8 @@
 		DCA00C482C7B942600C9E1D2 /* CloudDBClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDBClientTests.swift; sourceTree = "<group>"; };
 		DCA00C4E2C7BCA8500C9E1D2 /* UrCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrCoachApp.swift; sourceTree = "<group>"; };
-		DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkAlert.swift; sourceTree = "<group>"; };
 		DCBDB9A32C836E2200667654 /* UrSolver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrSolver.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +244,7 @@
 				DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */,
 				DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */,
 				DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */,
+				DC44E22D2C85029200008101 /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +254,8 @@
 		DC729EA12C7A436F00193A2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DC358F332C85155E007BD6A3 /* About.md */,
+				DC358F322C85155E007BD6A3 /* Help.md */,
 				DC729EA22C7A438400193A2E /* urSolution.data */,
 			);
 			path = Resources;
@@ -363,50 +363,13 @@
 		DCA00C4F2C7BCA8500C9E1D2 /* UrCoach */ = {
 			isa = PBXGroup;
 			children = (
-				DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */,
-				DCA00C5C2C7BCAB500C9E1D2 /* Model */,
-				DCA00C5F2C7BCACD00C9E1D2 /* Resources */,
-				DCA00C5D2C7BCABC00C9E1D2 /* Scene */,
-				DCA00C5E2C7BCAC200C9E1D2 /* View */,
-			);
-			path = UrCoach;
-			sourceTree = "<group>";
-		};
-		DCA00C5C2C7BCAB500C9E1D2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
 				DC1D07402C7E5D31000B7D5B /* UrModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		DCA00C5D2C7BCABC00C9E1D2 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
+				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
 				DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */,
 				DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */,
-				DCBB08ED2C81548E00C60FD5 /* NoNetworkAlert.swift */,
+				DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */,
 			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		DCA00C5E2C7BCAC200C9E1D2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DCA00C522C7BCA8500C9E1D2 /* ContentView.swift */,
-				DC1D073C2C7E5CEA000B7D5B /* MenuView.swift */,
-				DC1D073E2C7E5CFC000B7D5B /* RulesView.swift */,
-				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DCA00C5F2C7BCACD00C9E1D2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DC1D07422C7E5F0A000B7D5B /* rules.txt */,
-			);
-			path = Resources;
+			path = UrCoach;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +478,7 @@
 				DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */,
 				DC96FB512C7E0C0700ECB509 /* UtiliKit */,
 				DC96FB542C7E0CCB00ECB509 /* UtiliKit */,
+				DC44E22C2C85029200008101 /* CheckersKit */,
 			);
 			productName = UrCoach;
 			productReference = DCA00C4E2C7BCA8500C9E1D2 /* UrCoach.app */;
@@ -558,6 +522,7 @@
 			mainGroup = DC89A56F2C7A40E1005D0269;
 			packageReferences = (
 				DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */,
+				DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */,
 			);
 			productRefGroup = DC89A57C2C7A40F5005D0269 /* Products */;
 			projectDirPath = "";
@@ -585,6 +550,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC358F352C85155E007BD6A3 /* About.md in Resources */,
+				DC358F342C85155E007BD6A3 /* Help.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +559,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1D07432C7E5F0A000B7D5B /* rules.txt in Resources */,
+				DC358F372C851573007BD6A3 /* Help.md in Resources */,
+				DC358F362C85156B007BD6A3 /* About.md in Resources */,
 				DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,9 +653,7 @@
 			files = (
 				DCA00C6A2C7CC0BE00C9E1D2 /* GameScene.swift in Sources */,
 				DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */,
-				DC1D073D2C7E5CEA000B7D5B /* MenuView.swift in Sources */,
 				DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */,
-				DCBB08EE2C81548E00C60FD5 /* NoNetworkAlert.swift in Sources */,
 				DCBDB9A42C836E3F00667654 /* SolutionDB.swift in Sources */,
 				DCBDB9A52C836E3F00667654 /* AWSConfig.swift in Sources */,
 				DCBDB9A62C836E3F00667654 /* DynamoNode.swift in Sources */,
@@ -698,8 +664,6 @@
 				DCBDB9AB2C836E3F00667654 /* PositionValues.swift in Sources */,
 				DCBDB9AC2C836E3F00667654 /* Ur.swift in Sources */,
 				DCBDB9AD2C836E3F00667654 /* PositionAnalyzer.swift in Sources */,
-				DC1D073F2C7E5CFC000B7D5B /* RulesView.swift in Sources */,
-				DCA00C532C7BCA8500C9E1D2 /* ContentView.swift in Sources */,
 				DCA00C512C7BCA8500C9E1D2 /* UrCoachApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1507,6 +1471,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../CheckersKit;
+		};
 		DC96FB532C7E0CCB00ECB509 /* XCLocalSwiftPackageReference "../UtiliKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../UtiliKit;
@@ -1541,6 +1509,11 @@
 		DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UtiliKit;
+		};
+		DC44E22C2C85029200008101 /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */;
+			productName = CheckersKit;
 		};
 		DC96FB512C7E0C0700ECB509 /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
