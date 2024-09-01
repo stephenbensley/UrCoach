@@ -15,7 +15,7 @@ export const handler = async (event, context) => {
   const headers = {
     "Content-Type": "application/json",
   };
-  
+
   try {
     switch (event.resource) {
       case "/urnodes/{id}":
@@ -27,10 +27,16 @@ export const handler = async (event, context) => {
             },
           })
         );
-       body = body.Item;
+        body = body.Item;
         break;
-        
+
       case "/urnodes":
+        if (!event.multiValueQueryStringParameters ||
+          !("id" in event.multiValueQueryStringParameters) ||
+          event.multiValueQueryStringParameters.id.length == 0) {
+          body = []
+          break;
+        }
         var input = {
           RequestItems: {
             urnodes: {
@@ -45,9 +51,10 @@ export const handler = async (event, context) => {
           };
           input.RequestItems.urnodes.Keys.push(key);
         }
+
         body = await dynamo.send(
           new BatchGetCommand(input)
-          );
+        );
         body = body.Responses.urnodes
         break;
 
