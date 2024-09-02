@@ -10,9 +10,9 @@ import SwiftUI
 import CheckersKit
 import UtiliKit
 
-public extension GamePalette {
-    static let analysisGreen = GameColor(Color(.analysisGreen))
-    static let analysisRed   = GameColor(Color(.red))
+public extension SKColor {
+    static let analysisGreen = SKColor(Color(hex: 0x549C30))
+    static let analysisRed   = SKColor(Color.red)
 }
 
 final class GameScene: SKScene {
@@ -69,7 +69,7 @@ final class GameScene: SKScene {
     override init() {
         super.init(size: Self.minSize)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.backgroundColor = GamePalette.background
+        self.backgroundColor = .background
         self.scaleMode = .aspectFit
         
         // Add the permanent nodes.
@@ -415,7 +415,7 @@ final class GameScene: SKScene {
         guard let checker = board.checker(at: indexToPoint(index)) else { return }
         
         let label = SKLabelNode()
-        label.fontColor = isBest ?  UIColor(Color(.analysisGreen)): .red
+        label.fontColor = isBest ? .analysisGreen : .analysisRed
         label.fontName = "Helvetica"
         label.fontSize = 11.0
         label.horizontalAlignmentMode = .center

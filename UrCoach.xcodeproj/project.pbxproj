@@ -15,8 +15,6 @@
 		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
 		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
 		DC358F342C85155E007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
-		DC358F352C85155E007BD6A3 /* About.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F332C85155E007BD6A3 /* About.md */; };
-		DC358F362C85156B007BD6A3 /* About.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F332C85155E007BD6A3 /* About.md */; };
 		DC358F372C851573007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
 		DC44E22D2C85029200008101 /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC44E22C2C85029200008101 /* CheckersKit */; };
 		DC729EB22C7A4AAA00193A2E /* UrSolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */; };
@@ -159,7 +157,6 @@
 /* Begin PBXFileReference section */
 		DC1D07402C7E5D31000B7D5B /* UrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrModel.swift; sourceTree = "<group>"; };
 		DC358F322C85155E007BD6A3 /* Help.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Help.md; sourceTree = "<group>"; };
-		DC358F332C85155E007BD6A3 /* About.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = About.md; sourceTree = "<group>"; };
 		DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionDBClient.swift; sourceTree = "<group>"; };
 		DC729E8B2C7A428800193A2E /* AWSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfig.swift; sourceTree = "<group>"; };
 		DC729E8C2C7A428800193A2E /* DynamoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoNode.swift; sourceTree = "<group>"; };
@@ -254,7 +251,6 @@
 		DC729EA12C7A436F00193A2E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DC358F332C85155E007BD6A3 /* About.md */,
 				DC358F322C85155E007BD6A3 /* Help.md */,
 				DC729EA22C7A438400193A2E /* urSolution.data */,
 			);
@@ -264,10 +260,10 @@
 		DC729EB02C7A4AAA00193A2E /* UrSolver */ = {
 			isa = PBXGroup;
 			children = (
-				DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */,
-				DC729EB32C7A4AAA00193A2E /* ContentView.swift */,
 				DC729EB52C7A4AAB00193A2E /* Assets.xcassets */,
+				DC729EB32C7A4AAA00193A2E /* ContentView.swift */,
 				DCBDB9A32C836E2200667654 /* UrSolver.entitlements */,
+				DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */,
 			);
 			path = UrSolver;
 			sourceTree = "<group>";
@@ -363,11 +359,11 @@
 		DCA00C4F2C7BCA8500C9E1D2 /* UrCoach */ = {
 			isa = PBXGroup;
 			children = (
-				DC1D07402C7E5D31000B7D5B /* UrModel.swift */,
-				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
+				DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */,
 				DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */,
 				DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */,
-				DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */,
+				DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */,
+				DC1D07402C7E5D31000B7D5B /* UrModel.swift */,
 			);
 			path = UrCoach;
 			sourceTree = "<group>";
@@ -550,7 +546,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC358F352C85155E007BD6A3 /* About.md in Resources */,
 				DC358F342C85155E007BD6A3 /* Help.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,7 +555,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC358F372C851573007BD6A3 /* Help.md in Resources */,
-				DC358F362C85156B007BD6A3 /* About.md in Resources */,
 				DCA00C552C7BCA8600C9E1D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

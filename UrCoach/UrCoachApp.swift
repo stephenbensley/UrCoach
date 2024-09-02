@@ -13,8 +13,8 @@ class UrGame: CheckersGame {
     private var scene = GameScene()
 
     var name: String = "Royal Game of Ur"
-    
     var description: String = "This is the Royal Game of Ur"
+    var privacyPolicy: URL = URL(string: "https://stephenbensley.github.io/UrCoach/privacy.html")!
     
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
         scene.addedToView(size: size, exitGame: exitGame)
