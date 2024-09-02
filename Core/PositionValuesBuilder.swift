@@ -41,10 +41,14 @@ final class PositionValuesBuilder {
     }
 
     init() {
+#if DEBUG
         // It takes a long time to initialize this class in Debug builds, so we cache the initial
-        // state to improve debugging time. We don't care if this fails.
+        // state to improve debugging and testing times. We don't care if this fails. For Release
+        // builds, we'll continue to rebuild everytime to avoid any bugs due to using stale
+        // cached state. Solving takes so long in a Debug build that there's no chance anyone
+        // would accidentally use the Debug build for the actual solution.
         if load() { return }
-        
+#endif
         // Process all possible GamePositions.
         GamePosition.forEach { pos in
             // If it's your turn and the game is over, you've lost, so terminal states have a
@@ -55,7 +59,9 @@ final class PositionValuesBuilder {
         // Sort entries so we can use binary search
         entries.sort()
         
+#if DEBUG
         save()
+#endif
     }
     
     // Returns the index of the position.
