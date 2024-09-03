@@ -1,5 +1,5 @@
 {
-  "originHash" : "669e3e25c90a8400349792aef3ee3de831a28d1991aca4bff801d00809ac5a67",
+  "originHash" : "d6abd9716227493a2d07d77e6945341e05a54457c3128151eaa8bad4ebbb28b5",
   "pins" : [
     {
       "identity" : "checkerskit",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/stephenbensley/CheckersKit",
       "state" : {
         "branch" : "main",
-        "revision" : "f6221a64f51e028c10e5e31fb0e91343bd0b58f8"
+        "revision" : "64a650e27cf4faae6e54d0b770d61230bf503310"
       }
     },
     {
