@@ -10,23 +10,30 @@ import CheckersKit
 import SpriteKit
 
 class UrGame: CheckersGame {
-    private var scene = GameScene()
+    private let model: UrModel
+    private let scene: GameScene
 
     var name: String = "Ur Coach"
     var description: String = "Sharpen your skills by playing the Royal Game of Ur with an expert."
     var privacyPolicy: URL = URL(string: "https://stephenbensley.github.io/UrCoach/privacy.html")!
     
+    init() {
+        let model = UrModel.create()
+        self.model = model
+        self.scene = GameScene(appModel: model)
+    }
+
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
         scene.addedToView(size: size, exitGame: exitGame)
         return scene
     }
     
     func newGame(white: CheckersKit.PlayerType, black: CheckersKit.PlayerType) {
-        UrModel.shared.newGame(white: white, black: black)
+        model.newGame(white: white, black: black)
     }
     
     func save() {
-        UrModel.shared.save()
+        model.save()
     }
 }
 

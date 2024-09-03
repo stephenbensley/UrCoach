@@ -16,7 +16,14 @@ final class UrModel: Codable {
 #endif
     var playerType: [PlayerType] = [ .human, .computer ]
 
-    static let shared = create()
+    static func create() -> UrModel {
+        if let data = UserDefaults.standard.data(forKey: "AppModel"),
+           let model = try? JSONDecoder().decode(UrModel.self, from: data) {
+            return model
+        }
+        // If we can't restore the app model, just create a new default one.
+        return UrModel()
+    }
 
     func newGame(white: PlayerType, black: PlayerType) {
         game.newGame()
@@ -39,14 +46,5 @@ final class UrModel: Codable {
 
     private init() {
         game = GameModel()
-    }
-    
-    private static func create() -> UrModel {
-        if let data = UserDefaults.standard.data(forKey: "AppModel"),
-           let model = try? JSONDecoder().decode(UrModel.self, from: data) {
-            return model
-        }
-        // If we can't restore the app model, just create a new default one.
-        return UrModel()
     }
 }

@@ -26,7 +26,7 @@ final class GameScene: SKScene {
     static private let annotationName = "annotation"
     
     // Global game state
-    private let appModel = UrModel.shared
+    private let appModel: UrModel
     // Set by the enclosing SwiftUI view to allow this scene to return to the main menu.
     private var exitGame: (() -> Void)? = nil
     
@@ -66,7 +66,8 @@ final class GameScene: SKScene {
     
     // MARK: Initialization
     
-    override init() {
+    init(appModel: UrModel) {
+        self.appModel = appModel
         super.init(size: Self.minSize)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.backgroundColor = .background
