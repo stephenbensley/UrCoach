@@ -12,8 +12,8 @@ import SpriteKit
 class UrGame: CheckersGame {
     private var scene = GameScene()
 
-    var name: String = "Royal Game of Ur"
-    var description: String = "This is the Royal Game of Ur"
+    var name: String = "Ur Coach"
+    var description: String = "Sharpen your skills by playing the Royal Game of Ur with an expert."
     var privacyPolicy: URL = URL(string: "https://stephenbensley.github.io/UrCoach/privacy.html")!
     
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
