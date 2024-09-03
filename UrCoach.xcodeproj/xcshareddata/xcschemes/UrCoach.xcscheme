@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCA00C4D2C7BCA8500C9E1D2"
-               BuildableName = "UrCoach.app"
+               BuildableName = "Ur Coach.app"
                BlueprintName = "UrCoach"
                ReferencedContainer = "container:UrCoach.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA00C4D2C7BCA8500C9E1D2"
-            BuildableName = "UrCoach.app"
+            BuildableName = "Ur Coach.app"
             BlueprintName = "UrCoach"
             ReferencedContainer = "container:UrCoach.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA00C4D2C7BCA8500C9E1D2"
-            BuildableName = "UrCoach.app"
+            BuildableName = "Ur Coach.app"
             BlueprintName = "UrCoach"
             ReferencedContainer = "container:UrCoach.xcodeproj">
          </BuildableReference>
