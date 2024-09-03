@@ -33,6 +33,8 @@
 		DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */; };
 		DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
 		DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */; };
+		DC8E71E22C8773E2009DE9CE /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71E12C8773E2009DE9CE /* CheckersKit */; };
+		DC8E71E42C8773E8009DE9CE /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71E32C8773E8009DE9CE /* CheckersKit */; };
 		DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB512C7E0C0700ECB509 /* UtiliKit */; };
 		DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB542C7E0CCB00ECB509 /* UtiliKit */; };
 		DC96FB572C7E0D2100ECB509 /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */; };
@@ -222,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1D07372C7E404A000B7D5B /* UtiliKit in Frameworks */,
+				DC8E71E42C8773E8009DE9CE /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1D073B2C7E407F000B7D5B /* UtiliKit in Frameworks */,
+				DC8E71E22C8773E2009DE9CE /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +435,7 @@
 			name = Tournament;
 			packageProductDependencies = (
 				DC1D07362C7E404A000B7D5B /* UtiliKit */,
+				DC8E71E32C8773E8009DE9CE /* CheckersKit */,
 			);
 			productName = Tournament;
 			productReference = DC729F112C7A6B7100193A2E /* Tournament */;
@@ -452,6 +457,7 @@
 			name = CoreTests;
 			packageProductDependencies = (
 				DC1D073A2C7E407F000B7D5B /* UtiliKit */,
+				DC8E71E12C8773E2009DE9CE /* CheckersKit */,
 			);
 			productName = UrCoreTests;
 			productReference = DC89A5832C7A40F5005D0269 /* CoreTests.xctest */;
@@ -1507,6 +1513,16 @@
 			productName = UtiliKit;
 		};
 		DC44E22C2C85029200008101 /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */;
+			productName = CheckersKit;
+		};
+		DC8E71E12C8773E2009DE9CE /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */;
+			productName = CheckersKit;
+		};
+		DC8E71E32C8773E8009DE9CE /* CheckersKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC44E22B2C85022F00008101 /* XCLocalSwiftPackageReference "../CheckersKit" */;
 			productName = CheckersKit;
