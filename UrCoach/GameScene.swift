@@ -418,12 +418,12 @@ final class GameScene: SKScene {
         let label = SKLabelNode()
         label.fontColor = isBest ? .analysisGreen : .analysisRed
         label.fontName = "Helvetica"
-        label.fontSize = 11.0
+        label.fontSize = 12.5
         label.horizontalAlignmentMode = .center
         label.position = .init(x: 0, y: -5)
         label.text = String(format: "%.2f%%", 100.0 * winProb)
         
-        let shape = SKShapeNode(rectOf: .init(width: 47.0, height: 15.0), cornerRadius: 2.0)
+        let shape = SKShapeNode(rectOf: .init(width: 50.0, height: 15.0), cornerRadius: 2.0)
         shape.fillColor = .white
         shape.name = "annotation"
         shape.position = .init(x: 0.0, y: 27.5)
