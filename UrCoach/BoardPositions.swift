@@ -8,6 +8,7 @@
 import CoreGraphics
 import CheckersKit
 
+// Maps logical game positions to their (x, y) coordinates on the screen.
 final class BoardPositions {
     // Various constants for mapping board positions. These depend on the exact layout of the
     // gameboard image.

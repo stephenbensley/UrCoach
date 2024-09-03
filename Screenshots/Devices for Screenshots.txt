@@ -1,0 +1,5 @@
+047_XXX   750x1334  iPhone SE (3rd generation)   
+055_XXX  1242x2208  None supported -- resize from 4.7"
+067_XXX  1290x2796  iPhone 15 Plus
+129_XXX  2048x2732  iPad Pro (12.9-inch) (2nd generation)
+130_XXX  2064x2752  iPad Pro 13-inch (M4)

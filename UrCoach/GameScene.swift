@@ -164,7 +164,7 @@ final class GameScene: SKScene {
         whiteDice.setValues(game.whiteDice)
         blackDice.setValues(game.blackDice)
         
-        // Update derived properties.
+        // Update computed properties.
         allowedMoves = game.moves()
         solo = appModel.playerType[0] != appModel.playerType[1]
         pickMoveEpoch += 1
@@ -229,7 +229,7 @@ final class GameScene: SKScene {
         game.rollDice()
         allowedMoves = game.moves()
         
-        // Commpute the next state after the roll animation completes.
+        // Commpute the next state to transition to once the roll animation completes.
         let nextState = allowedMoves.isEmpty ? displayNoMove : pickMove
         
         // Initiate network I/O before animating the dice. This buys us some extra time to mask

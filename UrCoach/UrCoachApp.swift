@@ -9,12 +9,13 @@ import SwiftUI
 import CheckersKit
 import SpriteKit
 
+// Provides the app-specific properties and methods consumed by the CheckersKit framework.
 class UrGame: CheckersGame {
     private let model: UrModel
     private let scene: GameScene
 
     var name: String = "Ur Coach"
-    var description: String = "Sharpen your skills by playing the Royal Game of Ur with an expert."
+    var description: String = "Sharpen your skills by playing the Royal Game of Ur against an expert."
     var privacyPolicy: URL = URL(string: "https://stephenbensley.github.io/UrCoach/privacy.html")!
     
     init() {

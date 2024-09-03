@@ -7,6 +7,7 @@
 import Foundation
 import CheckersKit
 
+// App model for the UrCoach app.
 final class UrModel: Codable {
     let game: GameModel
 #if TEST_NETWORK_FAULTS
