@@ -418,10 +418,13 @@ final class GameScene: SKScene {
         let label = SKLabelNode()
         label.fontColor = isBest ? .analysisGreen : .analysisRed
         label.fontName = "Helvetica"
-        label.fontSize = 12.5
+        label.fontSize = 13.0
         label.horizontalAlignmentMode = .center
         label.position = .init(x: 0, y: -5)
-        label.text = String(format: "%.2f%%", 100.0 * winProb)
+        // Only show one digit after the decimal if it will round up to 100%. We don't have
+        // enough room to display five digits (3 before + 2 after).
+        let format = winProb >= 0.9995 ? "%.1f%%" : "%.2f%%"
+        label.text = String(format: format, 100.0 * winProb)
         
         let shape = SKShapeNode(rectOf: .init(width: 50.0, height: 15.0), cornerRadius: 2.0)
         shape.fillColor = .white
