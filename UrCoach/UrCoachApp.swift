@@ -14,25 +14,27 @@ class UrGame: CheckersGame {
     private let model: UrModel
     private let scene: GameScene
 
-    var name: String = "Ur Coach"
-    var description: String = "Sharpen your skills by playing the Royal Game of Ur against an expert."
-    var privacyPolicy: URL = URL(string: "https://stephenbensley.github.io/UrCoach/privacy.html")!
-    
     init() {
         let model = UrModel.create()
         self.model = model
         self.scene = GameScene(appModel: model)
     }
 
+    // AppInfo protocol
+    var appStoreId: Int = 6670455978
+    var copyright: String = "© 2024 Stephen E. Bensley"
+    var description: String = "Sharpen your skills by playing the Royal Game of Ur against an expert."
+    var gitHubAccount: String = "stephenbensley"
+    var gitHubRepo: String = "UrCoach"
+    
+    // CheckersGame protocol
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
         scene.addedToView(size: size, exitGame: exitGame)
         return scene
     }
-    
     func newGame(white: CheckersKit.PlayerType, black: CheckersKit.PlayerType) {
         model.newGame(white: white, black: black)
     }
-    
     func save() {
         model.save()
     }
