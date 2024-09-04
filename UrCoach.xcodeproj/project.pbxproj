@@ -10,6 +10,29 @@
 		DC1D07412C7E5D31000B7D5B /* UrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D07402C7E5D31000B7D5B /* UrModel.swift */; };
 		DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04D2C7E0B4100C0FD2C /* UtiliKit */; };
 		DC28E0502C7E0B6E00C0FD2C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */; };
+		DC2CEEF22C88F30F00023B0C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C692C7CC0BE00C9E1D2 /* GameScene.swift */; };
+		DC2CEEF32C88F30F00023B0C /* UrModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D07402C7E5D31000B7D5B /* UrModel.swift */; };
+		DC2CEEF42C88F30F00023B0C /* BoardPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC96FB562C7E0D2100ECB509 /* BoardPositions.swift */; };
+		DC2CEEF52C88F30F00023B0C /* SolutionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729F1F2C7A840300193A2E /* SolutionDB.swift */; };
+		DC2CEEF62C88F30F00023B0C /* AWSConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8B2C7A428800193A2E /* AWSConfig.swift */; };
+		DC2CEEF72C88F30F00023B0C /* DynamoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8C2C7A428800193A2E /* DynamoNode.swift */; };
+		DC2CEEF82C88F30F00023B0C /* SolutionDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */; };
+		DC2CEEF92C88F30F00023B0C /* GamePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5922C7A410A005D0269 /* GamePosition.swift */; };
+		DC2CEEFA2C88F30F00023B0C /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE72C7A53ED00193A2E /* GameModel.swift */; };
+		DC2CEEFB2C88F30F00023B0C /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5982C7A410A005D0269 /* PlayerPosition.swift */; };
+		DC2CEEFC2C88F30F00023B0C /* PositionValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5962C7A410A005D0269 /* PositionValues.swift */; };
+		DC2CEEFD2C88F30F00023B0C /* Ur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5942C7A410A005D0269 /* Ur.swift */; };
+		DC2CEEFE2C88F30F00023B0C /* PositionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729E8E2C7A428800193A2E /* PositionAnalyzer.swift */; };
+		DC2CEEFF2C88F30F00023B0C /* UrCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA00C502C7BCA8500C9E1D2 /* UrCoachApp.swift */; };
+		DC2CEF012C88F30F00023B0C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEEC2C88F30F00023B0C /* UtiliKit */; };
+		DC2CEF022C88F30F00023B0C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEEE2C88F30F00023B0C /* UtiliKit */; };
+		DC2CEF032C88F30F00023B0C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEEA2C88F30F00023B0C /* UtiliKit */; };
+		DC2CEF042C88F30F00023B0C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEEB2C88F30F00023B0C /* UtiliKit */; };
+		DC2CEF052C88F30F00023B0C /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEED2C88F30F00023B0C /* UtiliKit */; };
+		DC2CEF062C88F30F00023B0C /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC2CEEEF2C88F30F00023B0C /* CheckersKit */; };
+		DC2CEF082C88F30F00023B0C /* urSolution.data in Resources */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
+		DC2CEF092C88F30F00023B0C /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
+		DC2CEF0A2C88F30F00023B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA00C542C7BCA8600C9E1D2 /* Assets.xcassets */; };
 		DC358F342C85155E007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
 		DC358F372C851573007BD6A3 /* Help.md in Resources */ = {isa = PBXBuildFile; fileRef = DC358F322C85155E007BD6A3 /* Help.md */; };
 		DC729EB22C7A4AAA00193A2E /* UrSolverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EB12C7A4AAA00193A2E /* UrSolverApp.swift */; };
@@ -158,6 +181,7 @@
 
 /* Begin PBXFileReference section */
 		DC1D07402C7E5D31000B7D5B /* UrModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrModel.swift; sourceTree = "<group>"; };
+		DC2CEF0E2C88F30F00023B0C /* UrCoach (local).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UrCoach (local).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC358F322C85155E007BD6A3 /* Help.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Help.md; sourceTree = "<group>"; };
 		DC729E8A2C7A428800193A2E /* SolutionDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolutionDBClient.swift; sourceTree = "<group>"; };
 		DC729E8B2C7A428800193A2E /* AWSConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSConfig.swift; sourceTree = "<group>"; };
@@ -203,6 +227,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC2CEF002C88F30F00023B0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2CEF012C88F30F00023B0C /* UtiliKit in Frameworks */,
+				DC2CEF022C88F30F00023B0C /* UtiliKit in Frameworks */,
+				DC2CEF032C88F30F00023B0C /* UtiliKit in Frameworks */,
+				DC2CEF042C88F30F00023B0C /* UtiliKit in Frameworks */,
+				DC2CEF052C88F30F00023B0C /* UtiliKit in Frameworks */,
+				DC2CEF062C88F30F00023B0C /* CheckersKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC729EAC2C7A4AAA00193A2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +358,7 @@
 				DC729EC22C7A4BB400193A2E /* DynamoDBGen */,
 				DC729F112C7A6B7100193A2E /* Tournament */,
 				DCA00C4E2C7BCA8500C9E1D2 /* Ur Coach.app */,
+				DC2CEF0E2C88F30F00023B0C /* UrCoach (local).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,6 +415,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DC2CEEE92C88F30F00023B0C /* UrCoach (local) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC2CEF0B2C88F30F00023B0C /* Build configuration list for PBXNativeTarget "UrCoach (local)" */;
+			buildPhases = (
+				DC2CEEF12C88F30F00023B0C /* Sources */,
+				DC2CEF002C88F30F00023B0C /* Frameworks */,
+				DC2CEF072C88F30F00023B0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "UrCoach (local)";
+			packageProductDependencies = (
+				DC2CEEEA2C88F30F00023B0C /* UtiliKit */,
+				DC2CEEEB2C88F30F00023B0C /* UtiliKit */,
+				DC2CEEEC2C88F30F00023B0C /* UtiliKit */,
+				DC2CEEED2C88F30F00023B0C /* UtiliKit */,
+				DC2CEEEE2C88F30F00023B0C /* UtiliKit */,
+				DC2CEEEF2C88F30F00023B0C /* CheckersKit */,
+			);
+			productName = UrCoach;
+			productReference = DC2CEF0E2C88F30F00023B0C /* UrCoach (local).app */;
+			productType = "com.apple.product-type.application";
+		};
 		DC729EAE2C7A4AAA00193A2E /* UrSolver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "UrSolver" */;
@@ -536,12 +599,23 @@
 				DC729EC12C7A4BB400193A2E /* DynamoDBGen */,
 				DC729F102C7A6B7100193A2E /* Tournament */,
 				DCA00C4D2C7BCA8500C9E1D2 /* UrCoach */,
+				DC2CEEE92C88F30F00023B0C /* UrCoach (local) */,
 				DC729EAE2C7A4AAA00193A2E /* UrSolver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC2CEF072C88F30F00023B0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2CEF082C88F30F00023B0C /* urSolution.data in Resources */,
+				DC2CEF092C88F30F00023B0C /* Help.md in Resources */,
+				DC2CEF0A2C88F30F00023B0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC729EAD2C7A4AAA00193A2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +644,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC2CEEF12C88F30F00023B0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2CEEF22C88F30F00023B0C /* GameScene.swift in Sources */,
+				DC2CEEF32C88F30F00023B0C /* UrModel.swift in Sources */,
+				DC2CEEF42C88F30F00023B0C /* BoardPositions.swift in Sources */,
+				DC2CEEF52C88F30F00023B0C /* SolutionDB.swift in Sources */,
+				DC2CEEF62C88F30F00023B0C /* AWSConfig.swift in Sources */,
+				DC2CEEF72C88F30F00023B0C /* DynamoNode.swift in Sources */,
+				DC2CEEF82C88F30F00023B0C /* SolutionDBClient.swift in Sources */,
+				DC2CEEF92C88F30F00023B0C /* GamePosition.swift in Sources */,
+				DC2CEEFA2C88F30F00023B0C /* GameModel.swift in Sources */,
+				DC2CEEFB2C88F30F00023B0C /* PlayerPosition.swift in Sources */,
+				DC2CEEFC2C88F30F00023B0C /* PositionValues.swift in Sources */,
+				DC2CEEFD2C88F30F00023B0C /* Ur.swift in Sources */,
+				DC2CEEFE2C88F30F00023B0C /* PositionAnalyzer.swift in Sources */,
+				DC2CEEFF2C88F30F00023B0C /* UrCoachApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC729EAB2C7A4AAA00193A2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -673,6 +768,172 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		DC2CEF0C2C88F30F00023B0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrCoach/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrCoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG USE_LOCAL_SOLUTION";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC2CEF0D2C88F30F00023B0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6X2P4HJBQW;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UrCoach/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stephenbensley.UrCoach;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = USE_LOCAL_SOLUTION;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		DC729EBC2C7A4AAB00193A2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1416,6 +1677,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC2CEF0B2C88F30F00023B0C /* Build configuration list for PBXNativeTarget "UrCoach (local)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC2CEF0C2C88F30F00023B0C /* Debug */,
+				DC2CEF0D2C88F30F00023B0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DC729EBB2C7A4AAB00193A2E /* Build configuration list for PBXNativeTarget "UrSolver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1473,6 +1743,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC2CEEF02C88F30F00023B0C /* XCRemoteSwiftPackageReference "CheckersKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephenbensley/CheckersKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephenbensley/CheckersKit";
@@ -1499,6 +1777,31 @@
 		DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UtiliKit;
+		};
+		DC2CEEEA2C88F30F00023B0C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC2CEEEB2C88F30F00023B0C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC2CEEEC2C88F30F00023B0C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC2CEEED2C88F30F00023B0C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC2CEEEE2C88F30F00023B0C /* UtiliKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UtiliKit;
+		};
+		DC2CEEEF2C88F30F00023B0C /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC2CEEF02C88F30F00023B0C /* XCRemoteSwiftPackageReference "CheckersKit" */;
+			productName = CheckersKit;
 		};
 		DC8E71E72C877B50009DE9CE /* CheckersKit */ = {
 			isa = XCSwiftPackageProductDependency;

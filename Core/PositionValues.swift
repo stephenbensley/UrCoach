@@ -38,6 +38,19 @@ final class PositionValues {
         self.init(data: data)
     }
 
+    convenience init?(forResource: String, withExtension: String) {
+        guard let url = Bundle.main.url(
+            forResource: forResource,
+            withExtension: withExtension
+        ) else {
+            return nil
+        }
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        self.init(data: data)
+    }
+
     subscript(position: GamePosition) -> Float {
         // The index is exhaustive, so we should never see an unknown id.
         return values[values.bsearch(forKey: position.id, extractedBy: \.id)!].value

@@ -12,6 +12,9 @@ final class UrModel: Codable {
     let game: GameModel
 #if TEST_NETWORK_FAULTS
     let analyzer = SolutionDB(client: FaultyDBClient(errorRate: 3, extraLatency: 5.0))
+#elseif USE_LOCAL_SOLUTION
+    // Not much we can do if this fails.
+    let analyzer = PositionValues(forResource: "urSolution", withExtension: "data")!
 #else
     let analyzer = SolutionDB(client: CloudDBClient())
 #endif
