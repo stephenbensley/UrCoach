@@ -54,7 +54,7 @@ final class GameModel: Codable {
             return blackDice
         }
     }
-
+    
     // Sum of the dice for the current player.
     var diceSum: Int { diceValues.reduce(0, +) }
     
@@ -63,12 +63,31 @@ final class GameModel: Codable {
         position.moves(forRoll: diceSum)
     }
     
+#if TEST_ENDGAME
+    func newGame() {
+        let endPos = PlayerPosition(bitboard: 0x1000, waitCount: 0)
+        state = .rollDice
+        position = .init(attacker: endPos, defender: endPos)
+    }
+#elseif CREATE_SCREENSHOTS
+    func newGame() {
+        state = .makeMove
+        currentPlayer = .white
+        position = .init(
+            attacker: .init(bitboard: 0x0082, waitCount: 5),
+            defender: .init(bitboard: 0x0016, waitCount: 4)
+        )
+        whiteDice = [1, 0, 1, 1]
+        blackDice = [0, 0, 1, 0]
+    }
+#else
     // Start a new game.
     func newGame() {
         state = .decideFirstPlayer
         position = GamePosition()
     }
-    
+#endif
+
     // Roll the dice to determine who moves first.
     func decideFirstPlayer() {
         assert(state == .decideFirstPlayer)
@@ -119,11 +138,4 @@ final class GameModel: Codable {
     static func rollDice() -> [Int] {
         (0..<Ur.diceCount).map {_ in Int.random(in: 0...1) }
     }
-    
-#if TEST_ENDGAME
-    func testEndGame() {
-        let endPos = PlayerPosition(bitboard: 0x2000, waitCount: 0)
-        inPlayPosition = .init(attacker: endPos, defender: endPos)
-    }
-#endif
 }

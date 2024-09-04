@@ -30,9 +30,6 @@ final class UrModel: Codable {
         game.newGame()
         playerType[PlayerColor.white.rawValue] = white
         playerType[PlayerColor.black.rawValue] = black
-#if TEST_ENDGAME
-        game.testEndGame()
-#endif
     }
 
     func save() {
