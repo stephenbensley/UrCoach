@@ -8,6 +8,10 @@ UrCoach is an iOS app for the [Royal Game of Ur](https://en.wikipedia.org/wiki/R
 
 The app can be downloaded for free from the Apple [App Store](https://apps.apple.com/us/app/queah/id6670455978/). There are no in-app purchases or ads.
 
+### Privacy
+
+This app does not collect or share any personal information. For complete details, read the [Privacy Policy](https://stephenbensley.github.io/UrCoach/privacy.html)
+
 ### License
 
 The source code for this app has been released under the [MIT License](LICENSE).
