@@ -7,7 +7,7 @@
 
 // Implements PositionAnalyzer by querying node state from a solution database.
 final class SolutionDB: PositionAnalyzer {
-    private var client: SolutionDBClient
+    private let client: SolutionDBClient
     private var cache = [Int32: SolutionNode]()
     
     init(client: SolutionDBClient) {

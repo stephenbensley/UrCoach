@@ -118,7 +118,7 @@ final class CloudDBClient: SolutionDBClient {
 
 // Mocks SolutionDBClient by querying the local PositionValues instead of the web service.
 final class MockDBClient: SolutionDBClient {
-    private var solution: PositionValues
+    private let solution: PositionValues
     
     init(solution: PositionValues) {
         self.solution = solution
@@ -138,9 +138,9 @@ final class MockDBClient: SolutionDBClient {
 }
 
 final class FaultyDBClient: SolutionDBClient {
-    private var client = CloudDBClient()
-    private var errorRate = 0
-    private var extraLatency = 0.0
+    private let client = CloudDBClient()
+    private let errorRate: Int
+    private let extraLatency: Double
     
     init(errorRate: Int = 0, extraLatency: Double = 0.0) {
         self.errorRate = errorRate
