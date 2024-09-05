@@ -17,9 +17,9 @@ struct PositionValue: Identifiable, Comparable {
     static func < (lhs: PositionValue, rhs: PositionValue) -> Bool { lhs.id < rhs.id }
 }
 
-// Stores all possible game positions.
-final class PositionValues {
-    private var values = [PositionValue]()
+// Stores all possible game positions. Trivially Sendable since all properties are read-only.
+final class PositionValues: Sendable {
+    private let values: [PositionValue]
     
     init(values: consuming [PositionValue]) {
         self.values = values

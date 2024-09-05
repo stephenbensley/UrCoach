@@ -86,6 +86,9 @@ final class GameScene: SKScene {
         menuButton.action = returnToMainMenu
         menuButton.position =    .init(x: -80.0, y: -310.0)
         addChild(menuButton)
+        
+        // Warm up the analyzer to minimize latency on first real query.
+        tickleAnalyzer()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -448,7 +451,7 @@ final class GameScene: SKScene {
     
     private func fetchAnalysis(forRoll roll: Int) {
         pendingAnalyze?.cancel()
-        pendingAnalyze = Task { @MainActor in
+        pendingAnalyze = Task {
             try? await appModel.analyzer.analyze(
                 position: game.position,
                 roll: roll
@@ -458,7 +461,7 @@ final class GameScene: SKScene {
     
     private func fetchBestMove(forRoll roll: Int) {
         pendingBestMove?.cancel()
-        pendingBestMove = Task{ @MainActor in
+        pendingBestMove = Task{
             try? await appModel.analyzer.bestMove(
                 from: game.position,
                 forRoll: roll
@@ -512,6 +515,11 @@ final class GameScene: SKScene {
         }
     }
     
+    // Send a throw-away query to prime the pump.
+    private func tickleAnalyzer() {
+        Task { try? await appModel.analyzer.analyze(position: .init(), roll: 2) }
+    }
+
     // MARK: Convert between logical and screen positions
     
     private func convertMove(_ move: Move) -> GameBoard.Move {

@@ -14,8 +14,9 @@ struct MoveValue: Comparable {
     static func < (lhs: MoveValue, rhs: MoveValue) -> Bool { lhs.value < rhs.value }
 }
 
-// Protocol for analyzing a game position.
-protocol PositionAnalyzer {
+// Protocol for analyzing a game position. This is Sendable, so we can execute queries in the
+// background.
+protocol PositionAnalyzer: Sendable {
     // Returns all moves sorted from best to worst.
     func analyze(position: GamePosition, roll: Int) async throws -> [MoveValue]
     

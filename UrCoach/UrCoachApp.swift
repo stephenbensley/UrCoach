@@ -38,15 +38,15 @@ class UrGame: CheckersGame {
     func save() {
         model.save()
     }
+    
+    static let shared = UrGame()
 }
 
 @main
 struct UrCoachApp: App {
-    private var game = UrGame()
-    
     var body: some Scene {
         WindowGroup {
-            ContentView(game: game)
+            ContentView(game: UrGame.shared)
         }
     }
 }

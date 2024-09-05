@@ -12,7 +12,7 @@ protocol Strategy {
 
 // Strategy implemented by an analyzer.
 final class AnalysisStrategy: Strategy {
-    private var analyzer: PositionAnalyzer
+    private let analyzer: PositionAnalyzer
 
     init(analyzer: PositionAnalyzer) {
         self.analyzer = analyzer

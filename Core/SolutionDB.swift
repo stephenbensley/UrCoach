@@ -5,8 +5,10 @@
 // license at https://github.com/stephenbensley/UrCoach/blob/main/LICENSE.
 //
 
-// Implements PositionAnalyzer by querying node state from a solution database.
-final class SolutionDB: PositionAnalyzer {
+// Implements PositionAnalyzer by querying node state from a solution database. This is an actor
+// to serialize access to the cache. Since all the functions are async anyway, this puts no extra
+// burden on callers.
+actor SolutionDB: PositionAnalyzer {
     private let client: SolutionDBClient
     private var cache = [Int32: SolutionNode]()
     

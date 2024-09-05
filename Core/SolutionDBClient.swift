@@ -44,8 +44,9 @@ enum SolutionDBError: Error {
     case unexpectedResponse
 }
 
-// This is defined as a protocol, so we can mock it.
-protocol SolutionDBClient {
+// This is defined as a protocol, so we can mock it. Clients should be stateless and thus trivially
+// Sendable. The stateful retry and caching is enabled at higher layers.
+protocol SolutionDBClient: Sendable {
     func getNode(id: Int32) async throws -> SolutionNode
     func getNodes(ids: [Int32]) async throws -> [SolutionNode]
 }
