@@ -461,7 +461,7 @@ final class GameScene: SKScene {
     
     private func fetchBestMove(forRoll roll: Int) {
         pendingBestMove?.cancel()
-        pendingBestMove = Task{
+        pendingBestMove = Task {
             try? await appModel.analyzer.bestMove(
                 from: game.position,
                 forRoll: roll
