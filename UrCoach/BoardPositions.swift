@@ -34,7 +34,7 @@ final class BoardPositions {
     }
     
     // Returns the position based on index, where zero is the entry square.
-    func position(_ player: PlayerColor,  index: Int) -> CGPoint {
+    func position(_ player: PlayerColor, index: Int) -> CGPoint {
         // Zero square has Ur.pieceCount waiting positions and the 'just before entry' square
         // ahead of it in the positions array.
         positions[player.rawValue][index + Self.originOffset]

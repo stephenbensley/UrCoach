@@ -275,7 +275,7 @@ final class GameScene: SKScene {
         case .computer:
             pickBestMove(onMovePicked: executeMove)
         }
-    }
+    } 
     
     private func executeMove(checker: Checker, viewMove: GameBoard.Move) {
         guard let modelMove = viewMove.userData as? Move else { return }

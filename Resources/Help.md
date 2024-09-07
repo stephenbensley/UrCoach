@@ -5,7 +5,7 @@ The app follows the rules originally proposed by Irving Finkel. These are the mo
 Players roll the dice to determine who goes first. The app skips any tied rolls and only shows the decisive roll. The player with the highest roll makes the first move.
 
 **Moving Pieces**
-The current player rolls the dice to determine how many squares to move during the turn. The player's dice are highlighted to indicate whose turn it is. Tap the piece you wish to move to select it. Both the selected piece and its destination will be highlighted. Tap the destination to confirm the move. If you are unable to select a piece, that means it has no move available. When entering a piece from off the board, you must select the highest piece from the stack of waiting pieces.
+The current player rolls the dice to determine how many squares to move during the turn. The player's dice are highlighted to indicate whose turn it is. Tap the piece you want to move to select it. Both the selected piece and its destination will be highlighted. Tap the destination to confirm the move. If you are unable to select a piece, that means it has no move available. When entering a piece from off the board, you must select the highest piece from the stack of waiting pieces.
 
 **Losing a Turn**
 If you roll a zero or none of your pieces can make a move, play automatically passes to the other player.
