@@ -316,9 +316,7 @@ final class GameScene: SKScene {
     }
     
     private func displayGameOutcome() {
-        let alert = AutoAlert("\(game.winner) wins!")
-        addChild(alert)
-        alert.display(forDuration: 5.0, completion: doNothing)
+        board.displayOutcome(text: "\(game.winner) wins!")
     }
     
     private func alertNetworkError(_ text: String, retryAction: @escaping () -> Void) {
@@ -337,8 +335,6 @@ final class GameScene: SKScene {
             }
         }
     }
-    
-    private func doNothing() { }
     
     // MARK: Animations
     
