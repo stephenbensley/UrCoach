@@ -409,6 +409,9 @@ final class GameScene: SKScene {
         for (i, move) in analysis.enumerated() {
             annotateChecker(at: move.move.from, with: move.value, isBest: (i == 0))
         }
+        if let best = analysis.first {
+            board.selectMove(convertMove(best.move))
+        }
     }
     
     private func annotateChecker(at index: Int, with winProb: Float, isBest: Bool) {
