@@ -22,7 +22,7 @@ The source code for this app has been released under the [MIT License](LICENSE).
 
 ## Building from Source
 
-The app was developed with [Xcode](https://developer.apple.com/xcode/), which is freely available from Apple. After installing Xcode and cloning the repo, open the Xcode [project](UrCoach.xcodeproj) at the root of the repo.
+The app was developed with [Xcode](https://developer.apple.com/xcode/), which is freely available from Apple. After installing Xcode and cloning the repo, open the Xcode [project](UrCoach.xcodeproj) at the root of the repo. The Git tags correspond to App Store releases. Checkout the most recent tag to ensure a stable build.
 
 ### Dependencies
 
