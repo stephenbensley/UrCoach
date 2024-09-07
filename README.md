@@ -6,7 +6,7 @@ UrCoach is an iOS app for the [Royal Game of Ur](https://en.wikipedia.org/wiki/R
 
 ### Installation
 
-The app can be downloaded for free from the Apple [App Store](https://apps.apple.com/us/app/queah/id6670455978/). There are no in-app purchases or ads.
+The app can be downloaded for free from the Apple [App Store](https://apps.apple.com/us/app/id6670455978/). There are no in-app purchases or ads.
 
 ### Privacy
 
