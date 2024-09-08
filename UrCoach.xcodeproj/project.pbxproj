@@ -1353,12 +1353,14 @@
 		DC89A5742C7A40E1005D0269 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
 		DC89A5752C7A40E1005D0269 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Release;
 		};

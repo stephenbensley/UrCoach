@@ -11,24 +11,22 @@ import SpriteKit
 
 // Provides the app-specific properties and methods consumed by the CheckersKit framework.
 class UrGame: CheckersGame {
-    private let model: UrModel
-    private let scene: GameScene
-
-    init() {
-        let model = UrModel.create()
-        self.model = model
-        self.scene = GameScene(appModel: model)
-    }
+    private let model = UrModel.create()
+    private var scene: GameScene!
 
     // AppInfo protocol
-    var appStoreId: Int = 6670455978
-    var copyright: String = "© 2024 Stephen E. Bensley"
-    var description: String = "Sharpen your skills by playing the Royal Game of Ur against an expert."
-    var gitHubAccount: String = "stephenbensley"
-    var gitHubRepo: String = "UrCoach"
+    let appStoreId: Int = 6670455978
+    let copyright: String = "© 2024 Stephen E. Bensley"
+    let description: String = "Sharpen your skills by playing the Royal Game of Ur against an expert."
+    let gitHubAccount: String = "stephenbensley"
+    let gitHubRepo: String = "UrCoach"
     
     // CheckersGame protocol
     func getScene(size: CGSize, exitGame: @escaping () -> Void) -> SKScene {
+        // We defer initialization since SKScene must be initialized from MainActor
+        if scene == nil {
+            scene = GameScene(appModel: model)
+        }
         scene.addedToView(size: size, exitGame: exitGame)
         return scene
     }
@@ -38,15 +36,15 @@ class UrGame: CheckersGame {
     func save() {
         model.save()
     }
-    
-    static let shared = UrGame()
 }
 
 @main
 struct UrCoachApp: App {
+    private let game = UrGame()
+
     var body: some Scene {
         WindowGroup {
-            ContentView(game: UrGame.shared)
+            ContentView(game: game)
         }
     }
 }

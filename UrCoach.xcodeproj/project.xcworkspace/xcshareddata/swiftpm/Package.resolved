@@ -7,7 +7,7 @@
       "location" : "https://github.com/stephenbensley/CheckersKit",
       "state" : {
         "branch" : "main",
-        "revision" : "fc0486998ab2627b52f2363891e21c55f5abf39c"
+        "revision" : "e8a2d91b62cbab1d194d56a3de15b37b9d5bae3d"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/stephenbensley/UtiliKit",
       "state" : {
         "branch" : "main",
-        "revision" : "ab173e9bd7891ad91e04af2a17a8c1198739433f"
+        "revision" : "56bb26aa1b060311903eae4d57f320cf0ef4303e"
       }
     }
   ],
