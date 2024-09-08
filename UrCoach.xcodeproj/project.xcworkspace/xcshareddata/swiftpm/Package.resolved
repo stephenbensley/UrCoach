@@ -1,22 +1,13 @@
 {
-  "originHash" : "d6abd9716227493a2d07d77e6945341e05a54457c3128151eaa8bad4ebbb28b5",
+  "originHash" : "9904166925030d438115cf3427cde4d59a2e94263ad3f7cb6cc541da2d8f7430",
   "pins" : [
-    {
-      "identity" : "checkerskit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephenbensley/CheckersKit",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e8a2d91b62cbab1d194d56a3de15b37b9d5bae3d"
-      }
-    },
     {
       "identity" : "utilikit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stephenbensley/UtiliKit",
       "state" : {
         "branch" : "main",
-        "revision" : "56bb26aa1b060311903eae4d57f320cf0ef4303e"
+        "revision" : "447e62dc4ec41ab571fd49ec25003b9836fa6181"
       }
     }
   ],

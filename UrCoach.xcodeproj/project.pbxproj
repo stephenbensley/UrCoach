@@ -47,16 +47,16 @@
 		DC729F182C7A6B7A00193A2E /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EF42C7A580E00193A2E /* Tournament.swift */; };
 		DC729F1E2C7A6BB100193A2E /* urSolution.data in CopyFiles */ = {isa = PBXBuildFile; fileRef = DC729EA22C7A438400193A2E /* urSolution.data */; };
 		DC729F452C7A8C5E00193A2E /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC729EE52C7A527300193A2E /* Strategy.swift */; };
+		DC7D85052C8DF4D9004D4D1F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC7D85042C8DF4D9004D4D1F /* CheckersKit */; };
+		DC7D85072C8DF510004D4D1F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC7D85062C8DF510004D4D1F /* CheckersKit */; };
+		DC7D85092C8DF51F004D4D1F /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC7D85082C8DF51F004D4D1F /* CheckersKit */; };
 		DC89A5A52C7A413B005D0269 /* PlayerPositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A12C7A413B005D0269 /* PlayerPositionTests.swift */; };
 		DC89A5A62C7A413B005D0269 /* PositionValuesBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A22C7A413B005D0269 /* PositionValuesBuilderTests.swift */; };
 		DC89A5A72C7A413B005D0269 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A32C7A413B005D0269 /* TestUtils.swift */; };
 		DC89A5A82C7A413B005D0269 /* GamePositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A5A42C7A413B005D0269 /* GamePositionTests.swift */; };
-		DC8E71E82C877B50009DE9CE /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71E72C877B50009DE9CE /* CheckersKit */; };
 		DC8E71EA2C877B50009DE9CE /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71E92C877B50009DE9CE /* UtiliKit */; };
 		DC8E71EC2C877B59009DE9CE /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71EB2C877B59009DE9CE /* UtiliKit */; };
-		DC8E71EE2C877B60009DE9CE /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71ED2C877B60009DE9CE /* CheckersKit */; };
 		DC8E71F02C877B60009DE9CE /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71EF2C877B60009DE9CE /* UtiliKit */; };
-		DC8E71F22C877B68009DE9CE /* CheckersKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71F12C877B68009DE9CE /* CheckersKit */; };
 		DC8E71F42C877B70009DE9CE /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC8E71F32C877B70009DE9CE /* UtiliKit */; };
 		DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB512C7E0C0700ECB509 /* UtiliKit */; };
 		DC96FB552C7E0CCB00ECB509 /* UtiliKit in Frameworks */ = {isa = PBXBuildFile; productRef = DC96FB542C7E0CCB00ECB509 /* UtiliKit */; };
@@ -260,8 +260,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8E71EE2C877B60009DE9CE /* CheckersKit in Frameworks */,
 				DC8E71F02C877B60009DE9CE /* UtiliKit in Frameworks */,
+				DC7D85092C8DF51F004D4D1F /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +269,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8E71E82C877B50009DE9CE /* CheckersKit in Frameworks */,
 				DC8E71EA2C877B50009DE9CE /* UtiliKit in Frameworks */,
+				DC7D85072C8DF510004D4D1F /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +283,7 @@
 				DCA00C972C7E07B700C9E1D2 /* UtiliKit in Frameworks */,
 				DC28E04E2C7E0B4100C0FD2C /* UtiliKit in Frameworks */,
 				DC96FB522C7E0C0700ECB509 /* UtiliKit in Frameworks */,
-				DC8E71F22C877B68009DE9CE /* CheckersKit in Frameworks */,
+				DC7D85052C8DF4D9004D4D1F /* CheckersKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,8 +497,8 @@
 			);
 			name = Tournament;
 			packageProductDependencies = (
-				DC8E71ED2C877B60009DE9CE /* CheckersKit */,
 				DC8E71EF2C877B60009DE9CE /* UtiliKit */,
+				DC7D85082C8DF51F004D4D1F /* CheckersKit */,
 			);
 			productName = Tournament;
 			productReference = DC729F112C7A6B7100193A2E /* Tournament */;
@@ -519,8 +519,8 @@
 			);
 			name = CoreTests;
 			packageProductDependencies = (
-				DC8E71E72C877B50009DE9CE /* CheckersKit */,
 				DC8E71E92C877B50009DE9CE /* UtiliKit */,
+				DC7D85062C8DF510004D4D1F /* CheckersKit */,
 			);
 			productName = UrCoreTests;
 			productReference = DC89A5832C7A40F5005D0269 /* CoreTests.xctest */;
@@ -545,7 +545,7 @@
 				DC28E04F2C7E0B6E00C0FD2C /* UtiliKit */,
 				DC96FB512C7E0C0700ECB509 /* UtiliKit */,
 				DC96FB542C7E0CCB00ECB509 /* UtiliKit */,
-				DC8E71F12C877B68009DE9CE /* CheckersKit */,
+				DC7D85042C8DF4D9004D4D1F /* CheckersKit */,
 			);
 			productName = UrCoach;
 			productReference = DCA00C4E2C7BCA8500C9E1D2 /* Ur Coach.app */;
@@ -588,7 +588,6 @@
 			);
 			mainGroup = DC89A56F2C7A40E1005D0269;
 			packageReferences = (
-				DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */,
 				DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */,
 			);
 			productRefGroup = DC89A57C2C7A40F5005D0269 /* Products */;
@@ -1753,14 +1752,6 @@
 				kind = branch;
 			};
 		};
-		DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephenbensley/CheckersKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephenbensley/UtiliKit";
@@ -1805,9 +1796,19 @@
 			package = DC2CEEF02C88F30F00023B0C /* XCRemoteSwiftPackageReference "CheckersKit" */;
 			productName = CheckersKit;
 		};
-		DC8E71E72C877B50009DE9CE /* CheckersKit */ = {
+		DC7D85042C8DF4D9004D4D1F /* CheckersKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */;
+			package = DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = CheckersKit;
+		};
+		DC7D85062C8DF510004D4D1F /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */;
+			productName = CheckersKit;
+		};
+		DC7D85082C8DF51F004D4D1F /* CheckersKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */;
 			productName = CheckersKit;
 		};
 		DC8E71E92C877B50009DE9CE /* UtiliKit */ = {
@@ -1820,20 +1821,10 @@
 			package = DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */;
 			productName = UtiliKit;
 		};
-		DC8E71ED2C877B60009DE9CE /* CheckersKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */;
-			productName = CheckersKit;
-		};
 		DC8E71EF2C877B60009DE9CE /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC8E71E62C877B43009DE9CE /* XCRemoteSwiftPackageReference "UtiliKit" */;
 			productName = UtiliKit;
-		};
-		DC8E71F12C877B68009DE9CE /* CheckersKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC8E71E52C877B1C009DE9CE /* XCRemoteSwiftPackageReference "CheckersKit" */;
-			productName = CheckersKit;
 		};
 		DC8E71F32C877B70009DE9CE /* UtiliKit */ = {
 			isa = XCSwiftPackageProductDependency;
