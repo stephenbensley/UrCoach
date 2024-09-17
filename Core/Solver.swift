@@ -150,7 +150,7 @@ final class Solver {
     // Ultimately, we'll store the values as a Float which has a 23-bit mantissa. In the upper half
     // of our range (0.5..<1.0), the exponent is -1, so we have a precision of 2^-24. We solve for
     // one extra bit to minimize rounding errors. In reality, even this is overkill. Due to the
-    // randomness of Ur, it would take a tremendous number of iterations to dectect an error of
+    // randomness of Ur, it would take a tremendous number of iterations to detect an error of
     // even 10^-5.
     static let threshold = pow(2.0, -25.0)
     // Current state of the solution
