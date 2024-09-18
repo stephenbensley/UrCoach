@@ -2,7 +2,7 @@
 1. Ensure Free Tier alerts are enabled.
 2. Create zero-spend and monthly cost budgets.
 3. Create the table in DynamoDB:
-   - Run [Ur Solver](../Solver) to generate urSolution.data.
+   - Run [Ur Solver](../UrSolver) to generate urSolution.data.
    - Run [DynamoDBGen](../DynamoDBGen) to convert the solution to a series of DynamoDB JSON files.
    - Compress the JSON files with [zstd](https://github.com/facebook/zstd).
    - Choose an appropriate region.
@@ -30,5 +30,5 @@
      - Set Rate, Burst, and Quota appropriately.
      - Associate the API key created above.
      - Associate the stage used to deploy the API.
-8. Update [AWSConfig.swift](../UrCore/AWSConfig.swift.txt) with the API parameters.
-9. Run [CloudDBClientTests](../UrCoreTests/CloudDBClientTests.swift) to validate the deployment.
+8. Update [AWSConfig.swift](../Core/AWSConfig.swift.txt) with the API parameters.
+9. Run [CloudDBClientTests](../CoreTests/CloudDBClientTests.swift) to validate the deployment.
