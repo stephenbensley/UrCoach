@@ -30,7 +30,7 @@ class UrGame: CheckersGame {
         scene.addedToView(size: size, exitGame: exitGame)
         return scene
     }
-    func newGame(white: CheckersKit.PlayerType, black: CheckersKit.PlayerType) {
+    func newGame(white: PlayerType, black: PlayerType) {
         model.newGame(white: white, black: black)
     }
     func save() {

@@ -11,7 +11,7 @@ import UtiliKit
 // Indexes the value of each game position. The class toggles between "read from red, write to
 // black" and "read from black, write to red". This allows phased updates of the values and allows
 // multiple threads to write to the index without collisions.
-final class PositionValuesBuilder {
+final class PositionValuesBuilder: @unchecked Sendable {
     private struct Entry: Comparable {
         let id: Int32
         var redValue: Double

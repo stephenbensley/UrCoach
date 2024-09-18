@@ -42,16 +42,17 @@ final class GameGraph {
     func reset() { cursor = 0}
 }
 
-// Solves a portion of the game graph.
-final class SolverWorker {
+// Solves a portion of the game graph. The class exposes a buildGraph/update API. Solver always
+// invokes these from within a single Task.
+fileprivate final class SolverWorker: @unchecked Sendable {
     // Probabilty of the various dice rolls.
     private static let pRoll = [0.0625, 0.25, 0.375, 0.25, 0.0625]
     // Current state of the solution
-    private var builder: PositionValuesBuilder
+    private let builder: PositionValuesBuilder
     // Game graph being solved. The Ur graph is broken into metastates based on safe counts. The
     // metastates are then broken into chunks for each worker. This is the graph for the current
     // chunk being solved, not the overall game of Ur.
-    private var graph = GameGraph()
+    private let graph = GameGraph()
     
     init(builder: PositionValuesBuilder) {
         self.builder = builder
@@ -139,13 +140,13 @@ final class SolverWorker {
 }
 
 // Solves the game of Ur.
-final class Solver {
+final class Solver: Sendable {
     // Used to report progress towards the solution.
     enum Progress {
         case buildingGraph(state: SafeCounts)
         case optimzing(iteration: Int, delta: Double)
     }
-    typealias ReportProgress = (Progress) -> Void
+    typealias ReportProgress = @MainActor (Progress) -> Void
     
     // Ultimately, we'll store the values as a Float which has a 23-bit mantissa. In the upper half
     // of our range (0.5..<1.0), the exponent is -1, so we have a precision of 2^-24. We solve for
@@ -154,7 +155,7 @@ final class Solver {
     // even 10^-5.
     static let threshold = pow(2.0, -25.0)
     // Current state of the solution
-    private var builder: PositionValuesBuilder
+    private let builder: PositionValuesBuilder
     // Closure used to report progress towards the solution
     private let reportProgress: ReportProgress
     // Workers that solve chunks of the graph.
@@ -179,7 +180,7 @@ final class Solver {
     
     // Builds the game graph for the given metastate.
     private func buildGraph(for state: SafeCounts) async {
-        reportProgress(.buildingGraph(state: state))
+        await reportProgress(.buildingGraph(state: state))
         
         // Get all the GamePositions for this state
         let positions = state.all
@@ -207,7 +208,7 @@ final class Solver {
         repeat {
             delta = await update()
             iteration += 1
-            reportProgress(.optimzing(iteration: iteration, delta: delta))
+            await reportProgress(.optimzing(iteration: iteration, delta: delta))
         } while delta > Self.threshold
     }
     

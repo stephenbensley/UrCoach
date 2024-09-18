@@ -22,13 +22,13 @@ struct SolutionFile: FileDocument {
         self.data = initialData
     }
     
-    static var readableContentTypes = [UTType.data]
+    static let readableContentTypes = [UTType.data]
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         return FileWrapper(regularFileWithContents: data)
     }
     
-    static var writableContentTypes = [UTType.data]
+    static let writableContentTypes = [UTType.data]
 }
 
 struct ContentView: View {
